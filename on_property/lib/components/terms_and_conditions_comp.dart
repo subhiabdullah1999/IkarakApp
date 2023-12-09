@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-
+import 'package:get/get.dart';
 
 Container bannerForTermsAndConditions(BuildContext context) {
   return Container(
@@ -8,8 +8,7 @@ Container bannerForTermsAndConditions(BuildContext context) {
     width: double.infinity,
     decoration: BoxDecoration(
         image: DecorationImage(
-            fit: BoxFit.fill,
-            image: AssetImage('assets/images/terms.png'))),
+            fit: BoxFit.fill, image: AssetImage('assets/images/terms.png'))),
     child: Container(
       color: Colors.black.withOpacity(0.4),
       child: Padding(
@@ -51,7 +50,6 @@ Container bannerForTermsAndConditions(BuildContext context) {
                         )),
                     onTap: () {
                       Navigator.pushNamed(context, 'Location');
-
                     }),
                 GestureDetector(
                     child: Container(
@@ -78,7 +76,7 @@ Container bannerForTermsAndConditions(BuildContext context) {
                 padding: EdgeInsets.only(bottom: 30),
                 alignment: Alignment.center,
                 child: Text(
-                  'TERMS AND CONDITIONS',
+                  'Terms and Policies'.tr,
                   style: TextStyle(
                       color: Colors.white,
                       fontSize: 20,

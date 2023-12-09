@@ -5,6 +5,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:on_property/control/loc_hous_detailes_controler.dart';
+import 'package:on_property/core/services/services.dart';
 import 'package:on_property/utils/colorscheme.dart';
 
 class LocationForHouseDetails extends StatefulWidget {
@@ -53,6 +54,8 @@ class _LocationForHouseDetailsState extends State<LocationForHouseDetails> {
 
   @override
   Widget build(BuildContext context) {
+    MyServices myServices = Get.find();
+
     Get.put(LocationHousDetailescontrollerImp());
     return SafeArea(
         child: GetBuilder<LocationHousDetailescontrollerImp>(
@@ -112,8 +115,7 @@ class _LocationForHouseDetailsState extends State<LocationForHouseDetails> {
                                           children: [
                                             InkWell(
                                               onTap: () {
-                                                controller.gR();
-                                                scanQR();
+                                                controller.typeIkar();
                                               },
                                               child: Container(
                                                 height: 90,
@@ -126,7 +128,7 @@ class _LocationForHouseDetailsState extends State<LocationForHouseDetails> {
                                                     border: Border.all(
                                                       color: controller
                                                                   .typeSearch ==
-                                                              "QR"
+                                                              "type"
                                                           ? primaryColor
                                                           : Colors.grey,
                                                     )),
@@ -135,13 +137,15 @@ class _LocationForHouseDetailsState extends State<LocationForHouseDetails> {
                                                       MainAxisAlignment.center,
                                                   children: [
                                                     SvgPicture.asset(
-                                                      'assets/icons/QR.svg',
-                                                      // color: Colors.green,
+                                                      'assets/icons/search1.svg',
+                                                      // color: typeSearch == "type"
+                                                      //     ? primaryColor
+                                                      //     : Colors.grey,
                                                       height: 32,
                                                       width: 32,
                                                     ),
                                                     Text(
-                                                      "َQR كود",
+                                                      "Property Type".tr,
                                                       style: TextStyle(
                                                           color: Colors.black,
                                                           fontWeight:
@@ -184,7 +188,7 @@ class _LocationForHouseDetailsState extends State<LocationForHouseDetails> {
                                                       width: 32,
                                                     ),
                                                     Text(
-                                                      "رقم الجوال",
+                                                      'Phone Number'.tr,
                                                       style: TextStyle(
                                                           color: Colors.black,
                                                           fontWeight:
@@ -199,7 +203,8 @@ class _LocationForHouseDetailsState extends State<LocationForHouseDetails> {
                                             ),
                                             InkWell(
                                               onTap: () {
-                                                controller.typeIkar();
+                                                controller.gR();
+                                                scanQR();
                                               },
                                               child: Container(
                                                 height: 90,
@@ -212,7 +217,7 @@ class _LocationForHouseDetailsState extends State<LocationForHouseDetails> {
                                                     border: Border.all(
                                                       color: controller
                                                                   .typeSearch ==
-                                                              "type"
+                                                              "QR"
                                                           ? primaryColor
                                                           : Colors.grey,
                                                     )),
@@ -221,15 +226,13 @@ class _LocationForHouseDetailsState extends State<LocationForHouseDetails> {
                                                       MainAxisAlignment.center,
                                                   children: [
                                                     SvgPicture.asset(
-                                                      'assets/icons/search1.svg',
-                                                      // color: typeSearch == "type"
-                                                      //     ? primaryColor
-                                                      //     : Colors.grey,
+                                                      'assets/icons/QR.svg',
+                                                      // color: Colors.green,
                                                       height: 32,
                                                       width: 32,
                                                     ),
                                                     Text(
-                                                      "نوع العقار",
+                                                      "QR code".tr,
                                                       style: TextStyle(
                                                           color: Colors.black,
                                                           fontWeight:
@@ -241,7 +244,7 @@ class _LocationForHouseDetailsState extends State<LocationForHouseDetails> {
                                                   ],
                                                 ),
                                               ),
-                                            )
+                                            ),
                                           ],
                                         ),
                                       ),
@@ -253,21 +256,16 @@ class _LocationForHouseDetailsState extends State<LocationForHouseDetails> {
                                                   bottom: 20),
                                               child: Column(
                                                 crossAxisAlignment:
-                                                    CrossAxisAlignment.end,
+                                                    CrossAxisAlignment.start,
                                                 children: [
                                                   Row(
                                                     mainAxisAlignment:
                                                         MainAxisAlignment
                                                             .spaceBetween,
                                                     children: [
-                                                      Switch(
-                                                        value: true,
-                                                        onChanged: (bool t) {},
-                                                        activeColor:
-                                                            primaryColor,
-                                                      ),
                                                       Text(
-                                                        "عرض طلبات التسويق",
+                                                        "View marketing requests"
+                                                            .tr,
                                                         style: TextStyle(
                                                             color:
                                                                 Colors.black54,
@@ -276,11 +274,17 @@ class _LocationForHouseDetailsState extends State<LocationForHouseDetails> {
                                                                 FontWeight.w600,
                                                             fontStyle: FontStyle
                                                                 .italic),
-                                                      )
+                                                      ),
+                                                      Switch(
+                                                        value: true,
+                                                        onChanged: (bool t) {},
+                                                        activeColor:
+                                                            primaryColor,
+                                                      ),
                                                     ],
                                                   ),
                                                   Text(
-                                                    "العنوان",
+                                                    "the address".tr,
                                                     style: TextStyle(
                                                         color: Colors.black,
                                                         fontSize: 22,
@@ -341,7 +345,7 @@ class _LocationForHouseDetailsState extends State<LocationForHouseDetails> {
                                                                                   decoration: BoxDecoration(color: primaryColor, borderRadius: BorderRadius.circular(15)),
                                                                                   child: Center(
                                                                                     child: Text(
-                                                                                      "موافق",
+                                                                                      "Ok".tr,
                                                                                       style: TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.w400, fontStyle: FontStyle.italic),
                                                                                     ),
                                                                                   ),
@@ -354,7 +358,7 @@ class _LocationForHouseDetailsState extends State<LocationForHouseDetails> {
                                                                                 child: Row(
                                                                                   children: [
                                                                                     Text(
-                                                                                      "موقع الخريطة",
+                                                                                      "map location".tr,
                                                                                       style: TextStyle(color: Colors.black, fontSize: 22, fontWeight: FontWeight.w600, fontStyle: FontStyle.italic),
                                                                                     ),
                                                                                     SizedBox(
@@ -374,10 +378,10 @@ class _LocationForHouseDetailsState extends State<LocationForHouseDetails> {
                                                                                 EdgeInsets.symmetric(vertical: 5),
                                                                             child:
                                                                                 Column(
-                                                                              crossAxisAlignment: CrossAxisAlignment.end,
+                                                                              crossAxisAlignment: CrossAxisAlignment.start,
                                                                               children: [
                                                                                 Text(
-                                                                                  "المدينة",
+                                                                                  "city".tr,
                                                                                   style: TextStyle(color: Colors.black, fontSize: 22, fontWeight: FontWeight.w600, fontStyle: FontStyle.italic),
                                                                                 ),
                                                                                 InkWell(
@@ -406,7 +410,7 @@ class _LocationForHouseDetailsState extends State<LocationForHouseDetails> {
                                                                                                               child: Row(
                                                                                                                 children: [
                                                                                                                   Text(
-                                                                                                                    "المدينة",
+                                                                                                                    "city".tr,
                                                                                                                     style: TextStyle(color: Colors.black, fontSize: 22, fontWeight: FontWeight.w600, fontStyle: FontStyle.italic),
                                                                                                                   ),
                                                                                                                   SizedBox(
@@ -424,15 +428,15 @@ class _LocationForHouseDetailsState extends State<LocationForHouseDetails> {
                                                                                                         Container(
                                                                                                           padding: EdgeInsets.symmetric(vertical: 5),
                                                                                                           child: Column(
-                                                                                                            crossAxisAlignment: CrossAxisAlignment.end,
+                                                                                                            crossAxisAlignment: CrossAxisAlignment.start,
                                                                                                             children: [
                                                                                                               Text(
-                                                                                                                "المدينة",
+                                                                                                                "city".tr,
                                                                                                                 style: TextStyle(color: Colors.black, fontSize: 22, fontWeight: FontWeight.w600, fontStyle: FontStyle.italic),
                                                                                                               ),
                                                                                                               TextFormField(
                                                                                                                 decoration: InputDecoration(
-                                                                                                                    label: Text("اختر المدينة"),
+                                                                                                                    label: Text("Select city".tr),
                                                                                                                     prefix: SvgPicture.asset(
                                                                                                                       'assets/icons/search1.svg',
                                                                                                                       color: primaryColor,
@@ -455,10 +459,10 @@ class _LocationForHouseDetailsState extends State<LocationForHouseDetails> {
                                                                                     width: MediaQuery.of(context).size.width,
                                                                                     decoration: BoxDecoration(borderRadius: BorderRadius.circular(10), color: Color.fromARGB(255, 197, 207, 212)),
                                                                                     child: Row(
-                                                                                      mainAxisAlignment: MainAxisAlignment.end,
+                                                                                      mainAxisAlignment: MainAxisAlignment.start,
                                                                                       children: [
                                                                                         Text(
-                                                                                          "اختر المدينة",
+                                                                                          "Select city".tr,
                                                                                           style: TextStyle(color: Colors.black54, fontSize: 20, fontWeight: FontWeight.w400, fontStyle: FontStyle.italic),
                                                                                         ),
                                                                                       ],
@@ -494,10 +498,20 @@ class _LocationForHouseDetailsState extends State<LocationForHouseDetails> {
                                                       child: Row(
                                                         mainAxisAlignment:
                                                             MainAxisAlignment
-                                                                .end,
+                                                                .start,
                                                         children: [
+                                                          SvgPicture.asset(
+                                                            'assets/icons/pin.svg',
+                                                            color: primaryColor,
+                                                            height: 20,
+                                                            width: 20,
+                                                          ),
+                                                          SizedBox(
+                                                            width: 10,
+                                                          ),
                                                           Text(
-                                                            "اختر المدينة, نوع العقار,كل الجهات",
+                                                            "Select the city, property type, all destinations"
+                                                                .tr,
                                                             style: TextStyle(
                                                                 color: Colors
                                                                     .black54,
@@ -509,15 +523,6 @@ class _LocationForHouseDetailsState extends State<LocationForHouseDetails> {
                                                                     FontStyle
                                                                         .italic),
                                                           ),
-                                                          SizedBox(
-                                                            width: 10,
-                                                          ),
-                                                          SvgPicture.asset(
-                                                            'assets/icons/pin.svg',
-                                                            color: primaryColor,
-                                                            height: 20,
-                                                            width: 20,
-                                                          ),
                                                         ],
                                                       ),
                                                     ),
@@ -526,7 +531,7 @@ class _LocationForHouseDetailsState extends State<LocationForHouseDetails> {
                                                     height: 10,
                                                   ),
                                                   Text(
-                                                    "نوع العقار",
+                                                    "Property Type".tr,
                                                     style: TextStyle(
                                                         color: Colors.black,
                                                         fontSize: 22,
@@ -587,7 +592,7 @@ class _LocationForHouseDetailsState extends State<LocationForHouseDetails> {
                                                                                   decoration: BoxDecoration(color: primaryColor, borderRadius: BorderRadius.circular(15)),
                                                                                   child: Center(
                                                                                     child: Text(
-                                                                                      "موافق",
+                                                                                      "Ok".tr,
                                                                                       style: TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.w400, fontStyle: FontStyle.italic),
                                                                                     ),
                                                                                   ),
@@ -600,7 +605,7 @@ class _LocationForHouseDetailsState extends State<LocationForHouseDetails> {
                                                                                 child: Row(
                                                                                   children: [
                                                                                     Text(
-                                                                                      " نوع العقار",
+                                                                                      "Property Type".tr,
                                                                                       style: TextStyle(color: Colors.black, fontSize: 22, fontWeight: FontWeight.w600, fontStyle: FontStyle.italic),
                                                                                     ),
                                                                                     SizedBox(
@@ -641,10 +646,10 @@ class _LocationForHouseDetailsState extends State<LocationForHouseDetails> {
                                                       child: Row(
                                                         mainAxisAlignment:
                                                             MainAxisAlignment
-                                                                .end,
+                                                                .start,
                                                         children: [
                                                           Text(
-                                                            "الكل للايجار",
+                                                            "All for rent".tr,
                                                             style: TextStyle(
                                                                 color: Colors
                                                                     .black54,
@@ -668,7 +673,7 @@ class _LocationForHouseDetailsState extends State<LocationForHouseDetails> {
                                                   horizontal: 10, vertical: 10),
                                               child: Column(
                                                 crossAxisAlignment:
-                                                    CrossAxisAlignment.end,
+                                                    CrossAxisAlignment.start,
                                                 children: [
                                                   Text(
                                                     "ادخل رقم صاحب الاعلان",
@@ -717,7 +722,7 @@ class _LocationForHouseDetailsState extends State<LocationForHouseDetails> {
                                                   BorderRadius.circular(10)),
                                           child: Center(
                                             child: Text(
-                                              "بحث",
+                                              "Search".tr,
                                               style: TextStyle(
                                                   color: Colors.white,
                                                   fontSize: 20,
@@ -735,7 +740,7 @@ class _LocationForHouseDetailsState extends State<LocationForHouseDetails> {
                   },
                   child: Container(
                     height: 50,
-                    width: 75,
+                    width: 78,
                     decoration: BoxDecoration(
                         color: primaryColor,
                         borderRadius: BorderRadius.circular(15)),
@@ -744,11 +749,11 @@ class _LocationForHouseDetailsState extends State<LocationForHouseDetails> {
                         SvgPicture.asset(
                           'assets/icons/search1.svg',
                           // color: Colors.white,
-                          height: 32,
-                          width: 32,
+                          height: 30,
+                          width: 30,
                         ),
                         Text(
-                          "بحث",
+                          "Search".tr,
                           style: TextStyle(
                               color: Colors.white,
                               fontWeight: FontWeight.w500,
@@ -765,8 +770,14 @@ class _LocationForHouseDetailsState extends State<LocationForHouseDetails> {
               left: 5,
               bottom: 15,
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment:
+                    myServices.sharedPreferences.getString("lang") == "ar"
+                        ? MainAxisAlignment.end
+                        : MainAxisAlignment.start,
+                crossAxisAlignment:
+                    myServices.sharedPreferences.getString("lang") == "ar"
+                        ? CrossAxisAlignment.end
+                        : CrossAxisAlignment.start,
                 children: [
                   InkWell(
                     onTap: () {
@@ -800,7 +811,7 @@ class _LocationForHouseDetailsState extends State<LocationForHouseDetails> {
                     child: Container(
                       padding: const EdgeInsets.symmetric(horizontal: 5),
                       height: 50,
-                      width: 125,
+                      width: 133,
                       decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(20),
@@ -809,18 +820,25 @@ class _LocationForHouseDetailsState extends State<LocationForHouseDetails> {
                           )),
                       child: Row(
                         children: [
-                          SvgPicture.asset(
-                            'assets/icons/menu.svg',
-                            // color: Colors.white,
-                            height: 32,
-                            width: 20,
-                          ),
+                          myServices.sharedPreferences.getString("lang") == "ar"
+                              ? SvgPicture.asset(
+                                  'assets/icons/menu2.svg',
+                                  // color: Colors.white,
+                                  height: 30,
+                                  width: 18,
+                                )
+                              : SvgPicture.asset(
+                                  'assets/icons/menu.svg',
+                                  // color: Colors.white,
+                                  height: 30,
+                                  width: 18,
+                                ),
                           Text(
-                            "عرض القائمة",
+                            "Show menu".tr,
                             style: TextStyle(
                                 color: Colors.black,
                                 fontWeight: FontWeight.w400,
-                                fontSize: 18,
+                                fontSize: 16,
                                 fontStyle: FontStyle.italic),
                           )
                         ],

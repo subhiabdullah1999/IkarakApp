@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:get/get.dart';
 import 'package:on_property/utils/colorscheme.dart';
 
 textFieldWithFilter({BuildContext? context, Function()? callback}) {
@@ -27,7 +28,7 @@ textFieldWithFilter({BuildContext? context, Function()? callback}) {
                   color: primaryColor,
                 ),
                 Text(
-                  'Find Rent,Sale & Buy Home',
+                  'Find Rent,Sale & Buy Home'.tr,
                   style: TextStyle(color: Colors.grey),
                 )
               ],

@@ -1,10 +1,9 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:get/get.dart';
 import 'package:on_property/models/notification_model.dart';
 import 'package:on_property/screens/profile.dart';
 import 'package:on_property/utils/colorscheme.dart';
-
 
 class Notifications extends StatelessWidget {
   @override
@@ -14,7 +13,7 @@ class Notifications extends StatelessWidget {
         elevation: 1,
         backgroundColor: Colors.white,
         title: Text(
-          'Notifications',
+          'Notifications'.tr,
           style: TextStyle(color: Colors.black, fontSize: 17),
         ),
         leading: GestureDetector(
@@ -33,57 +32,57 @@ class Notifications extends StatelessWidget {
           SizedBox(
             width: 10,
           )
-        ], systemOverlayStyle: SystemUiOverlayStyle.dark,
+        ],
+        systemOverlayStyle: SystemUiOverlayStyle.dark,
       ),
       body: notificationList(),
     );
   }
 
   notificationList() {
-
-    List<NotificationModel> myNotificationsList=[
+    List<NotificationModel> myNotificationsList = [
       NotificationModel(
-        img:       'assets/images/person1.jpg',
-        notification:  'Ayaz sent you a friend request',
+        img: 'assets/images/person1.jpg',
+        notification: 'Ayaz sent you a friend request',
       ),
       NotificationModel(
-        img:        'assets/images/person2.jpeg',
-        notification:     'Kevin sent you a friend request from Kepp Trucking',
+        img: 'assets/images/person2.jpeg',
+        notification: 'Kevin sent you a friend request from Kepp Trucking',
       ),
       NotificationModel(
-        img:    'assets/images/person3.png',
-        notification:    'Charles approved your request to join the group',
+        img: 'assets/images/person3.png',
+        notification: 'Charles approved your request to join the group',
       ),
       NotificationModel(
-        img:     'assets/images/person4.jpg',
-        notification:   'Quincy Mauger sent you a friend request from general',
+        img: 'assets/images/person4.jpg',
+        notification: 'Quincy Mauger sent you a friend request from general',
       ),
       NotificationModel(
-        img:       'assets/images/person5.png',
-        notification:  'John Bryant sent you a friend request from J.B Hunt',
+        img: 'assets/images/person5.png',
+        notification: 'John Bryant sent you a friend request from J.B Hunt',
       ),
       NotificationModel(
-        img:      'assets/images/person6.jpeg',
-        notification:  'Ayaz sent you a friend request',
+        img: 'assets/images/person6.jpeg',
+        notification: 'Ayaz sent you a friend request',
       ),
       NotificationModel(
-        img:             'assets/images/person7.jpg',
-        notification:   'Kevin sent you a friend request from Kepp Trucking,',
+        img: 'assets/images/person7.jpg',
+        notification: 'Kevin sent you a friend request from Kepp Trucking,',
       ),
       NotificationModel(
-        img:         'assets/images/person8.jpg',
-        notification:    'Charles approved your request to join the group',
+        img: 'assets/images/person8.jpg',
+        notification: 'Charles approved your request to join the group',
       ),
       NotificationModel(
-        img:       'assets/images/person9.jpg',
-        notification:  'John Bryant sent you a friend request from J.B Hunt'
-      ), NotificationModel(
-        img:       'assets/images/person5.png',
-        notification:  'John Bryant sent you a friend request from J.B Hunt',
+          img: 'assets/images/person9.jpg',
+          notification: 'John Bryant sent you a friend request from J.B Hunt'),
+      NotificationModel(
+        img: 'assets/images/person5.png',
+        notification: 'John Bryant sent you a friend request from J.B Hunt',
       ),
       NotificationModel(
-        img:      'assets/images/person6.jpeg',
-        notification:  'Ayaz sent you a friend request',
+        img: 'assets/images/person6.jpeg',
+        notification: 'Ayaz sent you a friend request',
       ),
     ];
 
@@ -106,7 +105,7 @@ class Notifications extends StatelessWidget {
                         );
                       },
                       child: Container(
-                        height: 80,
+                        height: 100,
                         padding: EdgeInsets.symmetric(horizontal: 8.0),
                         child: Column(
                           children: [
@@ -114,8 +113,8 @@ class Notifications extends StatelessWidget {
                               children: [
                                 CircleAvatar(
                                   maxRadius: 30,
-                                  backgroundImage:
-                                      AssetImage(myNotificationsList[index - 1].img!),
+                                  backgroundImage: AssetImage(
+                                      myNotificationsList[index - 1].img!),
                                 ),
                                 SizedBox(
                                   width: 10,
@@ -126,7 +125,8 @@ class Notifications extends StatelessWidget {
                                     Container(
                                         width: 270,
                                         child: Text(
-                                          myNotificationsList[index - 1].notification!,
+                                          myNotificationsList[index - 1]
+                                              .notification!,
                                           maxLines: 2,
                                           overflow: TextOverflow.ellipsis,
                                         )),

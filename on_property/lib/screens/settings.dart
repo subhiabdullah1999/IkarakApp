@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:get/get.dart';
 import 'package:on_property/utils/colorscheme.dart';
 
 class Settings extends StatefulWidget {
@@ -15,140 +16,152 @@ class _SettingsState extends State<Settings> {
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
-          appBar: AppBar(backgroundColor: Colors.white,title: Text('Settings',style: TextStyle(color: Colors.grey),),iconTheme: IconThemeData(color: Colors.grey),
-            actions: [
-              GestureDetector(
-                  child: Container(
-                      height: 40,
-                      width: 40,
-                      padding: EdgeInsets.all(8.0),
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10.0),
-                          color: Colors.transparent),
-                      child: Padding(
-                        padding: const EdgeInsets.all(0.0),
-                        child: SvgPicture.asset(
-                          'assets/icons/location.svg',
-                          color: Colors.grey,
-                          height: 20,
-                        ),
-                      )),
-                  onTap: () {
-                    Navigator.pushNamed(context, 'Location');
-                  }),
-              GestureDetector(
-                  child: Container(
-                      height: 40,
-                      width: 40,
-                      padding: EdgeInsets.all(8.0),
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10.0),
-                          color: Colors.transparent),
-                      child: Padding(
-                        padding: const EdgeInsets.all(0.0),
-                        child: SvgPicture.asset(
-                          'assets/icons/bell.svg',
-                          color: Colors.grey,
-                          height: 20,
-                        ),
-                      )),
-                  onTap: () {
-                    Navigator.pushNamed(context, 'Notifications');
-                  }),
-            ],),
-          body: Padding(
-            padding: const EdgeInsets.all(18.0),
-            child: SingleChildScrollView(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        title: Text(
+          'Settings'.tr,
+          style: TextStyle(color: Colors.grey),
+        ),
+        iconTheme: IconThemeData(color: Colors.grey),
+        actions: [
+          GestureDetector(
+              child: Container(
+                  height: 40,
+                  width: 40,
+                  padding: EdgeInsets.all(8.0),
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10.0),
+                      color: Colors.transparent),
+                  child: Padding(
+                    padding: const EdgeInsets.all(0.0),
+                    child: SvgPicture.asset(
+                      'assets/icons/location.svg',
+                      color: Colors.grey,
+                      height: 20,
+                    ),
+                  )),
+              onTap: () {
+                Navigator.pushNamed(context, 'Location');
+              }),
+          GestureDetector(
+              child: Container(
+                  height: 40,
+                  width: 40,
+                  padding: EdgeInsets.all(8.0),
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10.0),
+                      color: Colors.transparent),
+                  child: Padding(
+                    padding: const EdgeInsets.all(0.0),
+                    child: SvgPicture.asset(
+                      'assets/icons/bell.svg',
+                      color: Colors.grey,
+                      height: 20,
+                    ),
+                  )),
+              onTap: () {
+                Navigator.pushNamed(context, 'Notifications');
+              }),
+        ],
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(18.0),
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              SizedBox(
+                height: 15,
+              ),
+              _profileImg(),
+              SizedBox(
+                height: 10,
+              ),
+              Text('Name'.tr),
+              TextField(
+                cursorColor: primaryColor,
+                decoration: InputDecoration(
+                    hintText: 'John Smith',
+                    focusedBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(color: primaryColor))),
+              ),
+              SizedBox(
+                height: 15,
+              ),
+              Text('Email'.tr),
+              TextField(
+                cursorColor: primaryColor,
+                decoration: InputDecoration(
+                    hintText: 'johnsmith@gmail.com',
+                    focusedBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(color: primaryColor))),
+              ),
+              SizedBox(
+                height: 15,
+              ),
+              Text('Address'.tr),
+              TextField(
+                cursorColor: primaryColor,
+                decoration: InputDecoration(
+                    hintText: '045, Gaylord Walks Apt,003',
+                    focusedBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(color: primaryColor))),
+              ),
+              SizedBox(
+                height: 15,
+              ),
+              Text('Phone Number'.tr),
+              TextField(
+                cursorColor: primaryColor,
+                decoration: InputDecoration(
+                    hintText: '+92 312 4564322',
+                    focusedBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(color: primaryColor))),
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              Row(
                 children: [
-                  SizedBox(
-                    height: 15,
+                  Text(
+                    'FACEBOOK'.tr,
+                    style: TextStyle(color: Colors.grey),
                   ),
-                  _profileImg(),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  Text('Name'),
-                  TextField(cursorColor: primaryColor,
-                    decoration: InputDecoration(
-                        hintText: 'John Smith',focusedBorder: UnderlineInputBorder(
-                        borderSide: BorderSide(color: primaryColor)
-                    )
-
-                    ),
-                  ),
-                  SizedBox(height: 15,),
-                  Text('Email'),
-                  TextField(cursorColor: primaryColor,
-                    decoration: InputDecoration(
-                        hintText: 'johnsmith@gmail.com',focusedBorder: UnderlineInputBorder(
-                        borderSide: BorderSide(color: primaryColor)
-                    )
-                    ),
-                  ),
-                  SizedBox(height: 15,),
-                  Text('Address'),
-                  TextField(cursorColor: primaryColor,
-                    decoration: InputDecoration(
-                        hintText: '045, Gaylord Walks Apt,003',focusedBorder: UnderlineInputBorder(
-                        borderSide: BorderSide(color: primaryColor)
-                    )
-                    ),
-                  ),
-                  SizedBox(height: 15,),
-                  Text('Phone number'),
-                  TextField(cursorColor: primaryColor,
-                    decoration: InputDecoration(
-                        hintText: '+92 312 4564322',focusedBorder: UnderlineInputBorder(
-                        borderSide: BorderSide(color: primaryColor)
-                    )
-                    ),
-                  ),
-
-                  SizedBox(height: 20,),
-                  Row(
-
-                    children: [
-                      Text(
-                        'FACEBOOK',
-                        style: TextStyle(color: Colors.grey),
-                      ),
-                      Spacer(),
-                      Switch(
-                          value: _isSwitched1,
-                          onChanged: (val) {
-                            setState(() {
-                              _isSwitched1=val;
-                              print(val);
-                            });
-                          })
-                    ],
-                  ),
-                  Divider(),
-                  Row(
-                    children: [
-                      Text(
-                        'NOTIFICATIONS',
-                        style: TextStyle(color: Colors.grey),
-                      ),
-                      Spacer(),
-                      Switch(
-                          value: _isSwitched2,
-                          onChanged: (val) {
-                            setState(() {
-                              _isSwitched2=val;
-                              print(val);
-                            });
-                          })
-                    ],
-                  ),
-                  Divider(),
+                  Spacer(),
+                  Switch(
+                      value: _isSwitched1,
+                      onChanged: (val) {
+                        setState(() {
+                          _isSwitched1 = val;
+                          print(val);
+                        });
+                      })
                 ],
               ),
-            ),
+              Divider(),
+              Row(
+                children: [
+                  Text(
+                    'Notifications'.tr,
+                    style: TextStyle(color: Colors.grey),
+                  ),
+                  Spacer(),
+                  Switch(
+                      value: _isSwitched2,
+                      onChanged: (val) {
+                        setState(() {
+                          _isSwitched2 = val;
+                          print(val);
+                        });
+                      })
+                ],
+              ),
+              Divider(),
+            ],
           ),
-        ));
+        ),
+      ),
+    ));
   }
 
   _profileImg() {
@@ -169,13 +182,11 @@ class _SettingsState extends State<Settings> {
                 backgroundColor: Colors.grey[300],
                 child: Icon(
                   Icons.camera_alt,
-                  color:primaryColor,
+                  color: primaryColor,
                 ),
               ))
         ],
       ),
     );
   }
-
-
 }

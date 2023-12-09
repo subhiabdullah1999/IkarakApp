@@ -1,5 +1,6 @@
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:on_property/screens/sign_in.dart';
 import 'package:on_property/utils/app_assets.dart';
 import 'package:on_property/utils/colorscheme.dart';
@@ -41,21 +42,24 @@ class _IntroductionPageState extends State<IntroductionPage> {
               children: [
                 IndroductionPage(
                   imagepath: AppAssets.onbordingImage1,
-                  title: "Search Advance Filter",
+                  title: "Search Advance Filter".tr,
                   description:
-                      "Discover your property with advance filter like price, distance and calendar",
+                      "Discover your property with advance filter like price, distance and calendar"
+                          .tr,
                 ),
                 IndroductionPage(
                   imagepath: AppAssets.onbordingImage2,
-                  title: "Find And Post Without Broker",
+                  title: "Find And Post Without Broker".tr,
                   description:
-                      "Get your property directly with no broker investment. Post requirements in few seconds.",
+                      "Get your property directly with no broker investment. Post requirements in few seconds."
+                          .tr,
                 ),
                 IndroductionPage(
                   imagepath: AppAssets.onbordingImage3,
-                  title: "24 Hour Support Available",
+                  title: "24 Hour Support Available".tr,
                   description:
-                      "From Scheduling to Invoicing. All your rental process gathered in one place.",
+                      "From Scheduling to Invoicing. All your rental process gathered in one place."
+                          .tr,
                 ),
               ]),
           Padding(
@@ -86,7 +90,7 @@ class _IntroductionPageState extends State<IntroductionPage> {
                         ),
                         child: ElevatedButton(
                           child: Text(
-                            "Skip",
+                            "Skip".tr,
                             style: TextStyle(
                               color: whitecolor,
                               fontWeight: FontWeight.bold,
@@ -120,7 +124,7 @@ class _IntroductionPageState extends State<IntroductionPage> {
                         ),
                         child: ElevatedButton(
                           child: Text(
-                            "Next",
+                            "Next".tr,
                             style: TextStyle(
                               color: whitecolor,
                               fontWeight: FontWeight.bold,

@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:get/get.dart';
 import 'package:on_property/components/add_property_comp.dart';
 import 'package:on_property/utils/colorscheme.dart';
 import 'package:on_property/widgets/banner_for_add_property.dart';
 import 'package:on_property/widgets/bathrooms_container.dart';
 import 'package:on_property/widgets/bedrooms_container.dart';
 import 'package:on_property/widgets/custom_button.dart';
-
 
 class AddProperty extends StatefulWidget {
   @override
@@ -58,7 +58,7 @@ class _AddPropertyState extends State<AddProperty> {
               Padding(
                 padding: const EdgeInsets.all(18.0),
                 child: Text(
-                  'Property Type',
+                  'Property Type'.tr,
                   style: TextStyle(fontWeight: FontWeight.bold),
                 ),
               ),
@@ -66,21 +66,20 @@ class _AddPropertyState extends State<AddProperty> {
               Container(
                 child: propertyViews[selectedView],
               ),
-          /*...........................Bedrooms.......................*/
+              /*...........................Bedrooms.......................*/
               BedroomsContainer(),
               BathroomContainer(),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 18.0),
                 child: Text(
-                  'Select Images',
+                  'Select Images'.tr,
                   style: TextStyle(fontWeight: FontWeight.bold),
                 ),
               ),
-
               SizedBox(
                 height: 10,
               ),
-             /* ..................Grid View........................*/
+              /* ..................Grid View........................*/
               _customGridView(),
               SizedBox(
                 height: 10,
@@ -91,7 +90,7 @@ class _AddPropertyState extends State<AddProperty> {
                 child: Row(
                   children: [
                     Text(
-                      'Country  ',
+                      'Country  '.tr,
                       style: TextStyle(fontWeight: FontWeight.bold),
                     ),
                     Text(
@@ -101,7 +100,7 @@ class _AddPropertyState extends State<AddProperty> {
                     ),
                     Spacer(),
                     Text(
-                      'Change Country',
+                      'Change Country'.tr,
                       style: TextStyle(color: primaryColor),
                     )
                   ],
@@ -116,7 +115,7 @@ class _AddPropertyState extends State<AddProperty> {
               ),
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 18.0),
-                child: addPropertyTextField('Email'),
+                child: addPropertyTextField('Email'.tr),
               ),
               SizedBox(
                 height: 10,
@@ -128,7 +127,6 @@ class _AddPropertyState extends State<AddProperty> {
                 height: 10,
               ),
               _rowOfDropDowns(),
-
               SizedBox(
                 height: 30,
               ),
@@ -136,7 +134,7 @@ class _AddPropertyState extends State<AddProperty> {
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: CustomButton(
-                  title: 'SUBMIT NOW',
+                  title: 'SUBMIT NOW'.tr,
                   callback: () {},
                 ),
               ),
@@ -171,7 +169,7 @@ class _AddPropertyState extends State<AddProperty> {
               textAlign: TextAlign.start,
               decoration: InputDecoration(
                 contentPadding: EdgeInsets.only(left: 15, top: 5),
-                hintText: 'Description',
+                hintText: 'Description'.tr,
                 hintStyle: TextStyle(color: Colors.grey[500]),
                 focusedBorder: InputBorder.none,
                 enabledBorder: InputBorder.none,
@@ -193,7 +191,7 @@ class _AddPropertyState extends State<AddProperty> {
           child: Row(
             children: [
               Text(
-                'Area ',
+                'Area '.tr,
                 style: TextStyle(fontWeight: FontWeight.bold),
               ),
               Text(
@@ -203,7 +201,7 @@ class _AddPropertyState extends State<AddProperty> {
               ),
               Spacer(),
               Text(
-                'Change Area Unit',
+                'Change Area Unit'.tr,
                 style:
                     TextStyle(color: primaryColor, fontWeight: FontWeight.bold),
               )
@@ -212,7 +210,7 @@ class _AddPropertyState extends State<AddProperty> {
         ),
         Padding(
           padding: EdgeInsets.symmetric(horizontal: 18.0, vertical: 8.0),
-          child: addPropertyTextField('Area'),
+          child: addPropertyTextField('Area '),
         ),
       ],
     );
@@ -226,7 +224,7 @@ class _AddPropertyState extends State<AddProperty> {
           child: Row(
             children: [
               Text(
-                'Price ',
+                'Price '.tr,
                 style: TextStyle(fontWeight: FontWeight.bold),
               ),
               Text(
@@ -236,7 +234,7 @@ class _AddPropertyState extends State<AddProperty> {
               ),
               Spacer(),
               Text(
-                'Change Currency',
+                'Change Currency'.tr,
                 style:
                     TextStyle(color: primaryColor, fontWeight: FontWeight.bold),
               )
@@ -245,7 +243,7 @@ class _AddPropertyState extends State<AddProperty> {
         ),
         Padding(
           padding: EdgeInsets.symmetric(horizontal: 18.0, vertical: 8.0),
-          child: addPropertyTextField('Area'),
+          child: addPropertyTextField('Price '),
         )
       ],
     );
@@ -281,7 +279,7 @@ class _AddPropertyState extends State<AddProperty> {
                             : Colors.grey.shade300)),
                 child: Center(
                   child: Text(
-                    'Residential',
+                    'Residential'.tr,
                     style: TextStyle(
                         fontWeight: FontWeight.bold,
                         color: selectedColorForPropertyType1 == true
@@ -319,7 +317,7 @@ class _AddPropertyState extends State<AddProperty> {
                             : Colors.grey.shade300)),
                 child: Center(
                   child: Text(
-                    'Commercial',
+                    'Commercial'.tr,
                     style: TextStyle(
                         fontWeight: FontWeight.bold,
                         color: selectedColorForPropertyType2 == true
@@ -358,7 +356,7 @@ class _AddPropertyState extends State<AddProperty> {
                             ? primaryColor
                             : Colors.grey.shade300)),
                 child: Center(
-                  child: Text('Industrial',
+                  child: Text('Industrial'.tr,
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                         color: selectedColorForPropertyType3 == true
@@ -392,7 +390,6 @@ class _AddPropertyState extends State<AddProperty> {
                     selectedSearchPropertyCategories[1] = false;
                     selectedSearchPropertyCategories[2] = false;
                     selectedSearchPropertyCategories[1] = false;
-
                   });
                 },
                 child: CircleAvatar(
@@ -420,7 +417,7 @@ class _AddPropertyState extends State<AddProperty> {
                 height: 5,
               ),
               Text(
-                'Residential',
+                'Residential'.tr,
                 style: TextStyle(
                     color: Colors.grey,
                     fontWeight: FontWeight.w500,
@@ -465,7 +462,7 @@ class _AddPropertyState extends State<AddProperty> {
                 height: 5,
               ),
               Text(
-                'Commercial',
+                'Commercial'.tr,
                 style: TextStyle(
                     color: Colors.grey,
                     fontWeight: FontWeight.w500,
@@ -510,7 +507,7 @@ class _AddPropertyState extends State<AddProperty> {
                 height: 5,
               ),
               Text(
-                'Upper portion',
+                'Upper portion'.tr,
                 style: TextStyle(
                     color: Colors.grey,
                     fontWeight: FontWeight.w500,
@@ -555,7 +552,7 @@ class _AddPropertyState extends State<AddProperty> {
                 height: 5,
               ),
               Text(
-                'Lower portion',
+                'Lower portion'.tr,
                 style: TextStyle(
                     color: Colors.grey,
                     fontWeight: FontWeight.w500,
@@ -612,7 +609,7 @@ class _AddPropertyState extends State<AddProperty> {
                 height: 5,
               ),
               Text(
-                'Upper portion',
+                'Upper portion'.tr,
                 style: TextStyle(
                     color: Colors.grey,
                     fontWeight: FontWeight.w500,
@@ -657,7 +654,7 @@ class _AddPropertyState extends State<AddProperty> {
                 height: 5,
               ),
               Text(
-                'Lower portion',
+                'Lower portion'.tr,
                 style: TextStyle(
                     color: Colors.grey,
                     fontWeight: FontWeight.w500,
@@ -702,7 +699,7 @@ class _AddPropertyState extends State<AddProperty> {
                 height: 5,
               ),
               Text(
-                'Residential',
+                'Residential'.tr,
                 style: TextStyle(
                     color: Colors.grey,
                     fontWeight: FontWeight.w500,
@@ -747,7 +744,7 @@ class _AddPropertyState extends State<AddProperty> {
                 height: 5,
               ),
               Text(
-                'Commercial',
+                'Commercial'.tr,
                 style: TextStyle(
                     color: Colors.grey,
                     fontWeight: FontWeight.w500,
@@ -802,7 +799,7 @@ class _AddPropertyState extends State<AddProperty> {
                 height: 5,
               ),
               Text(
-                'Upper portion',
+                'Upper portion'.tr,
                 style: TextStyle(
                     color: Colors.grey,
                     fontWeight: FontWeight.w500,
@@ -847,7 +844,7 @@ class _AddPropertyState extends State<AddProperty> {
                 height: 5,
               ),
               Text(
-                'Commercial',
+                'Commercial'.tr,
                 style: TextStyle(
                     color: Colors.grey,
                     fontWeight: FontWeight.w500,
@@ -892,7 +889,7 @@ class _AddPropertyState extends State<AddProperty> {
                 height: 5,
               ),
               Text(
-                'Lower portion',
+                'Lower portion'.tr,
                 style: TextStyle(
                     color: Colors.grey,
                     fontWeight: FontWeight.w500,
@@ -937,7 +934,7 @@ class _AddPropertyState extends State<AddProperty> {
                 height: 5,
               ),
               Text(
-                'Residential',
+                'Residential'.tr,
                 style: TextStyle(
                     color: Colors.grey,
                     fontWeight: FontWeight.w500,
@@ -1006,7 +1003,7 @@ class _AddPropertyState extends State<AddProperty> {
                       ),
                       fillColor: Color(0xfffafafa),
                       filled: true,
-                      hintText: 'Phone number',
+                      hintText: 'Phone Number'.tr,
                       hintStyle: TextStyle(color: Colors.grey[500]),
                       enabledBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(30.0),
@@ -1019,8 +1016,8 @@ class _AddPropertyState extends State<AddProperty> {
                           borderSide: BorderSide(color: Colors.orange)),
                       disabledBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(30.0),
-                          borderSide: BorderSide(
-                              color: Colors.grey.shade300))))),
+                          borderSide:
+                              BorderSide(color: Colors.grey.shade300))))),
         ),
       ],
     );
@@ -1071,7 +1068,7 @@ class _AddPropertyState extends State<AddProperty> {
                     iconEnabledColor: Colors.grey[500],
                     iconDisabledColor: Colors.grey[500],
                     hint: Text(
-                      'Choose Province',
+                      'Choose Province'.tr,
                       style: TextStyle(color: Colors.grey[500]),
                     ),
                     style: TextStyle(color: Colors.grey[500]),
@@ -1110,7 +1107,7 @@ class _AddPropertyState extends State<AddProperty> {
                     iconEnabledColor: Colors.grey[500],
                     iconDisabledColor: Colors.grey[500],
                     hint: Text(
-                      'Choose city',
+                      'Choose city'.tr,
                       style: TextStyle(color: Colors.grey[500]),
                     ),
                     style: TextStyle(color: Colors.grey[500]),

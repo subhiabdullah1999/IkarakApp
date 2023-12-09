@@ -1,13 +1,43 @@
-
 import 'package:flutter/material.dart';
 import 'package:on_property/utils/constants.dart';
 import 'package:on_property/widgets/heart_container.dart';
 
-
-
-List<String> prices=['\$567,900','\$335,900','\$289,700','\$470,000','\$224,670','\$490,270','\$300,600','\$651,230','\$980,000','\$300,000',];
-List<String> addresses=['16523 Choke Cherry Dr,Victorville,CA 8728','Station,Hampton,GA 23423','129 Hoper Ln,Folsom,CA 95300','13598 Lagrone St,Powder Springs,GA 30127','4625 Careyback Ave,Elk Grove,CA 7689','4592 Eldywood Ln Batavia,OH 45103','4028 Timber Creek Dr, Cincinnati,OH45623','11456 57th St E Parrish,Fl 341219','67 Marvin Park,Powder Springs,GA 30178','24019 Doverwick Dr Tomball,Tx' ];
-List<String> houseImg=['assets/images/house.jpg','assets/images/house1.jpg','assets/images/house2.jpg','assets/images/house3.jpg','assets/images/house4.jpg','assets/images/house5.jpg','assets/images/house6.jpg','assets/images/house7.jpg','assets/images/house8.jpg','assets/images/house9.jpg'];
+List<String> prices = [
+  '\$567,900',
+  '\$335,900',
+  '\$289,700',
+  '\$470,000',
+  '\$224,670',
+  '\$490,270',
+  '\$300,600',
+  '\$651,230',
+  '\$980,000',
+  '\$300,000',
+];
+List<String> addresses = [
+  '16523 Choke Cherry Dr,Victorville,CA 8728',
+  'Station,Hampton,GA 23423',
+  '129 Hoper Ln,Folsom,CA 95300',
+  '13598 Lagrone St,Powder Springs,GA 30127',
+  '4625 Careyback Ave,Elk Grove,CA 7689',
+  '4592 Eldywood Ln Batavia,OH 45103',
+  '4028 Timber Creek Dr, Cincinnati,OH45623',
+  '11456 57th St E Parrish,Fl 341219',
+  '67 Marvin Park,Powder Springs,GA 30178',
+  '24019 Doverwick Dr Tomball,Tx'
+];
+List<String> houseImg = [
+  'assets/images/house.jpg',
+  'assets/images/house1.jpg',
+  'assets/images/house2.jpg',
+  'assets/images/house3.jpg',
+  'assets/images/house4.jpg',
+  'assets/images/house5.jpg',
+  'assets/images/house6.jpg',
+  'assets/images/house7.jpg',
+  'assets/images/house8.jpg',
+  'assets/images/house9.jpg'
+];
 
 listOfProperties() {
   return ListView.builder(
@@ -17,15 +47,17 @@ listOfProperties() {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             GestureDetector(
-                onTap: (){
+                onTap: () {
                   Navigator.pushNamed(context, 'HouseDetails');
                 },
                 child: Card(
                   margin: EdgeInsets.only(bottom: 10.0, left: 8.0, right: 8.0),
-                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20.0)),
                   child: Container(
                     height: 140,
-                    decoration: BoxDecoration(borderRadius: BorderRadius.circular(20.0)),
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20.0)),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
@@ -63,7 +95,8 @@ listOfProperties() {
                                   ),
                                   Text(
                                     addresses[index],
-                                    style: TextStyle(color: Colors.grey, fontSize: 11),
+                                    style: TextStyle(
+                                        color: Colors.grey, fontSize: 11),
                                   ),
                                   SizedBox(
                                     height: 5,
@@ -73,7 +106,8 @@ listOfProperties() {
                                       children: [
                                         Text(
                                           '3 ',
-                                          style: TextStyle(fontWeight: FontWeight.bold),
+                                          style: TextStyle(
+                                              fontWeight: FontWeight.bold),
                                         ),
                                         Text(
                                           'bds ',
@@ -85,7 +119,8 @@ listOfProperties() {
 
                                         Text(
                                           ' 5 ',
-                                          style: TextStyle(fontWeight: FontWeight.bold),
+                                          style: TextStyle(
+                                              fontWeight: FontWeight.bold),
                                         ),
                                         Text(
                                           'baths ',
@@ -95,13 +130,13 @@ listOfProperties() {
                                           color: Colors.grey,
                                         ),
 
-                                        Text(
-                                          ' 1,767 ',
-                                          style: TextStyle(fontWeight: FontWeight.bold),
-                                        ),
-                                        Text(
-                                          'sqft',
-                                        ),
+                                        // Text(
+                                        //   ' 1,767 ',
+                                        //   style: TextStyle(fontWeight: FontWeight.bold),
+                                        // ),
+                                        // Text(
+                                        //   'sqft',
+                                        // ),
                                       ],
                                     ),
                                   ),
@@ -110,7 +145,7 @@ listOfProperties() {
                                   ),
                                   Spacer(),
                                   Padding(
-                                    padding: const EdgeInsets.only(bottom:8.0),
+                                    padding: const EdgeInsets.only(bottom: 8.0),
                                     child: Row(
                                       children: [
                                         CircleAvatar(
@@ -121,9 +156,8 @@ listOfProperties() {
                                           ' House for Sale',
                                           style: TextStyle(fontSize: 12),
                                         ),
-
                                         Spacer(),
-                                      HeartContainer(index)
+                                        HeartContainer(index)
                                       ],
                                     ),
                                   )
@@ -138,4 +172,3 @@ listOfProperties() {
         );
       });
 }
-

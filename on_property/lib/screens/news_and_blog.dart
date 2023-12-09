@@ -1,11 +1,8 @@
-
 import 'package:flutter/material.dart';
 import 'package:on_property/components/news_and_blog_components.dart';
 import 'package:on_property/utils/colorscheme.dart';
 
-
 import 'news_and_blog_details.dart';
-
 
 class NewsAndBlog extends StatelessWidget {
   @override
@@ -123,43 +120,46 @@ class _NewsAndBlogBodyState extends State<NewsAndBlogBody> {
                                               fontSize: 17),
                                         ),
                                         Spacer(),
-                                        Row(
-                                          children: [
-                                            Text(
-                                              'Post on: 9 hours',
-                                              style:
-                                                  TextStyle(color: Colors.grey),
-                                            ),
-                                            SizedBox(
-                                              width: 7,
-                                            ),
-                                            Icon(
-                                              Icons.share,
-                                              color: Colors.grey,
-                                              size: 20,
-                                            ),
-                                            SizedBox(
-                                              width: 15,
-                                            ),
-                                            GestureDetector(
-                                              onTap: () {
-                                                setState(() {
-                                                  saved[index] = !saved[index];
-                                                });
-                                              },
-                                              child: saved[index]
-                                                  ? Icon(
-                                                      Icons.bookmark,
-                                                      color: primaryColor,
-                                                      size: 20,
-                                                    )
-                                                  : Icon(
-                                                      Icons.bookmark_border,
-                                                      color: primaryColor,
-                                                      size: 20,
-                                                    ),
-                                            ),
-                                          ],
+                                        Flexible(
+                                          child: Row(
+                                            children: [
+                                              Text(
+                                                'Post on: 9 hours',
+                                                style: TextStyle(
+                                                    color: Colors.grey),
+                                              ),
+                                              SizedBox(
+                                                width: 7,
+                                              ),
+                                              Icon(
+                                                Icons.share,
+                                                color: Colors.grey,
+                                                size: 20,
+                                              ),
+                                              SizedBox(
+                                                width: 15,
+                                              ),
+                                              GestureDetector(
+                                                onTap: () {
+                                                  setState(() {
+                                                    saved[index] =
+                                                        !saved[index];
+                                                  });
+                                                },
+                                                child: saved[index]
+                                                    ? Icon(
+                                                        Icons.bookmark,
+                                                        color: primaryColor,
+                                                        size: 20,
+                                                      )
+                                                    : Icon(
+                                                        Icons.bookmark_border,
+                                                        color: primaryColor,
+                                                        size: 20,
+                                                      ),
+                                              ),
+                                            ],
+                                          ),
                                         ),
                                         SizedBox(
                                           height: 5,

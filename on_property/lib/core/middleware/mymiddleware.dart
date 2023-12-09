@@ -1,7 +1,7 @@
-import 'package:My_Meal_on/core/constans/appNameRouts.dart';
-import 'package:My_Meal_on/core/services/services.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:on_property/core/constans/appNameRouts.dart';
+import 'package:on_property/core/services/services.dart';
 
 class MyMiddleWare extends GetMiddleware {
   @override

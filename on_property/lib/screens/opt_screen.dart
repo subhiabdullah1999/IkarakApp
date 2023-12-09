@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:on_property/components/horizontal_line.dart';
 
 import 'package:on_property/utils/constants.dart';
@@ -25,13 +26,13 @@ class _OtpScreenState extends State<OtpScreen> {
                   height: MediaQuery.of(context).size.height * 0.1,
                 ),
                 Text(
-                  'Enter Code',
+                  'Enter Code'.tr,
                   style: kh1,
                 ),
                 SizedBox(
                   height: 10,
                 ),
-                Text('Tap the input Field to Enter 6-Character Code'),
+                Text('Tap the input Field to Enter 6-Character Code'.tr),
                 horizontalLine(),
                 SizedBox(
                   height: MediaQuery.of(context).size.height * 0.1,
@@ -46,14 +47,14 @@ class _OtpScreenState extends State<OtpScreen> {
                   callback: () {
                     Navigator.pushNamed(context, 'Dashboard');
                   },
-                  title: 'Continue',
+                  title: 'Continue'.tr,
                 ),
                 SizedBox(
                   height: 20,
                 ),
                 Center(
                     child: Text(
-                  'Resend',
+                  'Resend'.tr,
                   style: TextStyle(
                       fontWeight: FontWeight.bold, color: Colors.grey),
                 ))

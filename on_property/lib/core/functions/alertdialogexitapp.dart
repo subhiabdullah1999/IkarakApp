@@ -1,9 +1,8 @@
 import 'dart:io';
-
-import 'package:My_Meal_on/core/constans/appColors.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:on_property/core/constans/appColors.dart';
 
 Future<bool> alertDialogExitApp() {
   Get.defaultDialog(

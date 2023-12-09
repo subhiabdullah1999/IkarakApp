@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:get/get.dart';
 
 bannerForAboutUS(BuildContext context) {
   return Container(
@@ -31,9 +32,7 @@ bannerForAboutUS(BuildContext context) {
                     ),
                   ),
                   Spacer(),
-
                   GestureDetector(
-
                       child: Container(
                           height: 40,
                           width: 40,
@@ -50,7 +49,7 @@ bannerForAboutUS(BuildContext context) {
                             ),
                           )),
                       onTap: () {
-                      Navigator.pushNamed(context, 'Notifications');
+                        Navigator.pushNamed(context, 'Notifications');
                       }),
                 ],
               ),
@@ -59,7 +58,7 @@ bannerForAboutUS(BuildContext context) {
                       padding: EdgeInsets.only(bottom: 30),
                       alignment: Alignment.center,
                       child: Text(
-                        'About Us',
+                        'About Us'.tr,
                         style: TextStyle(
                             color: Colors.white,
                             fontSize: 20,
@@ -81,7 +80,7 @@ listViewAboutUs() {
   ];
 
   return ListView.builder(
-      itemCount: offices.length+1,
+      itemCount: offices.length + 1,
       scrollDirection: Axis.horizontal,
       itemBuilder: (context, index) {
         return index == 0
@@ -94,7 +93,7 @@ listViewAboutUs() {
                 margin: EdgeInsets.only(right: 4.4),
                 decoration: BoxDecoration(
                   image: DecorationImage(
-                      fit: BoxFit.fill, image: AssetImage(offices[index-1])),
+                      fit: BoxFit.fill, image: AssetImage(offices[index - 1])),
                   borderRadius: BorderRadius.circular(10.0),
                 ),
               );

@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
 import 'package:on_property/components/location_icon.dart';
 import 'package:on_property/components/notification_icon.dart';
+import 'package:on_property/screens/add_property.dart';
 import 'package:on_property/screens/chat.dart';
 import 'package:on_property/screens/home.dart';
 import 'package:on_property/screens/locationForHouseDetails.dart';
@@ -101,9 +103,9 @@ class _DashBoardState extends State<DashBoard> {
             GestureDetector(
               onTap: () {
                 setState(() {
-                  currentScreen = SearchProperties();
+                  currentScreen = AddProperty();
                   _currentTab = 2;
-                  title = 'Projects';
+                  title = 'Projects'.tr;
                 });
               },
               child: Container(
@@ -131,7 +133,7 @@ class _DashBoardState extends State<DashBoard> {
                 setState(() {
                   currentScreen = Chat();
                   _currentTab = 4;
-                  title = 'Chat';
+                  title = 'Chat'.tr;
                 });
               },
               child: Container(
@@ -145,7 +147,7 @@ class _DashBoardState extends State<DashBoard> {
                 setState(() {
                   currentScreen = Profile();
                   _currentTab = 5;
-                  title = 'Profile';
+                  title = 'Profile'.tr;
                 });
               },
               child: Container(

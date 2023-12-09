@@ -1,4 +1,4 @@
-import 'package:My_Meal_on/core/constans/appimage.dart';
+import 'package:on_property/core/constans/appimage.dart';
 
 class ImageAsets {
   static List images = [

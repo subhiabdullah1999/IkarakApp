@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:on_property/utils/colorscheme.dart';
 
 class BedroomsContainer extends StatefulWidget {
@@ -17,7 +18,7 @@ class _BedroomsContainerState extends State<BedroomsContainer> {
   List<bool> bedRoomsSelected = [true, true, true, true, true];
   @override
   Widget build(BuildContext context) {
-    return  Container(
+    return Container(
       height: MediaQuery.of(context).size.height * 0.15,
       width: double.infinity,
       child: Column(
@@ -26,7 +27,7 @@ class _BedroomsContainerState extends State<BedroomsContainer> {
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Text(
-              'BEDROOMS',
+              'BEDROOMS'.tr,
               style: TextStyle(fontWeight: FontWeight.bold),
             ),
           ),

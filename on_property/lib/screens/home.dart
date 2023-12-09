@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
 import 'package:on_property/components/carousal.dart';
 import 'package:on_property/components/home_componets.dart';
 import 'package:on_property/components/textfield_with_filter.dart';
@@ -27,7 +28,7 @@ class Home extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
-                            'Latest Projects',
+                            'Latest Projects'.tr,
                             style: kh3,
                           ),
                           GestureDetector(
@@ -35,7 +36,7 @@ class Home extends StatelessWidget {
                               Navigator.pushNamed(context, 'SeeAllScreen');
                             },
                             child: Text(
-                              'SEE ALL',
+                              'SEE ALL'.tr,
                               style: TextStyle(
                                   fontWeight: FontWeight.bold,
                                   color: primaryColor),
@@ -56,7 +57,7 @@ class Home extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
-                            'Properties Near You',
+                            'Properties Near You'.tr,
                             style: kh3,
                           ),
                           GestureDetector(
@@ -64,7 +65,7 @@ class Home extends StatelessWidget {
                               Navigator.pushNamed(context, 'SeeAllScreen');
                             },
                             child: Text(
-                              'SEE ALL',
+                              'SEE ALL'.tr,
                               style: TextStyle(
                                   fontWeight: FontWeight.bold,
                                   color: primaryColor),

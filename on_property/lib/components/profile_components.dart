@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:on_property/components/home_componets.dart';
 import 'package:on_property/utils/colorscheme.dart';
 import 'package:on_property/utils/constants.dart';
-
-
 
 List<String> prices = [
   '\$567,900',
@@ -74,7 +73,7 @@ firstHalf(BuildContext context) {
                 borderRadius: BorderRadius.circular(30), color: primaryColor),
             child: Center(
               child: Text(
-                'Message',
+                'Message'.tr,
                 style: TextStyle(color: Colors.white),
               ),
             ),
@@ -114,7 +113,7 @@ firstHalf(BuildContext context) {
                 width: 30,
               ),
               GestureDetector(
-                onTap: (){
+                onTap: () {
                   Navigator.pushNamed(context, 'Properties');
                 },
                 child: Column(
@@ -135,7 +134,7 @@ firstHalf(BuildContext context) {
                 width: 30,
               ),
               GestureDetector(
-                onTap:()=>Navigator.pushNamed(context, 'Following'),
+                onTap: () => Navigator.pushNamed(context, 'Following'),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [

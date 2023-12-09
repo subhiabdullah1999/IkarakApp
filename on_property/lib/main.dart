@@ -1,10 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:get/get.dart';
+import 'package:on_property/core/localization/localizationController.dart';
+import 'package:on_property/core/localization/translation.dart';
+import 'package:on_property/core/services/services.dart';
 import 'package:on_property/routes.dart';
 // import 'package:onproperty/routes.dart';
 import 'package:sizer/sizer.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await initialServices();
   runApp(const MyApp());
 }
 
@@ -19,14 +25,14 @@ class MyApp extends StatelessWidget {
       DeviceOrientation.portraitDown,
     ]);
     return Sizer(builder: (context, orientation, deviceType) {
-      return MaterialApp(
+      LocalizationController controller = Get.put(LocalizationController());
+
+      return GetMaterialApp(
+        translations: MyTranslation(),
+        locale: controller.language,
         debugShowCheckedModeBanner: false,
         title: 'onProperty',
-        theme: ThemeData(
-          brightness: Brightness.light,
-          primarySwatch: Colors.blue,
-          visualDensity: VisualDensity.adaptivePlatformDensity,
-        ),
+        theme: controller.appTheme,
         onGenerateRoute: RouteGenerator.generateRoute,
         initialRoute: '/',
       );

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
 import 'package:on_property/utils/colorscheme.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -120,13 +121,20 @@ class _CustomDrawerState extends State<CustomDrawer> {
                         width: 10,
                       ),
                       Text(
-                        'New Projects',
+                        'New Projects'.tr,
                         style: TextStyle(color: dividerTextColor),
                       )
                     ],
                   ),
                 ),
               ),
+              Divider(
+                color: dividerColor,
+              ),
+              drawerTile(
+                  title: 'Settings',
+                  svgIconLoc: 'assets/icons/setting.svg',
+                  routeName: 'Settings'),
               Divider(
                 color: dividerColor,
               ),
@@ -152,7 +160,7 @@ class _CustomDrawerState extends State<CustomDrawer> {
                         width: 10,
                       ),
                       Text(
-                        'Favourites',
+                        'Favourites'.tr,
                         style: TextStyle(color: dividerTextColor),
                       )
                     ],
@@ -205,13 +213,6 @@ class _CustomDrawerState extends State<CustomDrawer> {
                 color: dividerColor,
               ),
               drawerTile(
-                  title: 'Settings',
-                  svgIconLoc: 'assets/icons/setting.svg',
-                  routeName: 'Settings'),
-              Divider(
-                color: dividerColor,
-              ),
-              drawerTile(
                   title: 'Log Out',
                   svgIconLoc: 'assets/icons/logout.svg',
                   routeName: 'SignIn'),
@@ -254,7 +255,7 @@ class _CustomDrawerState extends State<CustomDrawer> {
               width: 10,
             ),
             Text(
-              title!,
+              title!.tr,
               style: TextStyle(color: dividerTextColor),
             )
           ],

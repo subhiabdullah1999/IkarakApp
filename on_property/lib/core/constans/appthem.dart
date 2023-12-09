@@ -1,5 +1,5 @@
-import 'package:My_Meal_on/core/constans/appColors.dart';
 import 'package:flutter/material.dart';
+import 'package:on_property/core/constans/appColors.dart';
 
 ThemeData themArabic = ThemeData(
     primarySwatch: Colors.blue,

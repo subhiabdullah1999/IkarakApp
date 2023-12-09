@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:get/get.dart';
 import 'package:on_property/utils/colorscheme.dart';
+
 class BannerForAddProperty extends StatefulWidget {
   @override
   _BannerForAddPropertyState createState() => _BannerForAddPropertyState();
@@ -45,7 +47,7 @@ class _BannerForAddPropertyState extends State<BannerForAddProperty> {
                       width: 10,
                     ),
                     Text(
-                      'ADD PROPERTY',
+                      'ADD PROPERTY'.tr,
                       style: TextStyle(
                           color: Colors.white,
                           fontWeight: FontWeight.bold,
@@ -93,20 +95,19 @@ class _BannerForAddPropertyState extends State<BannerForAddProperty> {
                   ],
                 ),
               ),
-
-
               Center(
                 child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 8.0,vertical: 40.0),
+                  padding: const EdgeInsets.symmetric(
+                      horizontal: 8.0, vertical: 40.0),
                   child: Row(
                     children: [
                       Expanded(
                         child: GestureDetector(
                           onTap: () {
                             setState(() {
-                              forSaleSelected=true;
-                              forBuySelected=false;
-                              forRentSelected=false;
+                              forSaleSelected = true;
+                              forBuySelected = false;
+                              forRentSelected = false;
                               print(forSaleSelected);
                             });
                           },
@@ -122,7 +123,7 @@ class _BannerForAddPropertyState extends State<BannerForAddProperty> {
                             ),
                             child: Center(
                               child: Text(
-                                'FOR SALE',
+                                'FOR SALE'.tr,
                                 style: TextStyle(
                                     color: forSaleSelected == true
                                         ? Colors.white
@@ -136,9 +137,9 @@ class _BannerForAddPropertyState extends State<BannerForAddProperty> {
                         child: GestureDetector(
                           onTap: () {
                             setState(() {
-                              forSaleSelected=false;
-                              forBuySelected=true;
-                              forRentSelected=false;
+                              forSaleSelected = false;
+                              forBuySelected = true;
+                              forRentSelected = false;
                             });
                           },
                           child: Container(
@@ -150,12 +151,12 @@ class _BannerForAddPropertyState extends State<BannerForAddProperty> {
                                     : Colors.white),
                             child: Center(
                                 child: Text(
-                                  'FOR BUY',
-                                  style: TextStyle(
-                                      color: forBuySelected == true
-                                          ? Colors.white
-                                          : Colors.grey),
-                                )),
+                              'FOR BUY'.tr,
+                              style: TextStyle(
+                                  color: forBuySelected == true
+                                      ? Colors.white
+                                      : Colors.grey),
+                            )),
                           ),
                         ),
                       ),
@@ -163,9 +164,9 @@ class _BannerForAddPropertyState extends State<BannerForAddProperty> {
                         child: GestureDetector(
                           onTap: () {
                             setState(() {
-                              forSaleSelected=false;
-                              forBuySelected=false;
-                              forRentSelected=true;
+                              forSaleSelected = false;
+                              forBuySelected = false;
+                              forRentSelected = true;
                             });
                           },
                           child: Container(
@@ -181,13 +182,13 @@ class _BannerForAddPropertyState extends State<BannerForAddProperty> {
                             ),
                             child: Center(
                                 child: Text(
-                                  'FOR RENT',
-                                  style: TextStyle(
-                                    color: forRentSelected == true
-                                        ? Colors.white
-                                        : Colors.grey,
-                                  ),
-                                )),
+                              'FOR RENT'.tr,
+                              style: TextStyle(
+                                color: forRentSelected == true
+                                    ? Colors.white
+                                    : Colors.grey,
+                              ),
+                            )),
                           ),
                         ),
                       )
@@ -195,7 +196,6 @@ class _BannerForAddPropertyState extends State<BannerForAddProperty> {
                   ),
                 ),
               ),
-
             ],
           ),
         ));

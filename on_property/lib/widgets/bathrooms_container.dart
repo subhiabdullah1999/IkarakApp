@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:on_property/utils/colorscheme.dart';
 
 class BathroomContainer extends StatefulWidget {
@@ -28,7 +29,7 @@ class _BathroomContainerState extends State<BathroomContainer> {
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Text(
-              'BATHROOMS',
+              'BATHROOMS'.tr,
               style: TextStyle(fontWeight: FontWeight.bold),
             ),
           ),
@@ -41,7 +42,7 @@ class _BathroomContainerState extends State<BathroomContainer> {
               GestureDetector(
                 onTap: () {
                   setState(() {
-                    bathRoomsSelected[0] = !  bathRoomsSelected[0];
+                    bathRoomsSelected[0] = !bathRoomsSelected[0];
                   });
                 },
                 child: Container(
@@ -67,7 +68,7 @@ class _BathroomContainerState extends State<BathroomContainer> {
               GestureDetector(
                 onTap: () {
                   setState(() {
-                    bathRoomsSelected[1] = !  bathRoomsSelected[1];
+                    bathRoomsSelected[1] = !bathRoomsSelected[1];
                   });
                 },
                 child: Container(
@@ -89,7 +90,7 @@ class _BathroomContainerState extends State<BathroomContainer> {
               GestureDetector(
                 onTap: () {
                   setState(() {
-                    bathRoomsSelected[2] = !  bathRoomsSelected[2];
+                    bathRoomsSelected[2] = !bathRoomsSelected[2];
                   });
                 },
                 child: Container(
@@ -111,7 +112,7 @@ class _BathroomContainerState extends State<BathroomContainer> {
               GestureDetector(
                 onTap: () {
                   setState(() {
-                    bathRoomsSelected[3] = !  bathRoomsSelected[3];
+                    bathRoomsSelected[3] = !bathRoomsSelected[3];
                   });
                 },
                 child: Container(
@@ -133,7 +134,7 @@ class _BathroomContainerState extends State<BathroomContainer> {
               GestureDetector(
                 onTap: () {
                   setState(() {
-                    bathRoomsSelected[4] = !  bathRoomsSelected[4];
+                    bathRoomsSelected[4] = !bathRoomsSelected[4];
                   });
                 },
                 child: Container(

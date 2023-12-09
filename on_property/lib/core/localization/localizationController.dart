@@ -1,8 +1,7 @@
-import 'package:My_Meal_on/core/constans/appthem.dart';
-import 'package:My_Meal_on/core/services/services.dart';
 import 'package:flutter/material.dart';
-import 'package:geolocator/geolocator.dart';
 import 'package:get/get.dart';
+import 'package:on_property/core/constans/appthem.dart';
+import 'package:on_property/core/services/services.dart';
 
 class LocalizationController extends GetxController {
   Locale? language;
@@ -21,31 +20,6 @@ class LocalizationController extends GetxController {
     Get.updateLocale(locale);
   }
 
-  requestPermessinLocation() async {
-    bool serviceEnabled;
-    LocationPermission permission;
-    serviceEnabled = await Geolocator.isLocationServiceEnabled();
-
-    if (!serviceEnabled) {
-      return Get.snackbar("notification".tr, "permession Location".tr);
-    }
-    permission = await Geolocator.checkPermission();
-    if (permission == LocationPermission.denied) {
-      permission = await Geolocator.requestPermission();
-      if (permission == LocationPermission.denied) {
-        return Get.snackbar("notification".tr,
-            "Please give the site permission for the application".tr);
-      }
-    }
-    if (permission == LocationPermission.deniedForever) {
-      // Permissions are denied forever, handle appropriately.
-      return Get.snackbar(
-          "notification".tr,
-          "The application cannot be used without enabling the location permission until the food reaches your address"
-              .tr);
-    }
-  }
-
   @override
   void onInit() {
     String? sharedPrifLang = myServices.sharedPreferences.getString("lang");
@@ -57,9 +31,10 @@ class LocalizationController extends GetxController {
       appTheme = themEnglish;
     } else {
       language = Locale(Get.deviceLocale!.languageCode);
+      myServices.sharedPreferences
+          .setString("lang", Get.deviceLocale!.languageCode);
       appTheme = themEnglish;
     }
-    requestPermessinLocation();
 
     super.onInit();
   }

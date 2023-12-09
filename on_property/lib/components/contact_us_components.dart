@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:get/get.dart';
 import 'package:on_property/utils/colorscheme.dart';
 import 'package:on_property/utils/constants.dart';
 import 'package:on_property/widgets/contactUsDropDown.dart';
@@ -81,7 +82,7 @@ Container bannerForContactUs(BuildContext context) {
                 padding: EdgeInsets.only(bottom: 30),
                 alignment: Alignment.center,
                 child: Text(
-                  'Contact Us',
+                  'Contact Us'.tr,
                   style: TextStyle(
                       color: Colors.white,
                       fontSize: 20,
@@ -113,7 +114,7 @@ DefaultTabController tabViewForContactUs(BuildContext context) {
                 indicatorColor: Colors.white,
                 labelColor: Colors.white,
                 unselectedLabelColor: Colors.white,
-                tabs: [Text('Inquiry Form'), Text('Contact Information')],
+                tabs: [Text('Inquiry Form'.tr), Text('Contact Information'.tr)],
               ),
             ),
             Expanded(
@@ -143,7 +144,7 @@ inquiryForm(BuildContext context) {
           height: 20,
         ),
         Text(
-          'Inquiry Form',
+          'Inquiry Form'.tr,
           style: kh2,
         ),
         SizedBox(
@@ -152,20 +153,20 @@ inquiryForm(BuildContext context) {
         Row(
           children: [
             Expanded(
-              child: textFieldForContactUs('First Name'),
+              child: textFieldForContactUs('First Name'.tr),
             ),
             SizedBox(
               width: 15,
             ),
             Expanded(
-              child: textFieldForContactUs('Last Name'),
+              child: textFieldForContactUs('Last Name'.tr),
             )
           ],
         ),
         SizedBox(
           height: 15,
         ),
-        textFieldForContactUs('Email'),
+        textFieldForContactUs('Email'.tr),
         SizedBox(
           height: 15,
         ),
@@ -190,7 +191,7 @@ inquiryForm(BuildContext context) {
                         ),
                         fillColor: Color(0xfffafafa),
                         filled: true,
-                        hintText: 'Phone Number',
+                        hintText: 'Phone Number'.tr,
                         hintStyle: TextStyle(color: Colors.grey[500]),
                         enabledBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(30.0),
@@ -225,7 +226,7 @@ inquiryForm(BuildContext context) {
             textAlign: TextAlign.start,
             decoration: InputDecoration(
               contentPadding: EdgeInsets.only(left: 15, top: 5),
-              hintText: 'Message',
+              hintText: 'Message'.tr,
               hintStyle: TextStyle(color: Colors.grey[500]),
               focusedBorder: InputBorder.none,
               enabledBorder: InputBorder.none,
@@ -242,7 +243,7 @@ inquiryForm(BuildContext context) {
           width: double.infinity,
           child: Center(
               child: Text(
-            'SUBMIT NOW',
+            'SUBMIT NOW'.tr,
             style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
           )),
           decoration: BoxDecoration(
@@ -296,7 +297,7 @@ Container contactInformation() {
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Text(
-              'Contact Information',
+              'Contact Information'.tr,
               style: kh2,
             ),
           ),
@@ -304,7 +305,7 @@ Container contactInformation() {
             height: 20,
           ),
           customListTile(
-              Icons.place, 'Address', '000 Susan Apartemnet,New York, USA'),
+              Icons.place, 'Address', 'Susan Apartemnet,New York, USA'),
           SizedBox(
             height: 15,
           ),
@@ -337,7 +338,7 @@ Row customListTile(IconData iconData, String title, subtitle) {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            title,
+            title.tr,
             style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
           ),
           SizedBox(

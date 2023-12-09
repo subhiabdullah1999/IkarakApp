@@ -15,7 +15,7 @@ Container reusableTextField(
       cursorColor: primaryColor,
       decoration: InputDecoration(
         prefixIcon: icon,
-        contentPadding: EdgeInsets.only(left: 16.0),
+        contentPadding: EdgeInsets.only(left: 16.0, right: 16),
         suffixIcon: hint == 'Enter Password'
             ? GestureDetector(onTap: () {}, child: Icon(Icons.visibility))
             : null,

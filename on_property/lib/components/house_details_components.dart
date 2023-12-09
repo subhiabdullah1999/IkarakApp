@@ -1,6 +1,7 @@
 import 'package:carousel_nullsafety/carousel_nullsafety.dart' as carusel;
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
 import 'package:on_property/utils/colorscheme.dart';
 import 'package:on_property/utils/constants.dart';
 import '../screens/locationForHouseDetails.dart';
@@ -516,7 +517,7 @@ Container sixthComponent(BuildContext context) {
                     width: 10,
                   ),
                   Text(
-                    'Message',
+                    'Message'.tr,
                     style: TextStyle(fontWeight: FontWeight.bold),
                   )
                 ],

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:get/get.dart';
 import 'package:on_property/components/location_icon.dart';
 import 'package:on_property/components/notification_icon.dart';
 import 'package:on_property/models/saved_searches_model.dart';
@@ -17,10 +18,11 @@ class _SavedSearchesState extends State<SavedSearches> {
           backgroundColor: Colors.white,
           iconTheme: IconThemeData(color: Colors.grey),
           title: Text(
-            'Saved Searches',
+            'Saved Searches'.tr,
             style: TextStyle(color: Colors.black),
           ),
-          actions: [locationIcon(context), notificationIcon(context)], systemOverlayStyle: SystemUiOverlayStyle.dark,
+          actions: [locationIcon(context), notificationIcon(context)],
+          systemOverlayStyle: SystemUiOverlayStyle.dark,
         ),
         body: listOfSavedSearches());
   }

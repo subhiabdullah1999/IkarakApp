@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
 import 'package:on_property/components/copyright.dart';
 import 'package:on_property/components/reusable_textfield.dart';
 import 'package:on_property/components/textfield_with_filter.dart';
@@ -45,17 +46,15 @@ class _SearchPropertyBodyState extends State<SearchPropertyBody> {
     ];
     return SingleChildScrollView(
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-         textFieldWithFilter(context: context,callback: (){}),
+          textFieldWithFilter(context: context, callback: () {}),
           SizedBox(height: 10),
           Padding(
             padding: const EdgeInsets.all(18.0),
-            child: Align(
-              alignment: Alignment.centerLeft,
-              child: Text(
-                'Property Type',
-                style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),
-              ),
+            child: Text(
+              'Property Type'.tr,
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
             ),
           ),
           _rowOfButtons(),
@@ -67,22 +66,25 @@ class _SearchPropertyBodyState extends State<SearchPropertyBody> {
           ),
           Padding(
             padding: const EdgeInsets.all(8.0),
-            child: reusableTextField(hint: 'Search Properties',icon: Icon(Icons.search)),
+            child: reusableTextField(
+                hint: 'Search Properties'.tr, icon: Icon(Icons.search)),
           ),
           Padding(
             padding: const EdgeInsets.all(8.0),
-            child: reusableTextField(hint: 'Zip code,Location,Country or City',icon: Icon(Icons.room)),
+            child: reusableTextField(
+                hint: 'Zip code,Location,Country or City'.tr,
+                icon: Icon(Icons.room)),
           ),
-
-
           SizedBox(
             height: 20,
           ),
-          CustomButton(title: 'Search',callback: (){},),
+          CustomButton(
+            title: 'Search'.tr,
+            callback: () {},
+          ),
           SizedBox(
             height: 30,
           ),
-
           copyright(),
           SizedBox(
             height: 20,
@@ -120,7 +122,7 @@ class _SearchPropertyBodyState extends State<SearchPropertyBody> {
                             : Colors.grey.shade300)),
                 child: Center(
                   child: Text(
-                    'Residential',
+                    'Residential'.tr,
                     style: TextStyle(
                         fontWeight: FontWeight.bold,
                         color: selectedProperty[0] == true
@@ -157,7 +159,7 @@ class _SearchPropertyBodyState extends State<SearchPropertyBody> {
                             : Colors.grey.shade300)),
                 child: Center(
                   child: Text(
-                    'Commerical',
+                    'Commercial'.tr,
                     style: TextStyle(
                         fontWeight: FontWeight.bold,
                         color: selectedProperty[1] == true
@@ -194,7 +196,7 @@ class _SearchPropertyBodyState extends State<SearchPropertyBody> {
                             ? primaryColor
                             : Colors.grey.shade300)),
                 child: Center(
-                  child: Text('Industrial',
+                  child: Text('Industrial'.tr,
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                         color: selectedProperty[2] == true
@@ -267,7 +269,7 @@ class _SearchPropertyBodyState extends State<SearchPropertyBody> {
                 height: 5,
               ),
               Text(
-                'Residential',
+                'Residential'.tr,
                 style: TextStyle(
                     color: Colors.grey,
                     fontWeight: FontWeight.w500,
@@ -324,7 +326,7 @@ class _SearchPropertyBodyState extends State<SearchPropertyBody> {
                 height: 5,
               ),
               Text(
-                'Commercial',
+                'Commercial'.tr,
                 style: TextStyle(
                     color: Colors.grey,
                     fontWeight: FontWeight.w500,
@@ -381,7 +383,7 @@ class _SearchPropertyBodyState extends State<SearchPropertyBody> {
                 height: 5,
               ),
               Text(
-                'Upper portion',
+                'Upper portion'.tr,
                 style: TextStyle(
                     color: Colors.grey,
                     fontWeight: FontWeight.w500,
@@ -438,7 +440,7 @@ class _SearchPropertyBodyState extends State<SearchPropertyBody> {
                 height: 5,
               ),
               Text(
-                'Lower portion',
+                'Lower portion'.tr,
                 style: TextStyle(
                     color: Colors.grey,
                     fontWeight: FontWeight.w500,
@@ -507,7 +509,7 @@ class _SearchPropertyBodyState extends State<SearchPropertyBody> {
                 height: 5,
               ),
               Text(
-                'Upper portion',
+                'Upper portion'.tr,
                 style: TextStyle(
                     color: Colors.grey,
                     fontWeight: FontWeight.w500,
@@ -564,7 +566,7 @@ class _SearchPropertyBodyState extends State<SearchPropertyBody> {
                 height: 5,
               ),
               Text(
-                'Lower portion',
+                'Lower portion'.tr,
                 style: TextStyle(
                     color: Colors.grey,
                     fontWeight: FontWeight.w500,
@@ -621,7 +623,7 @@ class _SearchPropertyBodyState extends State<SearchPropertyBody> {
                 height: 5,
               ),
               Text(
-                'Residential',
+                'Residential'.tr,
                 style: TextStyle(
                     color: Colors.grey,
                     fontWeight: FontWeight.w500,
@@ -678,7 +680,7 @@ class _SearchPropertyBodyState extends State<SearchPropertyBody> {
                 height: 5,
               ),
               Text(
-                'Commercial',
+                'Commercial'.tr,
                 style: TextStyle(
                     color: Colors.grey,
                     fontWeight: FontWeight.w500,
@@ -747,7 +749,7 @@ class _SearchPropertyBodyState extends State<SearchPropertyBody> {
                 height: 5,
               ),
               Text(
-                'Upper portion',
+                'Upper portion'.tr,
                 style: TextStyle(
                     color: Colors.grey,
                     fontWeight: FontWeight.w500,
@@ -804,7 +806,7 @@ class _SearchPropertyBodyState extends State<SearchPropertyBody> {
                 height: 5,
               ),
               Text(
-                'Commercial',
+                'Commercial'.tr,
                 style: TextStyle(
                     color: Colors.grey,
                     fontWeight: FontWeight.w500,
@@ -861,7 +863,7 @@ class _SearchPropertyBodyState extends State<SearchPropertyBody> {
                 height: 5,
               ),
               Text(
-                'Lower portion',
+                'Lower portion'.tr,
                 style: TextStyle(
                     color: Colors.grey,
                     fontWeight: FontWeight.w500,
@@ -918,7 +920,7 @@ class _SearchPropertyBodyState extends State<SearchPropertyBody> {
                 height: 5,
               ),
               Text(
-                'Residential',
+                'Residential'.tr,
                 style: TextStyle(
                     color: Colors.grey,
                     fontWeight: FontWeight.w500,

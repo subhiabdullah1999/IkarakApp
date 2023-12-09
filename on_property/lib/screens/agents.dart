@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:on_property/components/agents_components.dart';
-
-
 
 class Agents extends StatefulWidget {
   @override
@@ -13,10 +12,11 @@ class _AgentsState extends State<Agents> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        appBar: AppBar(elevation: 1,
+        appBar: AppBar(
+          elevation: 1,
           backgroundColor: Colors.white,
           title: Text(
-            'AGENTS',
+            'Agents'.tr,
             style: TextStyle(color: Colors.black, fontSize: 17),
           ),
           leading: GestureDetector(
@@ -27,7 +27,6 @@ class _AgentsState extends State<Agents> {
                 Icons.arrow_back,
                 color: Colors.black,
               )),
-
         ),
         body: agentsList(),
       ),

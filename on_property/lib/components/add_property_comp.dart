@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:on_property/utils/colorscheme.dart';
-
-
 
 addPropertyTextField(String title) {
   return Container(
@@ -16,7 +15,7 @@ addPropertyTextField(String title) {
         ),
         fillColor: Color(0xfffafafa),
         filled: true,
-        hintText: title,
+        hintText: title.tr,
         hintStyle: TextStyle(color: Colors.grey[500]),
         enabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(30.0),

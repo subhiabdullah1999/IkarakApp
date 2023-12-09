@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:get/get.dart';
 import 'package:on_property/components/reusable_textfield.dart';
 import 'package:on_property/utils/colorscheme.dart';
 import 'package:on_property/widgets/custom_button.dart';
@@ -36,13 +37,13 @@ class _SignUpState extends State<SignUp> {
                 height: MediaQuery.of(context).size.height * 0.1,
               ),
               Text(
-                'SIGN UP',
+                'Sign Up'.tr,
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
               ),
               SizedBox(
                 height: 5,
               ),
-              Text('Sign Up Now and Get The Best Deal'),
+              Text('Sign Up Now and Get The Best Deal'.tr),
               Container(
                 height: 5,
                 width: 70,
@@ -55,13 +56,13 @@ class _SignUpState extends State<SignUp> {
                 height: MediaQuery.of(context).size.height * 0.05,
               ),
               Text(
-                'Username',
+                'Username'.tr,
                 style: TextStyle(fontWeight: FontWeight.bold),
               ),
               SizedBox(
                 height: 5,
               ),
-              reusableTextField(hint: 'Enter your Username'),
+              reusableTextField(hint: 'Enter your Username'.tr),
               SizedBox(
                 height: 10,
               ),
@@ -69,7 +70,7 @@ class _SignUpState extends State<SignUp> {
                 height: 5,
               ),
               Text(
-                'Phone Number',
+                'Phone Number'.tr,
                 style: TextStyle(fontWeight: FontWeight.bold),
               ),
               SizedBox(
@@ -88,19 +89,19 @@ class _SignUpState extends State<SignUp> {
                   },
                   // mycontroller: controllerImp.phonenumber,
                   keyboardType: TextInputType.phone,
-                  hintText: "mobile_number",
+                  hintText: 'Phone Number'.tr,
                   iconData: Icons.mobile_friendly_outlined),
               SizedBox(
                 height: 10,
               ),
               Text(
-                'Password',
+                'Password'.tr,
                 style: TextStyle(fontWeight: FontWeight.bold),
               ),
               SizedBox(
                 height: 5,
               ),
-              reusableTextField(hint: 'Enter Password'),
+              reusableTextField(hint: 'Enter Password'.tr),
               SizedBox(
                 height: 10,
               ),
@@ -113,7 +114,7 @@ class _SignUpState extends State<SignUp> {
                 callback: () {
                   Navigator.pushNamed(context, 'OtpScreen');
                 },
-                title: 'Sign Up Now',
+                title: 'Sign Up Now'.tr,
               ),
               SizedBox(
                 height: 10,
@@ -154,7 +155,7 @@ class _SignUpState extends State<SignUp> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    'Already have an Account? ',
+                    'Already have an Account? '.tr,
                     style: TextStyle(fontWeight: FontWeight.bold),
                   ),
                   GestureDetector(
@@ -162,7 +163,7 @@ class _SignUpState extends State<SignUp> {
                         Navigator.pushNamed(context, 'SignIn');
                       },
                       child: Text(
-                        'Sign In',
+                        'SIGN IN'.tr,
                         style: TextStyle(
                             color: primaryColor,
                             fontWeight: FontWeight.bold,

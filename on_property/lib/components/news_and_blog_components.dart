@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-
-
+import 'package:get/get.dart';
 
 Container bannerForNewsAndBlog(BuildContext context) {
   return Container(
@@ -34,26 +33,25 @@ Container bannerForNewsAndBlog(BuildContext context) {
                   ),
                 ),
                 Spacer(),
-
                 GestureDetector(
-                    onTap: (){
-                      Navigator.pushNamed(context, 'Notifications');
-                    },
-                    child: Container(
-                        height: 40,
-                        width: 40,
-                        padding: EdgeInsets.all(8.0),
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10.0),
-                            color: Colors.transparent),
-                        child: Padding(
-                          padding: const EdgeInsets.all(0.0),
-                          child: SvgPicture.asset(
-                            'assets/icons/bell.svg',
-                            color: Colors.white,
-                          ),
-                        )),
-                   ),
+                  onTap: () {
+                    Navigator.pushNamed(context, 'Notifications');
+                  },
+                  child: Container(
+                      height: 40,
+                      width: 40,
+                      padding: EdgeInsets.all(8.0),
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10.0),
+                          color: Colors.transparent),
+                      child: Padding(
+                        padding: const EdgeInsets.all(0.0),
+                        child: SvgPicture.asset(
+                          'assets/icons/bell.svg',
+                          color: Colors.white,
+                        ),
+                      )),
+                ),
               ],
             ),
             Expanded(
@@ -61,7 +59,7 @@ Container bannerForNewsAndBlog(BuildContext context) {
                 padding: EdgeInsets.only(bottom: 30),
                 alignment: Alignment.center,
                 child: Text(
-                  'NEWS AND BLOG',
+                  'News and Blog'.tr,
                   style: TextStyle(
                       color: Colors.white,
                       fontSize: 20,
@@ -75,5 +73,3 @@ Container bannerForNewsAndBlog(BuildContext context) {
     ),
   );
 }
-
-

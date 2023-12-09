@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:get/get.dart';
 import 'package:on_property/components/reusable_textfield.dart';
 import 'package:on_property/utils/colorscheme.dart';
 
@@ -36,13 +37,13 @@ class SignIn extends StatelessWidget {
                 height: MediaQuery.of(context).size.height * 0.03,
               ),
               Text(
-                'SIGN IN',
+                'SIGN IN'.tr,
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
               ),
               SizedBox(
                 height: 5,
               ),
-              Text('Log Back Into Your Account'),
+              Text('Log Back Into Your Account'.tr),
               Container(
                 height: 5,
                 width: 70,
@@ -55,7 +56,7 @@ class SignIn extends StatelessWidget {
                 height: MediaQuery.of(context).size.height * 0.07,
               ),
               Text(
-                'Phone Number',
+                'Phone Number'.tr,
                 style: TextStyle(fontWeight: FontWeight.bold),
               ),
               SizedBox(
@@ -72,20 +73,20 @@ class SignIn extends StatelessWidget {
                   },
                   // mycontroller: controllerImp.phonenumber,
                   keyboardType: TextInputType.phone,
-                  hintText: "mobile_number",
+                  hintText: 'Phone Number'.tr,
                   iconData: Icons.mobile_friendly_outlined),
 
               SizedBox(
                 height: 2,
               ),
               Text(
-                'Password',
+                'Password'.tr,
                 style: TextStyle(fontWeight: FontWeight.bold),
               ),
               SizedBox(
                 height: 5,
               ),
-              reusableTextField(hint: 'Enter Password'),
+              reusableTextField(hint: 'Enter Password'.tr),
               SizedBox(
                 height: 25,
               ),
@@ -95,7 +96,7 @@ class SignIn extends StatelessWidget {
                     Navigator.pushNamed(context, 'ForgotPassword');
                   },
                   child: Text(
-                    'Forgot Password?',
+                    'Forgot Password?'.tr,
                     style: TextStyle(fontWeight: FontWeight.bold),
                   ),
                 ),
@@ -111,7 +112,7 @@ class SignIn extends StatelessWidget {
                       await SharedPreferences.getInstance();
                   _prefs.setBool("isLoggedIn", true);
                 },
-                title: 'Sign In Now',
+                title: 'Sign In Now'.tr,
               ),
               SizedBox(
                 height: 10,
@@ -151,7 +152,7 @@ class SignIn extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    'Don\'t have an Account? ',
+                    'Don\'t have an Account? '.tr,
                     style: TextStyle(fontWeight: FontWeight.bold),
                   ),
                   GestureDetector(
@@ -159,7 +160,7 @@ class SignIn extends StatelessWidget {
                         Navigator.pushNamed(context, 'SignUp');
                       },
                       child: Text(
-                        'Sign Up',
+                        'Sign Up'.tr,
                         style: TextStyle(
                             color: primaryColor,
                             fontWeight: FontWeight.bold,

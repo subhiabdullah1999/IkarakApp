@@ -1,5 +1,5 @@
-import 'package:My_Meal_on/core/services/services.dart';
 import 'package:get/get.dart';
+import 'package:on_property/core/services/services.dart';
 
 translationData(nameAr, nameEn) {
   MyServices myServices = Get.find();
