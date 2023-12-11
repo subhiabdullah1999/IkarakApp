@@ -103,7 +103,14 @@ class MyTranslation extends Translations {
           'First Name': "الاسم الاول",
           'Last Name': "الاسم الاخير",
           'Email Us': "ايميلنا",
-          'Website URL': "رابط موقع الويب"
+          'Website URL': "رابط موقع الويب",
+          "For sale": "للبيع",
+          "For Rent": "للايجار",
+          "For investment": "للاستثمار",
+          "Services": "الخدمات",
+          "advertisement": "اعلان",
+          "our chat": "محادثتنا",
+          "Enter the advertisement owner's number": "ادخل رقم صاحب الاعلان",
         },
         "en": {
           "Search Advance Filter": "Search Advance Filter",
@@ -207,6 +214,14 @@ class MyTranslation extends Translations {
           'Last Name': 'Last Name',
           'Email Us': 'Email Us',
           'Website URL': 'Website URL',
+          "For sale": "For sale",
+          "For Rent": "For Rent",
+          "For investment": "investment",
+          "Services": "Services",
+          "advertisement": "advertisement",
+          "our chat": "Our Chat",
+          "Enter the advertisement owner's number":
+              "Enter the advertisement owner's number",
         }
       };
 }

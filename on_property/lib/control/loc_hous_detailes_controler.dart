@@ -6,6 +6,7 @@ abstract class LocationHousDetailescontroller extends GetxController {
 
 class LocationHousDetailescontrollerImp extends LocationHousDetailescontroller {
   String typeSearch = "type";
+  String label = "Buy";
   @override
   typeIkar() {
     typeSearch = "type";
@@ -19,6 +20,21 @@ class LocationHousDetailescontrollerImp extends LocationHousDetailescontroller {
 
   gR() {
     typeSearch = "QR";
+    update();
+  }
+
+  forBuy() {
+    label = "Buy";
+    update();
+  }
+
+  forRant() {
+    label = "Rant";
+    update();
+  }
+
+  forInv() {
+    label = "Inv";
     update();
   }
 }

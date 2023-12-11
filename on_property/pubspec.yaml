@@ -47,6 +47,8 @@ dependencies:
   get: ^4.6.5
   cool_dropdown: ^1.4.1
   flutter_barcode_scanner: ^2.0.0
+  flutter_animated_dialog: ^2.0.1
+  url_launcher: ^6.0.1
 
 
 dev_dependencies:
