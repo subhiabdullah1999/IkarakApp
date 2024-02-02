@@ -2,11 +2,17 @@ import 'package:carousel_nullsafety/carousel_nullsafety.dart' as carusel;
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:on_property/control/house_detailes_contrller.dart';
+import 'package:on_property/core/constans/appColors.dart';
+import 'package:on_property/core/constans/applinks.dart';
 import 'package:on_property/utils/colorscheme.dart';
 import 'package:on_property/utils/constants.dart';
+import 'package:url_launcher/url_launcher.dart';
 import '../screens/locationForHouseDetails.dart';
 
 Stack customCarousal(BuildContext context) {
+  Get.put(HouseDetailsControllerImp());
   return Stack(
     children: [
       Column(
@@ -64,7 +70,7 @@ Stack customCarousal(BuildContext context) {
                   child: Text(
                 'For Sale',
                 style:
-                    TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+                    TextStyle(color: Colors.white, fontWeight: FontWeight.w500),
               )),
             ),
             SizedBox(
@@ -75,7 +81,7 @@ Stack customCarousal(BuildContext context) {
               style: TextStyle(
                   color: Colors.white,
                   fontSize: 18,
-                  fontWeight: FontWeight.bold),
+                  fontWeight: FontWeight.w500),
             ),
             SizedBox(
               height: 5,
@@ -86,7 +92,7 @@ Stack customCarousal(BuildContext context) {
                   'New York, USA   ',
                   style: TextStyle(
                       color: Colors.white,
-                      fontWeight: FontWeight.bold,
+                      fontWeight: FontWeight.w500,
                       fontSize: 12),
                 ),
                 SvgPicture.asset(
@@ -97,7 +103,7 @@ Stack customCarousal(BuildContext context) {
                   '  750 (Sq Fts)',
                   style: TextStyle(
                       color: Colors.white,
-                      fontWeight: FontWeight.bold,
+                      fontWeight: FontWeight.w500,
                       fontSize: 12),
                 ),
               ],
@@ -123,115 +129,295 @@ Stack customCarousal(BuildContext context) {
   );
 }
 
-Container firstCompOfDetails(BuildContext context) {
-  return Container(
-    height: MediaQuery.of(context).size.height * 0.28,
-    padding: EdgeInsets.all(10.0),
-    child: Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(
-          'Price',
-          style: TextStyle(
-              color: Colors.black, fontWeight: FontWeight.bold, fontSize: 18),
-        ),
-        Text(
-          '\$ 50,000',
-          style: TextStyle(
-              color: primaryColor, fontSize: 28, fontWeight: FontWeight.bold),
-        ),
-        Divider(),
-        Container(
-          height: 80,
-          padding: EdgeInsets.symmetric(horizontal: 18.0),
-          child: IntrinsicHeight(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Expanded(
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
+class FirstCompOfDetails extends StatelessWidget {
+  const FirstCompOfDetails({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    Get.put(HouseDetailsControllerImp());
+    return GetBuilder<HouseDetailsControllerImp>(
+        builder: (controllerImp) => Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      SvgPicture.asset(
-                        'assets/icons/bed.svg',
-                        color: primaryColor,
-                      ),
-                      SizedBox(
-                        height: 5,
-                      ),
                       Text(
-                        '3 beds',
+                        controllerImp.data[0].title!,
                         style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 14,
-                        ),
-                        textAlign: TextAlign.start,
+                            color: Colors.black,
+                            fontWeight: FontWeight.w500,
+                            fontSize: 18),
+                      ),
+                      Column(
+                        children: [
+                          Text(
+                            'Price '.tr,
+                            style: TextStyle(
+                                color: Colors.black,
+                                fontWeight: FontWeight.w500,
+                                fontSize: 18),
+                          ),
+                          Text(
+                            '\$ ' + controllerImp.data[0].price.toString(),
+                            style: TextStyle(
+                                color: primaryColor,
+                                fontSize: 28,
+                                fontWeight: FontWeight.w500),
+                          ),
+                        ],
                       ),
                     ],
                   ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: VerticalDivider(),
-                ),
-                Expanded(
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      SvgPicture.asset(
-                        'assets/icons/washroom.svg',
-                        color: primaryColor,
+                  Divider(),
+                  // controllerImp.data[0].subCategoryId == 2 ||
+                  //         controllerImp.data[0].subCategoryId == 3 ||
+                  //         controllerImp.data[0].subCategoryId == 4
+                  //     ? SizedBox()
+                  //     :
+                  Container(
+                    height: 80,
+                    padding: EdgeInsets.symmetric(horizontal: 18.0),
+                    child: IntrinsicHeight(
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          Expanded(
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                SvgPicture.asset(
+                                  'assets/icons/bed.svg',
+                                  color: primaryColor,
+                                ),
+                                SizedBox(
+                                  height: 5,
+                                ),
+                                Text(
+                                  controllerImp.data[0].propertyDetails!.bed
+                                          .toString() +
+                                      ' beds'.tr,
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.w500,
+                                    fontSize: 14,
+                                  ),
+                                  textAlign: TextAlign.start,
+                                ),
+                              ],
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: VerticalDivider(),
+                          ),
+                          Expanded(
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                SvgPicture.asset(
+                                  'assets/icons/washroom.svg',
+                                  color: primaryColor,
+                                ),
+                                SizedBox(
+                                  height: 5,
+                                ),
+                                Text(
+                                  controllerImp.data[0].propertyDetails!.bath
+                                          .toString() +
+                                      ' baths'.tr,
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.w500,
+                                    fontSize: 14,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: VerticalDivider(),
+                          ),
+                          Expanded(
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                SvgPicture.asset(
+                                  'assets/icons/kitchen.svg',
+                                  height: 20,
+                                  color: primaryColor,
+                                ),
+                                SizedBox(
+                                  height: 5,
+                                ),
+                                Text(
+                                  controllerImp.data[0].propertyDetails!.garage
+                                          .toString() +
+                                      ' kitchens'.tr,
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.w500,
+                                    fontSize: 14,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          )
+                        ],
                       ),
-                      SizedBox(
-                        height: 5,
-                      ),
-                      Text(
-                        '5 baths',
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 14,
-                        ),
-                      ),
-                    ],
+                    ),
                   ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: VerticalDivider(),
-                ),
-                Expanded(
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      SvgPicture.asset(
-                        'assets/icons/kitchen.svg',
-                        height: 20,
-                        color: primaryColor,
-                      ),
-                      SizedBox(
-                        height: 5,
-                      ),
-                      Text(
-                        '2 kitchens',
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 14,
-                        ),
-                      ),
-                    ],
-                  ),
-                )
-              ],
-            ),
-          ),
-        ),
-        Divider(),
-      ],
-    ),
-  );
+                  Divider(),
+                ],
+              ),
+            ));
+  }
 }
 
+// Container firstCompOfDetails(BuildContext context) {
+//   HouseDetailsControllerImp controllerImp =
+//       Get.put(HouseDetailsControllerImp());
+// return
+// Container(
+//   height: MediaQuery.of(context).size.height * 0.23,
+//   padding: EdgeInsets.all(10.0),
+//   child: Column(
+//     crossAxisAlignment: CrossAxisAlignment.start,
+//     children: [
+//       Row(
+//         mainAxisAlignment: MainAxisAlignment.spaceBetween,
+//         children: [
+//           Text(
+//             controllerImp.data[0].title!,
+//             style: TextStyle(
+//                 color: Colors.black,
+//                 fontWeight: FontWeight.w500,
+//                 fontSize: 18),
+//           ),
+//           Column(
+//             children: [
+//               Text(
+//                 'Price '.tr,
+//                 style: TextStyle(
+//                     color: Colors.black,
+//                     fontWeight: FontWeight.w500,
+//                     fontSize: 18),
+//               ),
+//               Text(
+//                 '\$ ' + controllerImp.data[0].price.toString(),
+//                 style: TextStyle(
+//                     color: primaryColor,
+//                     fontSize: 28,
+//                     fontWeight: FontWeight.w500),
+//               ),
+//             ],
+//           ),
+//         ],
+//       ),
+//       Divider(),
+//       controllerImp.data[0].subCategoryId == 2 ||
+//               controllerImp.data[0].subCategoryId == 3 ||
+//               controllerImp.data[0].subCategoryId == 4
+//           ? SizedBox()
+//           : Container(
+//               height: 80,
+//               padding: EdgeInsets.symmetric(horizontal: 18.0),
+//               child: IntrinsicHeight(
+//                 child: Row(
+//                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+//                   children: [
+//                     Expanded(
+//                       child: Column(
+//                         mainAxisAlignment: MainAxisAlignment.center,
+//                         children: [
+//                           SvgPicture.asset(
+//                             'assets/icons/bed.svg',
+//                             color: primaryColor,
+//                           ),
+//                           SizedBox(
+//                             height: 5,
+//                           ),
+//                           Text(
+//                             controllerImp.data[0].propertyDetails!.bed
+//                                     .toString() +
+//                                 ' beds'.tr,
+//                             style: TextStyle(
+//                               fontWeight: FontWeight.w500,
+//                               fontSize: 14,
+//                             ),
+//                             textAlign: TextAlign.start,
+//                           ),
+//                         ],
+//                       ),
+//                     ),
+//                     Padding(
+//                       padding: const EdgeInsets.all(8.0),
+//                       child: VerticalDivider(),
+//                     ),
+//                     Expanded(
+//                       child: Column(
+//                         mainAxisAlignment: MainAxisAlignment.center,
+//                         children: [
+//                           SvgPicture.asset(
+//                             'assets/icons/washroom.svg',
+//                             color: primaryColor,
+//                           ),
+//                           SizedBox(
+//                             height: 5,
+//                           ),
+//                           Text(
+//                             controllerImp.data[0].propertyDetails!.bath
+//                                     .toString() +
+//                                 ' baths'.tr,
+//                             style: TextStyle(
+//                               fontWeight: FontWeight.w500,
+//                               fontSize: 14,
+//                             ),
+//                           ),
+//                         ],
+//                       ),
+//                     ),
+//                     Padding(
+//                       padding: const EdgeInsets.all(8.0),
+//                       child: VerticalDivider(),
+//                     ),
+//                     Expanded(
+//                       child: Column(
+//                         mainAxisAlignment: MainAxisAlignment.center,
+//                         children: [
+//                           SvgPicture.asset(
+//                             'assets/icons/kitchen.svg',
+//                             height: 20,
+//                             color: primaryColor,
+//                           ),
+//                           SizedBox(
+//                             height: 5,
+//                           ),
+//                           Text(
+//                             controllerImp.data[0].propertyDetails!.garage
+//                                     .toString() +
+//                                 ' kitchens'.tr,
+//                             style: TextStyle(
+//                               fontWeight: FontWeight.w500,
+//                               fontSize: 14,
+//                             ),
+//                           ),
+//                         ],
+//                       ),
+//                     )
+//                   ],
+//                 ),
+//               ),
+//             ),
+//       Divider(),
+//     ],
+//   ),
+// );
+// }
+
 Container secondComponentOfDetails(BuildContext context) {
+  HouseDetailsControllerImp controllerImp =
+      Get.put(HouseDetailsControllerImp());
   return Container(
     padding: EdgeInsets.only(left: 8.0),
     height: MediaQuery.of(context).size.height * 0.25,
@@ -240,11 +426,10 @@ Container secondComponentOfDetails(BuildContext context) {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          'Description',
+          'Description'.tr,
           style: kh1,
         ),
-        Text(
-            'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,'),
+        Text(controllerImp.data[0].description.toString()),
         SizedBox(
           height: 10,
         ),
@@ -255,6 +440,8 @@ Container secondComponentOfDetails(BuildContext context) {
 }
 
 Container thirdComponentOfPhotos(BuildContext context) {
+  HouseDetailsControllerImp controllerImp =
+      Get.put(HouseDetailsControllerImp());
   return Container(
     height: MediaQuery.of(context).size.height * 0.28,
     child: Column(
@@ -263,7 +450,7 @@ Container thirdComponentOfPhotos(BuildContext context) {
         Padding(
           padding: const EdgeInsets.all(8.0),
           child: Text(
-            'Photos',
+            'Photos'.tr,
             style: kh1,
           ),
         ),
@@ -284,6 +471,7 @@ Container thirdComponentOfPhotos(BuildContext context) {
 }
 
 ListView listForThirdComp() {
+  HouseDetailsControllerImp controller = Get.put(HouseDetailsControllerImp());
   List<String> urlImages = [
     'assets/images/house.jpg',
     'assets/images/house1.jpg',
@@ -309,7 +497,9 @@ ListView listForThirdComp() {
                         borderRadius: BorderRadius.circular(10.0),
                         image: DecorationImage(
                             fit: BoxFit.fill,
-                            image: AssetImage(urlImages[index - 1]))),
+                            image: NetworkImage(
+                                AppLinks.serverNameImgeThumbnail +
+                                    controller.data[0].thumbnail!))),
                   ),
           ],
         );
@@ -317,6 +507,8 @@ ListView listForThirdComp() {
 }
 
 Container fourthComponent(BuildContext context) {
+  HouseDetailsControllerImp controllerImp =
+      Get.put(HouseDetailsControllerImp());
   return Container(
     padding: EdgeInsets.symmetric(horizontal: 8.0),
     height: MediaQuery.of(context).size.height * 0.25,
@@ -340,7 +532,7 @@ Container fourthComponent(BuildContext context) {
             ),
             Text(
               '    BosPhorus Views',
-              style: TextStyle(fontWeight: FontWeight.w600),
+              style: TextStyle(fontWeight: FontWeight.w500),
             )
           ],
         ),
@@ -356,7 +548,7 @@ Container fourthComponent(BuildContext context) {
             ),
             Text(
               '    Telephone',
-              style: TextStyle(fontWeight: FontWeight.w600),
+              style: TextStyle(fontWeight: FontWeight.w500),
             )
           ],
         ),
@@ -372,7 +564,7 @@ Container fourthComponent(BuildContext context) {
             ),
             Text(
               '    Family Villa',
-              style: TextStyle(fontWeight: FontWeight.w600),
+              style: TextStyle(fontWeight: FontWeight.w500),
             )
           ],
         ),
@@ -388,7 +580,7 @@ Container fourthComponent(BuildContext context) {
             ),
             Text(
               '    Internet',
-              style: TextStyle(fontWeight: FontWeight.w600),
+              style: TextStyle(fontWeight: FontWeight.w500),
             )
           ],
         ),
@@ -409,7 +601,7 @@ Container fifthComponent(BuildContext context) {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          'Location',
+          'Location'.tr,
           style: kh1,
         ),
         SizedBox(
@@ -421,7 +613,7 @@ Container fifthComponent(BuildContext context) {
             borderRadius: BorderRadius.circular(10.0),
             color: Colors.red,
           ),
-          child: LocationForHouseDetails(),
+          child: GoogleMappCustom(),
         ),
         SizedBox(
           height: 10,
@@ -433,6 +625,9 @@ Container fifthComponent(BuildContext context) {
 }
 
 Container sixthComponent(BuildContext context) {
+  HouseDetailsControllerImp controllerImp =
+      Get.put(HouseDetailsControllerImp());
+
   return Container(
     padding: EdgeInsets.symmetric(horizontal: 8.0),
     height: MediaQuery.of(context).size.height * 0.35,
@@ -440,30 +635,36 @@ Container sixthComponent(BuildContext context) {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          'Contact Us',
+          'Contact Us'.tr,
           style: kh1,
         ),
         SizedBox(
           height: 15,
         ),
         Center(
-          child: CircleAvatar(
-            maxRadius: 45,
-            backgroundImage: AssetImage('assets/images/person2.jpeg'),
-          ),
+          child: controllerImp.data[0].user!.image == null
+              ? CircleAvatar(
+                  maxRadius: 45,
+                  backgroundColor: AppColors.green,
+                )
+              : CircleAvatar(
+                  maxRadius: 45,
+                  backgroundImage: NetworkImage(
+                      controllerImp.data[0].user!.image.toString()),
+                ),
         ),
         SizedBox(
           height: 10,
         ),
         Center(
             child: Text(
-          'John Smith',
+          controllerImp.data[0].user!.fName.toString(),
           style: TextStyle(
-              color: primaryColor, fontWeight: FontWeight.bold, fontSize: 18),
+              color: primaryColor, fontWeight: FontWeight.w500, fontSize: 18),
         )),
         Center(
             child: Text(
-          'Takaful Real Estate',
+          controllerImp.data[0].user!.type.toString(),
           style: TextStyle(color: Colors.black, fontSize: 14),
         )),
         SizedBox(
@@ -472,55 +673,100 @@ Container sixthComponent(BuildContext context) {
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Container(
-              height: 40,
-              width: 100,
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20.0),
-                  color: Colors.grey[200]),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Icon(
-                    Icons.phone_in_talk,
-                    color: primaryColor,
-                    size: 17,
-                  ),
-                  SizedBox(
-                    width: 10,
-                  ),
-                  Text(
-                    'Call',
-                    style: TextStyle(fontWeight: FontWeight.bold),
-                  )
-                ],
+            InkWell(
+              onTap: () async {
+                await launchUrl(Uri.parse(
+                    "tel:" + controllerImp.data[0].user!.mobile.toString()));
+              },
+              child: Container(
+                height: 40,
+                width: 100,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20.0),
+                    color: Colors.grey[200]),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(
+                      Icons.phone_in_talk,
+                      color: primaryColor,
+                      size: 17,
+                    ),
+                    SizedBox(
+                      width: 10,
+                    ),
+                    Text(
+                      "call".tr,
+                      style: TextStyle(fontWeight: FontWeight.w500),
+                    )
+                  ],
+                ),
               ),
             ),
             SizedBox(
               width: 30,
             ),
-            Container(
-              height: 40,
-              width: 100,
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20.0),
-                  color: Colors.grey[200]),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Icon(
-                    Icons.mail,
-                    color: primaryColor,
-                    size: 17,
-                  ),
-                  SizedBox(
-                    width: 10,
-                  ),
-                  Text(
-                    'Message'.tr,
-                    style: TextStyle(fontWeight: FontWeight.bold),
-                  )
-                ],
+            InkWell(
+              onTap: () async {
+                await launchUrl(Uri.parse("https://wa.me/" +
+                    controllerImp.data[0].user!.mobile.toString()));
+              },
+              child: Container(
+                height: 40,
+                width: 100,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20.0),
+                    color: Colors.grey[200]),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(
+                      Icons.mark_chat_read_outlined,
+                      color: primaryColor,
+                      size: 17,
+                    ),
+                    SizedBox(
+                      width: 10,
+                    ),
+                    Text(
+                      'wahtsapp',
+                      style: TextStyle(fontWeight: FontWeight.w500),
+                    )
+                  ],
+                ),
+              ),
+            ),
+            SizedBox(
+              width: 30,
+            ),
+            InkWell(
+              onTap: () async {
+                await launchUrl(Uri.parse(
+                    "mailto:" + controllerImp.data[0].user!.email.toString()));
+              },
+              child: Container(
+                height: 40,
+                width: 100,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20.0),
+                    color: Colors.grey[200]),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(
+                      Icons.mail,
+                      color: primaryColor,
+                      size: 17,
+                    ),
+                    SizedBox(
+                      width: 10,
+                    ),
+                    Text(
+                      'Message'.tr,
+                      style: TextStyle(fontWeight: FontWeight.w500),
+                    )
+                  ],
+                ),
               ),
             )
           ],
@@ -528,4 +774,45 @@ Container sixthComponent(BuildContext context) {
       ],
     ),
   );
+}
+
+class GoogleMappCustom extends StatefulWidget {
+  const GoogleMappCustom({super.key});
+
+  @override
+  State<GoogleMappCustom> createState() => _GoogleMappCustomState();
+}
+
+class _GoogleMappCustomState extends State<GoogleMappCustom> {
+  HouseDetailsControllerImp controllerImp =
+      Get.put(HouseDetailsControllerImp());
+  LatLng center = const LatLng(33.86, 35.72);
+  GoogleMapController? _controller;
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: GoogleMap(
+          zoomGesturesEnabled: true,
+          markers: {
+            Marker(
+                markerId: MarkerId(controllerImp.data[0].id.toString()),
+                position: LatLng(33.86, 35.72),
+                // position: LatLng(double.parse(controllerImp.data[0].lat!),
+                //     double.parse(controllerImp.data[0].lat!)),
+                icon: BitmapDescriptor.defaultMarker,
+                infoWindow: InfoWindow(
+                    title: controllerImp.data[0].state!.name,
+                    snippet: controllerImp.data[0].city!.name))
+          },
+          initialCameraPosition: CameraPosition(target: center, zoom: 6.1),
+          mapType: MapType.terrain,
+          onMapCreated: (controller) {
+            setState(() {
+              _controller = controller;
+            });
+          },
+          onTap: (coordinates) =>
+              _controller!.animateCamera(CameraUpdate.newLatLng(coordinates))),
+    );
+  }
 }

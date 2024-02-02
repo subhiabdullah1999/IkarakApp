@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-
-socialMediaButton({Function()?  callback, String? img, String? text,Color? color}) {
+socialMediaButton(
+    {Function()? callback, String? img, String? text, Color? color}) {
   return GestureDetector(
     onTap: callback,
     child: Container(
@@ -9,7 +9,7 @@ socialMediaButton({Function()?  callback, String? img, String? text,Color? color
       width: 150,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(40.0),
-        color:color??Colors.white,
+        color: color ?? Colors.white,
       ),
       child: Row(
         children: [
@@ -21,7 +21,7 @@ socialMediaButton({Function()?  callback, String? img, String? text,Color? color
               )),
           Text(
             text!,
-            style: TextStyle(fontWeight: FontWeight.w700),
+            style: TextStyle(fontWeight: FontWeight.w600),
           )
         ],
       ),

@@ -38,8 +38,8 @@ class _IndroductionPageState extends State<IndroductionPage> {
             textAlign: TextAlign.center,
             style: TextStyle(
               color: dividerTextColor,
-              fontWeight: FontWeight.bold,
-              fontSize: 20.sp,
+              fontWeight: FontWeight.w500,
+              fontSize: 18.sp,
             ),
           ),
         ),

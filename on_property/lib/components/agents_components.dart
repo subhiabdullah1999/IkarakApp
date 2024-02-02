@@ -48,7 +48,7 @@ ListView agentsList() {
                                   Text(
                                     'John Smith',
                                     style:
-                                        TextStyle(fontWeight: FontWeight.bold),
+                                        TextStyle(fontWeight: FontWeight.w500),
                                   ),
                                   Text(
                                     '+(123) 456 789 0',

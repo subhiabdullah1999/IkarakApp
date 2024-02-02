@@ -114,6 +114,8 @@ class RouteGenerator {
       case 'LocationForHouseDetails':
         return MaterialPageRoute(
             builder: (context) => LocationForHouseDetails());
+      case 'HouseDetails':
+        return MaterialPageRoute(builder: (context) => HouseDetails());
     }
     return null;
   }

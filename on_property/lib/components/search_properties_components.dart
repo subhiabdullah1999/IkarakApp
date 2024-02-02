@@ -107,7 +107,7 @@ listOfProperties() {
                                         Text(
                                           '3 ',
                                           style: TextStyle(
-                                              fontWeight: FontWeight.bold),
+                                              fontWeight: FontWeight.w500),
                                         ),
                                         Text(
                                           'bds ',
@@ -120,7 +120,7 @@ listOfProperties() {
                                         Text(
                                           ' 5 ',
                                           style: TextStyle(
-                                              fontWeight: FontWeight.bold),
+                                              fontWeight: FontWeight.w500),
                                         ),
                                         Text(
                                           'baths ',

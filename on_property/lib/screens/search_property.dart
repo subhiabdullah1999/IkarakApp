@@ -54,7 +54,7 @@ class _SearchPropertyBodyState extends State<SearchPropertyBody> {
             padding: const EdgeInsets.all(18.0),
             child: Text(
               'Property Type'.tr,
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+              style: TextStyle(fontWeight: FontWeight.w500, fontSize: 18),
             ),
           ),
           _rowOfButtons(),
@@ -124,7 +124,7 @@ class _SearchPropertyBodyState extends State<SearchPropertyBody> {
                   child: Text(
                     'Residential'.tr,
                     style: TextStyle(
-                        fontWeight: FontWeight.bold,
+                        fontWeight: FontWeight.w500,
                         color: selectedProperty[0] == true
                             ? Colors.white
                             : Colors.black),
@@ -161,7 +161,7 @@ class _SearchPropertyBodyState extends State<SearchPropertyBody> {
                   child: Text(
                     'Commercial'.tr,
                     style: TextStyle(
-                        fontWeight: FontWeight.bold,
+                        fontWeight: FontWeight.w500,
                         color: selectedProperty[1] == true
                             ? Colors.white
                             : Colors.black),
@@ -198,7 +198,7 @@ class _SearchPropertyBodyState extends State<SearchPropertyBody> {
                 child: Center(
                   child: Text('Industrial'.tr,
                       style: TextStyle(
-                        fontWeight: FontWeight.bold,
+                        fontWeight: FontWeight.w500,
                         color: selectedProperty[2] == true
                             ? Colors.white
                             : Colors.black,

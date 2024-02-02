@@ -1,6 +1,9 @@
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:on_property/control/intro_controller.dart';
+import 'package:on_property/core/services/services.dart';
+import 'package:on_property/screens/dashboard.dart';
 import 'package:on_property/screens/sign_in.dart';
 import 'package:on_property/utils/app_assets.dart';
 import 'package:on_property/utils/colorscheme.dart';
@@ -15,6 +18,7 @@ class IntroductionPage extends StatefulWidget {
 }
 
 class _IntroductionPageState extends State<IntroductionPage> {
+  IntroControllerImp controller = Get.put(IntroControllerImp());
   late int selectedPage;
   late final PageController _pageController;
   bool rememberMe = false;
@@ -98,11 +102,13 @@ class _IntroductionPageState extends State<IntroductionPage> {
                             ),
                           ),
                           onPressed: () {
+                            controller.myServices.sharedPreferences
+                                .setBool("showIntro", true);
                             Navigator.pushReplacement(
                                 context,
                                 MaterialPageRoute(
                                     builder: (BuildContext context) =>
-                                        SignIn()));
+                                        DashBoard()));
                           },
                           style: ElevatedButton.styleFrom(
                             backgroundColor: primaryColor,
@@ -132,12 +138,14 @@ class _IntroductionPageState extends State<IntroductionPage> {
                             ),
                           ),
                           onPressed: () {
+                            controller.myServices.sharedPreferences
+                                .setBool("showIntro", true);
                             if (selectedPage == 2) {
                               Navigator.pushReplacement(
                                   context,
                                   MaterialPageRoute(
                                       builder: (BuildContext context) =>
-                                          SignIn()));
+                                          DashBoard()));
                             }
                             _pageController.nextPage(
                                 duration: Duration(microseconds: 1000),

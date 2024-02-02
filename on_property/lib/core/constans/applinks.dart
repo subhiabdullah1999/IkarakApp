@@ -1,11 +1,15 @@
 class AppLinks {
-  static const serverName = "https://mo.mymealon.com/public/api";
+  static const serverName = "https://ikarak.ibits-ltd.me/api";
+  static const serverNameImgeThumbnail =
+      "https://ikarak.ibits-ltd.me/public/uploads/";
+  static const serverNameImgeGelary =
+      "https://ikarak.ibits-ltd.me/public/uploads/";
 
   // authLinks
-  static const signup = "$serverName/customer/register";
+  static const signup = "$serverName/signup";
 
-  static const verifycodesinupandogin = "$serverName/vvvvvvv";
-  static const login = "$serverName/customer/login";
+  static const otpCode = "$serverName/verify";
+  static const login = "$serverName/login";
   static const changePassword = "$serverName/change-password";
   static const logOut = "$serverName/logout";
 
@@ -16,16 +20,14 @@ class AppLinks {
   static const resetpassword = "$serverName/rp";
 
   // home screen
-  static const homeApi = "$serverName/home";
+  static const rentProp = "$serverName/rent-properties/";
+  static const saleProp = "$serverName/sale-properties/";
 
-  static const subCategoriesHome = "$serverName/sub-categories";
-  static const subCategoriesDescrHome = "$serverName/foods-sub-categories/";
-  static const searchResturant = "$serverName/home";
-  static const sliderOffers = "$serverName/sliders";
+  static const inversProp = "$serverName/investment-properties/";
 
-  // cart links
-  static const viewCart = "$serverName/home";
-  static const addCart = "$serverName/add-to-cart/12";
+  // add Prop links
+  static const state = "$serverName/state";
+  static const addProp = "$serverName/add-property";
   static const deletCart = "$serverName/delete-cart-item/{cart_item_id}";
   static const deletAllUpComingOrders = "$serverName/clear-carts";
   static const deletAllUpPastOrders = "$serverName/clear-orders";
@@ -39,7 +41,8 @@ class AppLinks {
   static const allOrders = "$serverName/all-orders";
 
   // profile
-  static const editProfile = "$serverName/update-profile";
+  static const getProfile = "$serverName/user-profile/";
+  static const getPropUserId = "$serverName/user-properties/";
 
   // adress
   static const addAddress = "$serverName/add-address";

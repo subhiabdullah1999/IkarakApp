@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:on_property/utils/colorscheme.dart';
 
-
-
 ListView followersList() {
   List<String> images = [
     'assets/images/person1.jpg',
@@ -16,8 +14,18 @@ ListView followersList() {
     'assets/images/person9.jpg',
     'assets/images/person10.jpg',
   ];
-  List<String> personNames=['Aiden Ken','Paul Phoenix','Ricardo John','John Smith ','Joe Smith ','Juan Carlos','Mike Jones ','David Smith','Peter Parker','Tony Hector'];
-
+  List<String> personNames = [
+    'Aiden Ken',
+    'Paul Phoenix',
+    'Ricardo John',
+    'John Smith ',
+    'Joe Smith ',
+    'Juan Carlos',
+    'Mike Jones ',
+    'David Smith',
+    'Peter Parker',
+    'Tony Hector'
+  ];
 
   return ListView.builder(
       itemCount: images.length,
@@ -25,7 +33,6 @@ ListView followersList() {
       itemBuilder: (context, index) {
         return Column(
           children: [
-
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Row(
@@ -65,7 +72,7 @@ ListView followersList() {
                   ),
                   Text(
                     personNames[index],
-                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
                   ),
                   Spacer(),
                   Container(
@@ -76,9 +83,9 @@ ListView followersList() {
                         border: Border.all(color: primaryColor)),
                     child: Center(
                         child: Text(
-                          'FOLLOW',
-                          style: TextStyle(color: primaryColor),
-                        )),
+                      'FOLLOW',
+                      style: TextStyle(color: primaryColor),
+                    )),
                   )
                 ],
               ),

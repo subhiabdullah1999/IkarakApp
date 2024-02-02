@@ -79,8 +79,8 @@ Container bannerForTermsAndConditions(BuildContext context) {
                   'Terms and Policies'.tr,
                   style: TextStyle(
                       color: Colors.white,
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold),
+                      fontSize: 18,
+                      fontWeight: FontWeight.w500),
                 ),
               ),
             )

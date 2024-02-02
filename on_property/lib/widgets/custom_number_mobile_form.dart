@@ -49,8 +49,8 @@ class CustomNumberMobileWidget extends StatelessWidget {
         // keyboardType: keyboardType,
         textAlign: TextAlign.left,
         decoration: InputDecoration(
-          contentPadding: EdgeInsets.only(
-            left: 16.0,
+          contentPadding: EdgeInsets.symmetric(
+            horizontal: 20,
           ),
           hintStyle: TextStyle(color: Colors.grey),
           filled: true,

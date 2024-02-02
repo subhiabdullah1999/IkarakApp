@@ -106,7 +106,7 @@ class _NewsAndBlogBodyState extends State<NewsAndBlogBody> {
                                           newsTitle[index],
                                           style: TextStyle(
                                               color: primaryColor,
-                                              fontWeight: FontWeight.bold),
+                                              fontWeight: FontWeight.w500),
                                         ),
                                         SizedBox(
                                           height: 5,
@@ -116,8 +116,8 @@ class _NewsAndBlogBodyState extends State<NewsAndBlogBody> {
                                           maxLines: 3,
                                           overflow: TextOverflow.ellipsis,
                                           style: TextStyle(
-                                              fontWeight: FontWeight.bold,
-                                              fontSize: 17),
+                                              fontWeight: FontWeight.w500,
+                                              fontSize: 16),
                                         ),
                                         Spacer(),
                                         Flexible(

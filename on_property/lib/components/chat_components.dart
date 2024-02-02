@@ -1,23 +1,68 @@
 import 'package:flutter/material.dart';
 import 'package:on_property/utils/colorscheme.dart';
 
-
-
-List<String> images=['assets/images/person1.jpg','assets/images/person2.jpeg','assets/images/person3.png','assets/images/person4.jpg','assets/images/person5.png','assets/images/person6.jpeg','assets/images/person7.jpg','assets/images/person8.jpg','assets/images/person9.jpg','assets/images/person10.jpg',];
-List<String> msgStatus=['Read...','Pending...','Read...','Read...','Read...','Read...','Pending...','Read...','Read...','Pending...'];
-List<String> msg=['Hey !Please make sure to Check my document' ,'Hello!','Hey pal! I need a favour from you','We will meet at 10 p.m','What\'s the status of your work','Please! email your resume at the mentioned email address','Let\'s have some coffee tonight',' I will be at office at sharp 8 a.m','Can we meet','Just received your docs!'];
-List<String> personNames=['Aiden Ken','Paul Phoenix','Ricardo John','John Smith ','Joe Smith ','Juan Carlos','Mike Jones ','David Smith','Peter Parker','Tony Hector'];
-verticalChatList(BuildContext context,int index){
+List<String> images = [
+  'assets/images/person1.jpg',
+  'assets/images/person2.jpeg',
+  'assets/images/person3.png',
+  'assets/images/person4.jpg',
+  'assets/images/person5.png',
+  'assets/images/person6.jpeg',
+  'assets/images/person7.jpg',
+  'assets/images/person8.jpg',
+  'assets/images/person9.jpg',
+  'assets/images/person10.jpg',
+];
+List<String> msgStatus = [
+  'Read...',
+  'Pending...',
+  'Read...',
+  'Read...',
+  'Read...',
+  'Read...',
+  'Pending...',
+  'Read...',
+  'Read...',
+  'Pending...'
+];
+List<String> msg = [
+  'Hey !Please make sure to Check my document',
+  'Hello!',
+  'Hey pal! I need a favour from you',
+  'We will meet at 10 p.m',
+  'What\'s the status of your work',
+  'Please! email your resume at the mentioned email address',
+  'Let\'s have some coffee tonight',
+  ' I will be at office at sharp 8 a.m',
+  'Can we meet',
+  'Just received your docs!'
+];
+List<String> personNames = [
+  'Aiden Ken',
+  'Paul Phoenix',
+  'Ricardo John',
+  'John Smith ',
+  'Joe Smith ',
+  'Juan Carlos',
+  'Mike Jones ',
+  'David Smith',
+  'Peter Parker',
+  'Tony Hector'
+];
+verticalChatList(BuildContext context, int index) {
   return Padding(
-    padding: const EdgeInsets.only(left:8.0,right: 8.0,),
+    padding: const EdgeInsets.only(
+      left: 8.0,
+      right: 8.0,
+    ),
     child: GestureDetector(
-      onTap: (){
+      onTap: () {
         Navigator.pushNamed(context, 'InnerChat');
       },
       child: Column(
         children: [
           Padding(
-            padding: const EdgeInsets.symmetric(vertical:4.0),
+            padding: const EdgeInsets.symmetric(vertical: 4.0),
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -34,7 +79,7 @@ verticalChatList(BuildContext context,int index){
                           image: DecorationImage(
                             alignment: Alignment.topCenter,
                             fit: BoxFit.cover,
-                            image: AssetImage(images[index-1]),
+                            image: AssetImage(images[index - 1]),
                           ),
                         ),
                       ),
@@ -64,19 +109,19 @@ verticalChatList(BuildContext context,int index){
                           height: 3,
                         ),
                         Text(
-                          personNames[index-1],
+                          personNames[index - 1],
                           style: TextStyle(
-                              fontWeight: FontWeight.bold, fontSize: 14),
+                              fontWeight: FontWeight.w500, fontSize: 14),
                         ),
                         SizedBox(
                           height: 8,
                         ),
                         Text(
-                          msg[index-1],
+                          msg[index - 1],
                           style: TextStyle(
                               color: Colors.black54,
                               fontSize: 11,
-                              fontWeight: FontWeight.bold),
+                              fontWeight: FontWeight.w500),
                         ),
                         SizedBox(
                           height: 6,
@@ -91,15 +136,19 @@ verticalChatList(BuildContext context,int index){
                                   color: Colors.black45),
                             ),
                             Spacer(),
-                            Text(msgStatus[index-1],
+                            Text(msgStatus[index - 1],
                                 style: TextStyle(
                                     fontSize: 11,
                                     fontWeight: FontWeight.w300,
-                                    color: msgStatus[index-1]=='Read...'?primaryColor:Colors.grey)),
+                                    color: msgStatus[index - 1] == 'Read...'
+                                        ? primaryColor
+                                        : Colors.grey)),
                             Icon(
                               Icons.done_all,
                               size: 15,
-                              color:msgStatus[index-1]=='Read...'? primaryColor:Colors.grey,
+                              color: msgStatus[index - 1] == 'Read...'
+                                  ? primaryColor
+                                  : Colors.grey,
                             )
                           ],
                         )

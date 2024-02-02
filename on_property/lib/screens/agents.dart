@@ -17,7 +17,7 @@ class _AgentsState extends State<Agents> {
           backgroundColor: Colors.white,
           title: Text(
             'Agents'.tr,
-            style: TextStyle(color: Colors.black, fontSize: 17),
+            style: TextStyle(color: Colors.black, fontSize: 15),
           ),
           leading: GestureDetector(
               onTap: () {

@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:on_property/utils/colorscheme.dart';
 
-
-
 class AudioCall extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -12,8 +10,7 @@ class AudioCall extends StatelessWidget {
           decoration: BoxDecoration(
             image: DecorationImage(
               fit: BoxFit.cover,
-              image: AssetImage(
-                  'assets/images/audio.jpg'),
+              image: AssetImage('assets/images/audio.jpg'),
             ),
           ),
           child: Container(
@@ -27,7 +24,7 @@ class AudioCall extends StatelessWidget {
                 ),
                 Text(
                   'Ringing...',
-                  style: TextStyle(color: Colors.white, fontSize: 16),
+                  style: TextStyle(color: Colors.white, fontSize: 15),
                 ),
                 SizedBox(
                   height: MediaQuery.of(context).size.height * 0.15,
@@ -41,7 +38,7 @@ class AudioCall extends StatelessWidget {
                 ),
                 Text(
                   'John  Doe',
-                  style: TextStyle(color: Colors.white, fontSize: 20),
+                  style: TextStyle(color: Colors.white, fontSize: 18),
                 ),
                 SizedBox(
                   height: 10,

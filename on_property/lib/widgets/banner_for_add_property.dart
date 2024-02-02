@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
+import 'package:on_property/control/add_prop_controller.dart';
 import 'package:on_property/utils/colorscheme.dart';
 
 class BannerForAddProperty extends StatefulWidget {
@@ -14,6 +15,7 @@ class _BannerForAddPropertyState extends State<BannerForAddProperty> {
   bool forBuySelected = false;
   @override
   Widget build(BuildContext context) {
+    AddPropControllerImp controller = Get.put(AddPropControllerImp());
     return Container(
         height: 230,
         width: double.infinity,
@@ -47,51 +49,51 @@ class _BannerForAddPropertyState extends State<BannerForAddProperty> {
                       width: 10,
                     ),
                     Text(
-                      'ADD PROPERTY'.tr,
+                      'Add property'.tr,
                       style: TextStyle(
                           color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 16),
+                          fontWeight: FontWeight.w500,
+                          fontSize: 15),
                     ),
                     Spacer(),
-                    GestureDetector(
-                        child: Container(
-                            height: 40,
-                            width: 40,
-                            padding: EdgeInsets.all(8.0),
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(10.0),
-                                color: Colors.transparent),
-                            child: Padding(
-                              padding: const EdgeInsets.all(0.0),
-                              child: SvgPicture.asset(
-                                'assets/icons/location.svg',
-                                color: Colors.white,
-                                height: 20,
-                              ),
-                            )),
-                        onTap: () {
-                          Navigator.pushNamed(context, 'Location');
-                        }),
-                    GestureDetector(
-                        child: Container(
-                            height: 40,
-                            width: 40,
-                            padding: EdgeInsets.all(8.0),
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(10.0),
-                                color: Colors.transparent),
-                            child: Padding(
-                              padding: const EdgeInsets.all(0.0),
-                              child: SvgPicture.asset(
-                                'assets/icons/bell.svg',
-                                color: Colors.white,
-                                height: 20,
-                              ),
-                            )),
-                        onTap: () {
-                          Navigator.pushNamed(context, 'Notifications');
-                        }),
+                    // GestureDetector(
+                    //     child: Container(
+                    //         height: 40,
+                    //         width: 40,
+                    //         padding: EdgeInsets.all(8.0),
+                    //         decoration: BoxDecoration(
+                    //             borderRadius: BorderRadius.circular(10.0),
+                    //             color: Colors.transparent),
+                    //         child: Padding(
+                    //           padding: const EdgeInsets.all(0.0),
+                    //           child: SvgPicture.asset(
+                    //             'assets/icons/location.svg',
+                    //             color: Colors.white,
+                    //             height: 20,
+                    //           ),
+                    //         )),
+                    //     onTap: () {
+                    //       Navigator.pushNamed(context, 'Location');
+                    //     }),
+                    // GestureDetector(
+                    //     child: Container(
+                    //         height: 40,
+                    //         width: 40,
+                    //         padding: EdgeInsets.all(8.0),
+                    //         decoration: BoxDecoration(
+                    //             borderRadius: BorderRadius.circular(10.0),
+                    //             color: Colors.transparent),
+                    //         child: Padding(
+                    //           padding: const EdgeInsets.all(0.0),
+                    //           child: SvgPicture.asset(
+                    //             'assets/icons/bell.svg',
+                    //             color: Colors.white,
+                    //             height: 20,
+                    //           ),
+                    //         )),
+                    //     onTap: () {
+                    //       Navigator.pushNamed(context, 'Notifications');
+                    //     }),
                   ],
                 ),
               ),
@@ -104,6 +106,8 @@ class _BannerForAddPropertyState extends State<BannerForAddProperty> {
                       Expanded(
                         child: GestureDetector(
                           onTap: () {
+                            controller.category_id = 1;
+                            controller.typeProp = "Sale";
                             setState(() {
                               forSaleSelected = true;
                               forBuySelected = false;
@@ -127,7 +131,8 @@ class _BannerForAddPropertyState extends State<BannerForAddProperty> {
                                 style: TextStyle(
                                     color: forSaleSelected == true
                                         ? Colors.white
-                                        : Colors.grey),
+                                        : Colors.grey,
+                                    fontSize: 17),
                               ),
                             ),
                           ),
@@ -136,6 +141,9 @@ class _BannerForAddPropertyState extends State<BannerForAddProperty> {
                       Expanded(
                         child: GestureDetector(
                           onTap: () {
+                            controller.category_id = 2;
+                            controller.typeProp = "Rent";
+
                             setState(() {
                               forSaleSelected = false;
                               forBuySelected = true;
@@ -151,11 +159,12 @@ class _BannerForAddPropertyState extends State<BannerForAddProperty> {
                                     : Colors.white),
                             child: Center(
                                 child: Text(
-                              'FOR BUY'.tr,
+                              'FOR RENT'.tr,
                               style: TextStyle(
                                   color: forBuySelected == true
                                       ? Colors.white
-                                      : Colors.grey),
+                                      : Colors.grey,
+                                  fontSize: 18),
                             )),
                           ),
                         ),
@@ -164,6 +173,9 @@ class _BannerForAddPropertyState extends State<BannerForAddProperty> {
                         child: GestureDetector(
                           onTap: () {
                             setState(() {
+                              controller.category_id = 3;
+                              controller.typeProp = "Inver";
+
                               forSaleSelected = false;
                               forBuySelected = false;
                               forRentSelected = true;
@@ -182,12 +194,12 @@ class _BannerForAddPropertyState extends State<BannerForAddProperty> {
                             ),
                             child: Center(
                                 child: Text(
-                              'FOR RENT'.tr,
+                              "For investment".tr,
                               style: TextStyle(
-                                color: forRentSelected == true
-                                    ? Colors.white
-                                    : Colors.grey,
-                              ),
+                                  color: forRentSelected == true
+                                      ? Colors.white
+                                      : Colors.grey,
+                                  fontSize: 17),
                             )),
                           ),
                         ),

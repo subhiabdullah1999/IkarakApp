@@ -1,17 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:on_property/utils/colorscheme.dart';
 
-
 class Following extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
         backgroundColor: Colors.white,
-        appBar: AppBar(iconTheme: IconThemeData(color:  Color(0xff979696)),
+        appBar: AppBar(
+          iconTheme: IconThemeData(color: Color(0xff979696)),
           backgroundColor: Colors.white,
           elevation: 2,
-          title: Text('Following',style: TextStyle(color: Colors.black),),
+          title: Text(
+            'Following',
+            style: TextStyle(color: Colors.black),
+          ),
         ),
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -28,7 +31,6 @@ class Following extends StatelessWidget {
     );
   }
 
-
   ListView followingList() {
     List<String> images = [
       'assets/images/person1.jpg',
@@ -42,8 +44,18 @@ class Following extends StatelessWidget {
       'assets/images/person9.jpg',
       'assets/images/person10.jpg',
     ];
-    List<String> personNames=['Aiden Ken','Paul Phoenix','Ricardo John','John Smith ','Joe Smith ','Juan Carlos','Mike Jones ','David Smith','Peter Parker','Tony Hector'];
-
+    List<String> personNames = [
+      'Aiden Ken',
+      'Paul Phoenix',
+      'Ricardo John',
+      'John Smith ',
+      'Joe Smith ',
+      'Juan Carlos',
+      'Mike Jones ',
+      'David Smith',
+      'Peter Parker',
+      'Tony Hector'
+    ];
 
     return ListView.builder(
         itemCount: images.length,
@@ -51,7 +63,6 @@ class Following extends StatelessWidget {
         itemBuilder: (context, index) {
           return Column(
             children: [
-
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Row(
@@ -91,7 +102,8 @@ class Following extends StatelessWidget {
                     ),
                     Text(
                       personNames[index],
-                      style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                      style:
+                          TextStyle(fontSize: 15, fontWeight: FontWeight.w500),
                     ),
                     Spacer(),
                     Container(
@@ -102,9 +114,9 @@ class Following extends StatelessWidget {
                           border: Border.all(color: primaryColor)),
                       child: Center(
                           child: Text(
-                            'UNFOLLOW',
-                            style: TextStyle(color: primaryColor),
-                          )),
+                        'UNFOLLOW',
+                        style: TextStyle(color: primaryColor),
+                      )),
                     )
                   ],
                 ),

@@ -3,7 +3,6 @@ import 'package:on_property/utils/colorscheme.dart';
 import 'package:on_property/utils/constants.dart';
 import 'package:on_property/widgets/heart_container.dart';
 
-
 firstHalfOfAgentDetails(BuildContext context) {
   return Container(
     height: MediaQuery.of(context).size.height * 0.40,
@@ -131,17 +130,17 @@ introduction() {
                 height: 10,
               )
             : GestureDetector(
-          onTap:(){
-            Navigator.pushNamed(context, 'HouseDetails');
-          },
-              child: Card(
+                onTap: () {
+                  Navigator.pushNamed(context, 'HouseDetails');
+                },
+                child: Card(
                   margin: EdgeInsets.only(bottom: 10.0, left: 8.0, right: 8.0),
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(20.0)),
                   child: Container(
                     height: 120,
-                    decoration:
-                        BoxDecoration(borderRadius: BorderRadius.circular(20.0)),
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20.0)),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
@@ -200,7 +199,6 @@ introduction() {
                                           width: 1,
                                           color: Colors.grey,
                                         ),
-
                                         Text(
                                           ' 5 ',
                                           style: TextStyle(
@@ -213,7 +211,6 @@ introduction() {
                                           width: 1,
                                           color: Colors.grey,
                                         ),
-
                                         Text(
                                           ' 1,767 ',
                                           style: TextStyle(
@@ -241,9 +238,8 @@ introduction() {
                                           ' House for Sale',
                                           style: TextStyle(fontSize: 12),
                                         ),
-
                                         Spacer(),
-                                       HeartContainer(index),
+                                        HeartContainer(index),
                                       ],
                                     ),
                                   )
@@ -254,7 +250,7 @@ introduction() {
                     ),
                   ),
                 ),
-            );
+              );
       });
 }
 
@@ -292,7 +288,7 @@ reusableCard(String price, address, img) {
                     Text(
                       'HOME',
                       style:
-                          TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+                          TextStyle(fontSize: 14, fontWeight: FontWeight.w500),
                     ),
                     SizedBox(
                       height: 3,
@@ -316,7 +312,7 @@ reusableCard(String price, address, img) {
                         Text(
                           ' 4.5',
                           style: TextStyle(
-                              fontWeight: FontWeight.bold, fontSize: 12),
+                              fontWeight: FontWeight.w500, fontSize: 12),
                         ),
                       ],
                     ),
@@ -332,14 +328,14 @@ reusableCard(String price, address, img) {
                             Text(
                               'Estimated Price',
                               style: TextStyle(
-                                  fontSize: 13, fontWeight: FontWeight.bold),
+                                  fontSize: 13, fontWeight: FontWeight.w500),
                             ),
                             Text(
                               price,
                               style: TextStyle(
                                   color: primaryColor,
                                   fontSize: 13,
-                                  fontWeight: FontWeight.bold),
+                                  fontWeight: FontWeight.w500),
                             )
                           ],
                         ),
@@ -395,7 +391,7 @@ Row customListTile(IconData iconData, String title, subtitle) {
         children: [
           Text(
             title,
-            style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+            style: TextStyle(fontSize: 14, fontWeight: FontWeight.w500),
           ),
           SizedBox(
             height: 2,

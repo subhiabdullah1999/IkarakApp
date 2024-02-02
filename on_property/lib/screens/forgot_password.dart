@@ -33,7 +33,7 @@ class ForgotPassword extends StatelessWidget {
               ),
               Text(
                 'Phone Number',
-                style: TextStyle(fontWeight: FontWeight.bold),
+                style: TextStyle(fontWeight: FontWeight.w500),
               ),
               SizedBox(
                 height: 5,
@@ -56,7 +56,7 @@ class ForgotPassword extends StatelessWidget {
                   child: Text(
                 'Cancel',
                 style:
-                    TextStyle(color: Colors.grey, fontWeight: FontWeight.bold),
+                    TextStyle(color: Colors.grey, fontWeight: FontWeight.w500),
               ))
             ],
           ),

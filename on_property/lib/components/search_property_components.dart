@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-
 firstComponent(BuildContext context) {
   return Container(
     height: MediaQuery.of(context).size.height * 0.3,
@@ -50,7 +49,7 @@ firstComponent(BuildContext context) {
                           ),
                         )),
                     onTap: () {
-                     Navigator.pushNamed(context, 'Location');
+                      Navigator.pushNamed(context, 'Location');
                     }),
                 GestureDetector(
                     child: Container(
@@ -80,8 +79,8 @@ firstComponent(BuildContext context) {
                   'Search Property',
                   style: TextStyle(
                       color: Colors.white,
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold),
+                      fontSize: 18,
+                      fontWeight: FontWeight.w500),
                 ),
               ),
             )
@@ -92,18 +91,15 @@ firstComponent(BuildContext context) {
   );
 }
 
-
-
-
 class CustomClip extends CustomClipper<Path> {
-
   @override
   Path getClip(Size size) {
-var path=Path();
-path.lineTo(0, size.height-80);
-path.quadraticBezierTo(size.width/2, size.height, size.width, size.height-80);
-path.lineTo(size.width, 0);
-path.close();
+    var path = Path();
+    path.lineTo(0, size.height - 80);
+    path.quadraticBezierTo(
+        size.width / 2, size.height, size.width, size.height - 80);
+    path.lineTo(size.width, 0);
+    path.close();
     return path;
   }
 

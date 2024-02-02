@@ -31,7 +31,7 @@ class SignUpWithOptions extends StatelessWidget {
           Text(
             'Hello There ',
             style: TextStyle(
-                color: Colors.white, fontSize: 22, fontWeight: FontWeight.bold),
+                color: Colors.white, fontSize: 20, fontWeight: FontWeight.w500),
           ),
           SizedBox(
             height: 5,
@@ -98,7 +98,7 @@ class SignUpWithOptions extends StatelessWidget {
                   child: Text(
                     'Sign In',
                     style: TextStyle(
-                        fontWeight: FontWeight.bold,
+                        fontWeight: FontWeight.w500,
                         color: Colors.white,
                         decoration: TextDecoration.underline),
                   ),

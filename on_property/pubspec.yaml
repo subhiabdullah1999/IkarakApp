@@ -37,6 +37,7 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
   flutter_svg: ^1.1.6
+  http: ^0.13.6
   carousel_nullsafety: 
   sizer: ^2.0.15
   dots_indicator: ^2.1.0
@@ -49,6 +50,13 @@ dependencies:
   flutter_barcode_scanner: ^2.0.0
   flutter_animated_dialog: ^2.0.1
   url_launcher: ^6.0.1
+  lottie: ^2.0.0
+  dartz: ^0.10.1
+  animated_custom_dropdown: ^1.5.0
+  cached_network_image: ^3.2.3
+  geolocator: ^10.0.1
+  image_picker: ^1.0.2
+ 
 
 
 dev_dependencies:

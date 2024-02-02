@@ -32,7 +32,7 @@ class AboutUs extends StatelessWidget {
                 children: [
                   Text(
                     'CopyRight ',
-                    style: TextStyle(fontWeight: FontWeight.bold),
+                    style: TextStyle(fontWeight: FontWeight.w500),
                   ),
                   Container(
                     height: 11,
@@ -52,7 +52,7 @@ class AboutUs extends StatelessWidget {
                   ),
                   Text(
                     ' 2023 Ikarak',
-                    style: TextStyle(fontWeight: FontWeight.bold),
+                    style: TextStyle(fontWeight: FontWeight.w500),
                   ),
                 ],
               ),

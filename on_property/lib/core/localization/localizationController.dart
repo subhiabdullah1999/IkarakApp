@@ -30,9 +30,8 @@ class LocalizationController extends GetxController {
       language = const Locale("en");
       appTheme = themEnglish;
     } else {
-      language = Locale(Get.deviceLocale!.languageCode);
-      myServices.sharedPreferences
-          .setString("lang", Get.deviceLocale!.languageCode);
+      language = Locale("ar");
+      myServices.sharedPreferences.setString("lang", "ar");
       appTheme = themEnglish;
     }
 

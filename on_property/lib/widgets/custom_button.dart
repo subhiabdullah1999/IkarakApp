@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:on_property/utils/colorscheme.dart';
 
 class CustomButton extends StatelessWidget {
- final  Function()? callback;
- final String? title;
+  final Function()? callback;
+  final String? title;
 
   CustomButton({this.callback, this.title});
 
@@ -19,7 +19,7 @@ class CustomButton extends StatelessWidget {
             child: Text(
           title!,
           style: TextStyle(
-              color: Colors.white, fontWeight: FontWeight.bold, fontSize: 17),
+              color: Colors.white, fontWeight: FontWeight.w500, fontSize: 16),
         )),
       ),
     );

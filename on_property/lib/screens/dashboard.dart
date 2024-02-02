@@ -8,6 +8,7 @@ import 'package:on_property/components/location_icon.dart';
 import 'package:on_property/components/notification_icon.dart';
 import 'package:on_property/control/dashboardcontroller.dart';
 import 'package:on_property/core/constans/appColors.dart';
+import 'package:on_property/core/functions/checkinternet.dart';
 import 'package:on_property/core/localization/localizationController.dart';
 import 'package:on_property/core/services/services.dart';
 import 'package:on_property/screens/add_property.dart';
@@ -16,6 +17,7 @@ import 'package:on_property/screens/home.dart';
 import 'package:on_property/screens/locationForHouseDetails.dart';
 import 'package:on_property/screens/profile.dart';
 import 'package:on_property/screens/search_properties.dart';
+import 'package:on_property/screens/sign_in.dart';
 import 'package:on_property/screens/wishlist.dart';
 import 'package:on_property/utils/colorscheme.dart';
 import 'package:on_property/widgets/drawer.dart';
@@ -32,6 +34,7 @@ class DashBoard extends StatefulWidget {
 }
 
 class _DashBoardState extends State<DashBoard> {
+  MyServices myServices = Get.find();
   GlobalKey<ScaffoldState> _drawerKey = GlobalKey();
   final PageStorageBucket bucket = PageStorageBucket();
   int _currentTab = 0;
@@ -45,7 +48,14 @@ class _DashBoardState extends State<DashBoard> {
     if (_currentTab == 2) currentScreen = SearchProperties();
     // if (_currentTab == 3) currentScreen = Wishlist();
     if (_currentTab == 5) currentScreen = Profile();
-    title = 'Hello, John Smith';
+    title = myServices.sharedPreferences.get("fname") == null
+        ? "Hello".tr + " " + "visitor".tr
+        : "Hello".tr +
+            "," +
+            myServices.sharedPreferences.get("fname").toString() +
+            " " +
+            myServices.sharedPreferences.get("lname").toString();
+    checkInterNet();
 
     super.initState();
   }
@@ -91,7 +101,13 @@ class _DashBoardState extends State<DashBoard> {
                 setState(() {
                   currentScreen = LocationForHouseDetails();
                   _currentTab = 0;
-                  title = 'Hello, John Smith';
+                  title = myServices.sharedPreferences.get("fname") == null
+                      ? "Hello".tr + " " + "visitor".tr
+                      : "Hello".tr +
+                          "," +
+                          myServices.sharedPreferences.get("fname").toString() +
+                          " " +
+                          myServices.sharedPreferences.get("lname").toString();
                 });
               },
               child: Container(
@@ -105,7 +121,13 @@ class _DashBoardState extends State<DashBoard> {
                 setState(() {
                   currentScreen = Home();
                   _currentTab = 1;
-                  title = 'Hello, John Smith';
+                  title = myServices.sharedPreferences.get("lname") == null
+                      ? "Hello".tr + " " + "visitor".tr
+                      : "Hello".tr +
+                          "," +
+                          myServices.sharedPreferences.get("fname").toString() +
+                          " " +
+                          myServices.sharedPreferences.get("lname").toString();
                 });
               },
               child: Container(
@@ -117,9 +139,12 @@ class _DashBoardState extends State<DashBoard> {
             GestureDetector(
               onTap: () {
                 setState(() {
-                  currentScreen = AddProperty();
+                  currentScreen =
+                      controller.myServices.sharedPreferences.get("id") == null
+                          ? SignIn()
+                          : AddProperty();
                   _currentTab = 2;
-                  title = 'Projects'.tr;
+                  title = '';
                 });
               },
               child: Container(
@@ -159,7 +184,10 @@ class _DashBoardState extends State<DashBoard> {
             GestureDetector(
               onTap: () {
                 setState(() {
-                  currentScreen = Profile();
+                  currentScreen = currentScreen =
+                      controller.myServices.sharedPreferences.get("id") == null
+                          ? SignIn()
+                          : Profile();
                   _currentTab = 5;
                   title = 'Profile'.tr;
                 });
@@ -175,7 +203,14 @@ class _DashBoardState extends State<DashBoard> {
                 setState(() {
                   // currentScreen = LocationForHouseDetails();
                   // _currentTab = 0;
-                  title = 'Hello, John Smith';
+                  title = myServices.sharedPreferences.get("lname") == null
+                      ? "Hello".tr + " " + "visitor".tr
+                      : "Hello".tr +
+                          "," +
+                          myServices.sharedPreferences.get("fname").toString() +
+                          " " +
+                          myServices.sharedPreferences.get("lname").toString();
+                  ;
 
                   animdaialog.showAnimatedDialog(
                     context: context,
@@ -183,273 +218,78 @@ class _DashBoardState extends State<DashBoard> {
                     builder: (BuildContext context) {
                       return animdaialog.CustomDialog(
                         child: Container(
-                          height: MediaQuery.of(context).size.height / 2.57,
-                          padding: EdgeInsets.only(top: 20),
-                          child: Column(
+                          height: MediaQuery.of(context).size.height / 2.45,
+                          // padding: EdgeInsets.only(top: 5),
+                          child: ListView(
                             children: [
-                              Container(
-                                child: Column(
-                                  children: [
-                                    Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceAround,
-                                      children: [
-                                        GestureDetector(
-                                          onTap: () {},
-                                          child: Column(
-                                            children: [
-                                              Container(
-                                                  margin: EdgeInsets.only(
-                                                      bottom: 5),
-                                                  width: 70,
-                                                  height: 70,
-                                                  padding:
-                                                      const EdgeInsets.all(13),
-                                                  decoration: BoxDecoration(
-                                                      color: AppColors.gry3,
-                                                      boxShadow: [
-                                                        BoxShadow(
-                                                            color: primaryColor,
-                                                            offset:
-                                                                Offset(-2, -1))
-                                                      ],
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              8),
-                                                      border: Border.all(
-                                                          color: primaryColor,
-                                                          width: 1.5)),
-                                                  child: SvgPicture.asset(
-                                                      'assets/icons/buy.svg',
-                                                      color: primaryColor)),
-                                              Text(
-                                                'For sale'.tr,
-                                                style: TextStyle(
-                                                    color:
-                                                        AppColors.blackColor2,
-                                                    fontSize: 16,
-                                                    fontWeight:
-                                                        FontWeight.bold),
-                                              ),
-                                            ],
-                                          ),
-                                        ),
-                                        GestureDetector(
-                                          onTap: () {},
-                                          child: Column(
-                                            children: [
-                                              Container(
-                                                  margin: EdgeInsets.only(
-                                                      bottom: 5),
-                                                  width: 70,
-                                                  height: 70,
-                                                  padding:
-                                                      const EdgeInsets.all(13),
-                                                  decoration: BoxDecoration(
-                                                      color: AppColors.gry3,
-                                                      boxShadow: [
-                                                        BoxShadow(
-                                                            color: primaryColor,
-                                                            offset:
-                                                                Offset(-2, -1))
-                                                      ],
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              8),
-                                                      border: Border.all(
-                                                          color: primaryColor,
-                                                          width: 1.5)),
-                                                  child: SvgPicture.asset(
-                                                      'assets/icons/reant.svg',
-                                                      color: primaryColor)),
-                                              Text(
-                                                'For Rent'.tr,
-                                                style: TextStyle(
-                                                    color:
-                                                        AppColors.blackColor2,
-                                                    fontSize: 16,
-                                                    fontWeight:
-                                                        FontWeight.bold),
-                                              ),
-                                            ],
-                                          ),
-                                        ),
-                                        GestureDetector(
-                                          onTap: () {},
-                                          child: Column(
-                                            children: [
-                                              Container(
-                                                  margin: EdgeInsets.only(
-                                                      bottom: 5),
-                                                  width: 70,
-                                                  height: 70,
-                                                  padding:
-                                                      const EdgeInsets.all(13),
-                                                  decoration: BoxDecoration(
-                                                      color: AppColors.gry3,
-                                                      boxShadow: [
-                                                        BoxShadow(
-                                                            color: primaryColor,
-                                                            offset:
-                                                                Offset(-2, -1))
-                                                      ],
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              8),
-                                                      border: Border.all(
-                                                          color: primaryColor,
-                                                          width: 1.5)),
-                                                  child: SvgPicture.asset(
-                                                      'assets/icons/investment-insurance-svgrepo-com.svg',
-                                                      color: primaryColor)),
-                                              Text(
-                                                'For investment'.tr,
-                                                style: TextStyle(
-                                                    color:
-                                                        AppColors.blackColor2,
-                                                    fontSize: 16,
-                                                    fontWeight:
-                                                        FontWeight.bold),
-                                              ),
-                                            ],
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                    SizedBox(
-                                      height: 10,
-                                    ),
-                                    Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceAround,
-                                      children: [
-                                        GestureDetector(
-                                          onTap: () {},
-                                          child: Column(
-                                            children: [
-                                              Container(
-                                                  margin: EdgeInsets.only(
-                                                      bottom: 5),
-                                                  width: 70,
-                                                  height: 70,
-                                                  padding:
-                                                      const EdgeInsets.all(13),
-                                                  decoration: BoxDecoration(
-                                                      color: AppColors.gry3,
-                                                      boxShadow: [
-                                                        BoxShadow(
-                                                            color: primaryColor,
-                                                            offset:
-                                                                Offset(-2, -1))
-                                                      ],
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              8),
-                                                      border: Border.all(
-                                                          color: primaryColor,
-                                                          width: 1.5)),
-                                                  child: SvgPicture.asset(
-                                                      'assets/icons/chat.svg',
-                                                      color: primaryColor)),
-                                              Text(
-                                                'our chat'.tr,
-                                                style: TextStyle(
-                                                    color:
-                                                        AppColors.blackColor2,
-                                                    fontSize: 16,
-                                                    fontWeight:
-                                                        FontWeight.bold),
-                                              ),
-                                            ],
-                                          ),
-                                        ),
-                                        GestureDetector(
-                                          onTap: () {},
-                                          child: Column(
-                                            children: [
-                                              Container(
-                                                  margin: EdgeInsets.only(
-                                                      bottom: 5),
-                                                  width: 70,
-                                                  height: 70,
-                                                  padding:
-                                                      const EdgeInsets.all(13),
-                                                  decoration: BoxDecoration(
-                                                      color: AppColors.gry3,
-                                                      boxShadow: [
-                                                        BoxShadow(
-                                                            color: primaryColor,
-                                                            offset:
-                                                                Offset(-2, -1))
-                                                      ],
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              8),
-                                                      border: Border.all(
-                                                          color: primaryColor,
-                                                          width: 1.5)),
-                                                  child: SvgPicture.asset(
-                                                      'assets/icons/add-location-svgrepo-com.svg',
-                                                      color: primaryColor)),
-                                              Text(
-                                                'advertisement'.tr,
-                                                style: TextStyle(
-                                                    color:
-                                                        AppColors.blackColor2,
-                                                    fontSize: 16,
-                                                    fontWeight:
-                                                        FontWeight.bold),
-                                              ),
-                                            ],
-                                          ),
-                                        ),
-                                        GestureDetector(
-                                          onTap: () {},
-                                          child: Column(
-                                            children: [
-                                              Container(
-                                                  margin: EdgeInsets.only(
-                                                      bottom: 5),
-                                                  width: 70,
-                                                  height: 70,
-                                                  padding:
-                                                      const EdgeInsets.all(13),
-                                                  decoration: BoxDecoration(
-                                                      color: AppColors.gry3,
-                                                      boxShadow: [
-                                                        BoxShadow(
-                                                            color: primaryColor,
-                                                            offset:
-                                                                Offset(-2, -1))
-                                                      ],
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              8),
-                                                      border: Border.all(
-                                                          color: primaryColor,
-                                                          width: 1.5)),
-                                                  child: SvgPicture.asset(
-                                                      'assets/icons/healthcare-health-svgrepo-com.svg',
-                                                      color: primaryColor)),
-                                              Text(
-                                                'Services'.tr,
-                                                style: TextStyle(
-                                                    color:
-                                                        AppColors.blackColor2,
-                                                    fontSize: 16,
-                                                    fontWeight:
-                                                        FontWeight.bold),
-                                              ),
-                                            ],
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ],
+                              Padding(
+                                padding:
+                                    const EdgeInsets.symmetric(horizontal: 10),
+                                child: Text(
+                                  "Services".tr,
+                                  style: TextStyle(
+                                      color: AppColors.blackColor3,
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.w500,
+                                      fontStyle: FontStyle.normal),
+                                ),
+                              ),
+                              Card(
+                                child: ListTile(
+                                  title: Text(
+                                      "Renting, selling, buying and registering real estate"
+                                          .tr,
+                                      style: TextStyle(
+                                        fontSize: 17,
+                                        fontWeight: FontWeight.w500,
+                                      ),
+                                      overflow: TextOverflow.clip,
+                                      maxLines: 2),
+                                  leading: CircleAvatar(
+                                    radius: 15,
+                                    backgroundColor: AppColors.green,
+                                    child: Icon(Icons.done),
+                                  ),
+                                ),
+                              ),
+                              Card(
+                                child: ListTile(
+                                  title: Text(
+                                      "Services for establishing real estate companies and documenting their trademarks"
+                                          .tr,
+                                      style: TextStyle(
+                                        fontSize: 17,
+                                        fontWeight: FontWeight.w500,
+                                      ),
+                                      overflow: TextOverflow.clip,
+                                      maxLines: 2),
+                                  leading: CircleAvatar(
+                                    radius: 15,
+                                    backgroundColor: AppColors.green,
+                                    child: Icon(Icons.done),
+                                  ),
+                                ),
+                              ),
+                              Card(
+                                child: ListTile(
+                                  title: Text(
+                                      "Real Estate Investment and Marketing Services Management"
+                                          .tr,
+                                      style: TextStyle(
+                                        fontSize: 17,
+                                        fontWeight: FontWeight.w500,
+                                      ),
+                                      overflow: TextOverflow.clip,
+                                      maxLines: 2),
+                                  leading: CircleAvatar(
+                                    radius: 15,
+                                    backgroundColor: AppColors.green,
+                                    child: Icon(Icons.done),
+                                  ),
                                 ),
                               ),
                               SizedBox(
-                                height: 8,
+                                height: 2,
                               ),
                               Container(
                                 padding: EdgeInsets.all(6),
@@ -468,7 +308,7 @@ class _DashBoardState extends State<DashBoard> {
                                           child: CircleAvatar(
                                               backgroundColor:
                                                   AppColors.whiteColor,
-                                              radius: 28,
+                                              radius: 25,
                                               child: SvgPicture.asset(
                                                   'assets/icons/contactus1.svg',
                                                   color: primaryColor)),
@@ -480,8 +320,8 @@ class _DashBoardState extends State<DashBoard> {
                                           'Contact Us'.tr,
                                           style: TextStyle(
                                               color: AppColors.whiteColor,
-                                              fontSize: 16,
-                                              fontWeight: FontWeight.bold),
+                                              fontSize: 15,
+                                              fontWeight: FontWeight.w500),
                                         ),
                                       ],
                                     ),
@@ -507,10 +347,10 @@ class _DashBoardState extends State<DashBoard> {
                                           child: CircleAvatar(
                                               backgroundColor:
                                                   AppColors.whiteColor,
-                                              radius: 28,
+                                              radius: 25,
                                               child: SvgPicture.asset(
                                                 'assets/icons/translation.svg',
-                                                height: 40,
+                                                height: 35,
                                                 // color: primaryColor
                                               )),
                                         ),
@@ -524,17 +364,17 @@ class _DashBoardState extends State<DashBoard> {
                                                 'العربية',
                                                 style: TextStyle(
                                                     color: AppColors.whiteColor,
-                                                    fontSize: 16,
+                                                    fontSize: 15,
                                                     fontWeight:
-                                                        FontWeight.bold),
+                                                        FontWeight.w500),
                                               )
                                             : Text(
                                                 'English',
                                                 style: TextStyle(
                                                     color: AppColors.whiteColor,
-                                                    fontSize: 16,
+                                                    fontSize: 15,
                                                     fontWeight:
-                                                        FontWeight.bold),
+                                                        FontWeight.w500),
                                               )
                                       ],
                                     ),
@@ -580,7 +420,7 @@ class _DashBoardState extends State<DashBoard> {
       backgroundColor: Colors.white,
       title: Text(
         title!,
-        style: TextStyle(color: Colors.black),
+        style: TextStyle(color: Colors.black, fontSize: 18),
       ),
       leading: GestureDetector(
         onTap: () => _drawerKey.currentState!.openDrawer(),
@@ -600,10 +440,10 @@ class _DashBoardState extends State<DashBoard> {
               ),
             )),
       ),
-      actions: [
-        locationIcon(context),
-        notificationIcon(context),
-      ],
+      // actions: [
+      //   locationIcon(context),
+      //   notificationIcon(context),
+      // ],
       systemOverlayStyle: SystemUiOverlayStyle.dark,
     );
   }

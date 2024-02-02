@@ -80,14 +80,13 @@ class _FiltersState extends State<Filters> {
                     bedRoomsSelected[i] = true;
                   });
                 }
-
               },
               child: Text(
                 'Reset',
                 style: TextStyle(
                     color: primaryColor,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 16),
+                    fontWeight: FontWeight.w500,
+                    fontSize: 15),
               ),
             )),
             SizedBox(
@@ -168,11 +167,9 @@ class _FiltersState extends State<Filters> {
               ),
             ),
             Divider(),
-
             SizedBox(height: 30),
             /*.............Residential, Commercial, Industrial Buttons*/
             _rowOfButtons(),
-
             Container(
               margin: EdgeInsets.only(top: 10),
               child: propertyViews[selectedView!],
@@ -187,21 +184,21 @@ class _FiltersState extends State<Filters> {
                     children: [
                       Text(
                         'PRICE RANGE',
-                        style: TextStyle(fontWeight: FontWeight.bold),
+                        style: TextStyle(fontWeight: FontWeight.w500),
                       ),
                       Spacer(),
                       Text(
                         '\$',
-                        style: TextStyle(fontWeight: FontWeight.bold),
+                        style: TextStyle(fontWeight: FontWeight.w500),
                       ),
                       Text(values.start.truncateToDouble().toString(),
-                          style: TextStyle(fontWeight: FontWeight.bold)),
+                          style: TextStyle(fontWeight: FontWeight.w500)),
                       Text(
                         '    -   \$',
-                        style: TextStyle(fontWeight: FontWeight.bold),
+                        style: TextStyle(fontWeight: FontWeight.w500),
                       ),
                       Text(values.end.truncateToDouble().toString(),
-                          style: TextStyle(fontWeight: FontWeight.bold)),
+                          style: TextStyle(fontWeight: FontWeight.w500)),
                       SizedBox(
                         width: 23,
                       )
@@ -226,7 +223,7 @@ class _FiltersState extends State<Filters> {
                 ],
               ),
             ),
-           /* ............................Bedrooms.......................*/
+            /* ............................Bedrooms.......................*/
             Container(
               height: MediaQuery.of(context).size.height * 0.15,
               width: double.infinity,
@@ -373,7 +370,7 @@ class _FiltersState extends State<Filters> {
               ),
             ),
 
-           /* ...........................Bathrooms..............*/
+            /* ...........................Bathrooms..............*/
             Container(
               height: MediaQuery.of(context).size.height * 0.15,
               width: double.infinity,
@@ -533,7 +530,7 @@ class _FiltersState extends State<Filters> {
                     child: Text(
                   'Show Properties',
                   style: TextStyle(
-                      fontWeight: FontWeight.bold, color: Colors.white),
+                      fontWeight: FontWeight.w500, color: Colors.white),
                 )),
               ),
             )
@@ -577,7 +574,7 @@ class _FiltersState extends State<Filters> {
                   child: Text(
                     'Residential',
                     style: TextStyle(
-                        fontWeight: FontWeight.bold,
+                        fontWeight: FontWeight.w500,
                         color: selectedColorForPropertyType1 == true
                             ? Colors.white
                             : Colors.black),
@@ -618,7 +615,7 @@ class _FiltersState extends State<Filters> {
                   child: Text(
                     'Commerical',
                     style: TextStyle(
-                        fontWeight: FontWeight.bold,
+                        fontWeight: FontWeight.w500,
                         color: selectedColorForPropertyType2 == true
                             ? Colors.white
                             : Colors.black),
@@ -659,7 +656,7 @@ class _FiltersState extends State<Filters> {
                 child: Center(
                   child: Text('Industrial',
                       style: TextStyle(
-                        fontWeight: FontWeight.bold,
+                        fontWeight: FontWeight.w500,
                         color: selectedColorForPropertyType3 == true
                             ? Colors.white
                             : Colors.black,

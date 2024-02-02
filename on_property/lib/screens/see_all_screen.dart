@@ -1,20 +1,18 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:on_property/components/search_properties_components.dart';
-
-
 
 class SeeAllScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        appBar: AppBar(elevation: 1,
+        appBar: AppBar(
+          elevation: 1,
           backgroundColor: Colors.white,
           title: Text(
             'Properties',
-            style: TextStyle(color: Colors.black, fontSize: 17),
+            style: TextStyle(color: Colors.black, fontSize: 16),
           ),
           leading: GestureDetector(
               onTap: () {
@@ -29,8 +27,11 @@ class SeeAllScreen extends StatelessWidget {
               Icons.more_vert,
               color: Colors.black,
             ),
-            SizedBox(width: 10,)
-          ], systemOverlayStyle: SystemUiOverlayStyle.dark,
+            SizedBox(
+              width: 10,
+            )
+          ],
+          systemOverlayStyle: SystemUiOverlayStyle.dark,
         ),
         body: listOfProperties(),
       ),

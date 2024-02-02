@@ -1,19 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:on_property/components/horizontal_line.dart';
+import 'package:on_property/control/otp_controller.dart';
+import 'package:on_property/core/constans/appColors.dart';
 
 import 'package:on_property/utils/constants.dart';
 import 'package:on_property/widgets/custom_button.dart';
 import 'package:on_property/widgets/opt_form.dart';
 
-class OtpScreen extends StatefulWidget {
-  @override
-  _OtpScreenState createState() => _OtpScreenState();
-}
-
-class _OtpScreenState extends State<OtpScreen> {
+class OtpScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    OtpControllerImp contrller = Get.put(OtpControllerImp());
     return SafeArea(
       child: Scaffold(
         body: Padding(
@@ -45,7 +43,7 @@ class _OtpScreenState extends State<OtpScreen> {
                 ),
                 CustomButton(
                   callback: () {
-                    Navigator.pushNamed(context, 'Dashboard');
+                    contrller.VerfCode();
                   },
                   title: 'Continue'.tr,
                 ),
@@ -57,7 +55,16 @@ class _OtpScreenState extends State<OtpScreen> {
                   'Resend'.tr,
                   style: TextStyle(
                       fontWeight: FontWeight.bold, color: Colors.grey),
-                ))
+                )),
+                SizedBox(
+                  height: 20,
+                ),
+                Center(
+                    child: Text(
+                  contrller.myServices.sharedPreferences.get("otp").toString(),
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold, color: AppColors.green),
+                )),
               ],
             ),
           ),

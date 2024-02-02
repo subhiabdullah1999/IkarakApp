@@ -1,8 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:get/get.dart';
+import 'package:on_property/control/home_controller.dart';
+import 'package:on_property/control/profile_controller.dart';
+import 'package:on_property/core/constans/appColors.dart';
+import 'package:on_property/core/constans/applinks.dart';
+import 'package:on_property/screens/house_details.dart';
 import 'package:on_property/utils/colorscheme.dart';
 import 'package:on_property/utils/constants.dart';
 import 'package:on_property/widgets/heart_container.dart';
+
 List images = [
   'assets/images/house.jpg',
   'assets/images/carousal1.jpg',
@@ -108,7 +115,6 @@ Container firstComponent(BuildContext context) {
 }
 
 Container listForSecondComponent() {
-
   return Container(
     height: 250,
     child: ListView.builder(
@@ -121,138 +127,142 @@ Container listForSecondComponent() {
                   width: 10,
                 )
               : Card(
-            margin: EdgeInsets.only(right: 8.0),
-            shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.all(Radius.circular(10.0))),
-            child: Container(
-              height: 230,
-              width: 155,
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(10.0),
-              ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  GestureDetector(
-                    onTap: (){
-                      Navigator.pushNamed(context, 'HouseDetails');
-                    },
-                    child: Container(
-                      height: 130,
-                      decoration: BoxDecoration(
-                          image: DecorationImage(
-                              fit: BoxFit.fill, image: AssetImage(images[index])),
-                          borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(10.0),
-                            topRight: Radius.circular(10.0),
-                          )),
+                  margin: EdgeInsets.only(right: 8.0),
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(10.0))),
+                  child: Container(
+                    height: 230,
+                    width: 155,
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(10.0),
                     ),
-                  ),
-                  Container(
-                    padding: EdgeInsets.all(8.0),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(
-                          'HOME FOR SALE',
-                          style: kh4,
-                        ),
-                        SizedBox(
-                          height: 2,
-                        ),
-                        Text(
-                          addresses[index],
-                          style: TextStyle(color: Colors.grey, fontSize: 10),
-                          maxLines: 1,
-                          overflow: TextOverflow.ellipsis,
-                        ),
-                        SizedBox(
-                          height: 2,
-                        ),
-                        IntrinsicHeight(
-                          child: Row(
-                            children: [
-                              Text(
-                                '3 ',
-                                style: TextStyle(
-                                    fontWeight: FontWeight.bold, fontSize: 12),
-                              ),
-                              Text(
-                                'bds ',
-                                style: TextStyle(fontSize: 12),
-                              ),
-                              VerticalDivider(
-                                width: 1,
-                                color: Colors.grey,
-                              ),
-
-                              Text(
-                                ' 5 ',
-                                style: TextStyle(
-                                    fontWeight: FontWeight.bold, fontSize: 12),
-                              ),
-                              Text(
-                                'baths ',
-                                style: TextStyle(fontSize: 12),
-                              ),
-                              VerticalDivider(
-                                width: 1,
-                                color: Colors.grey,
-                              ),
-
-                              Text(
-                                ' 1750 ',
-                                style: TextStyle(
-                                    fontWeight: FontWeight.bold, fontSize: 12),
-                              ),
-                              Text(
-                                'sqft',
-                                style: TextStyle(fontSize: 12),
-                              ),
-                            ],
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.pushNamed(context, 'HouseDetails');
+                          },
+                          child: Container(
+                            height: 130,
+                            decoration: BoxDecoration(
+                                image: DecorationImage(
+                                    fit: BoxFit.fill,
+                                    image: AssetImage(images[index])),
+                                borderRadius: BorderRadius.only(
+                                  topLeft: Radius.circular(10.0),
+                                  topRight: Radius.circular(10.0),
+                                )),
                           ),
                         ),
-                        Row(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                SizedBox(
-                                  height: 7,
+                        Container(
+                          padding: EdgeInsets.all(8.0),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                'HOME FOR SALE',
+                                style: kh4,
+                              ),
+                              SizedBox(
+                                height: 2,
+                              ),
+                              Text(
+                                addresses[index],
+                                style:
+                                    TextStyle(color: Colors.grey, fontSize: 10),
+                                maxLines: 1,
+                                overflow: TextOverflow.ellipsis,
+                              ),
+                              SizedBox(
+                                height: 2,
+                              ),
+                              IntrinsicHeight(
+                                child: Row(
+                                  children: [
+                                    Text(
+                                      '3 ',
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.w500,
+                                          fontSize: 12),
+                                    ),
+                                    Text(
+                                      'bds ',
+                                      style: TextStyle(fontSize: 12),
+                                    ),
+                                    VerticalDivider(
+                                      width: 1,
+                                      color: Colors.grey,
+                                    ),
+                                    Text(
+                                      ' 5 ',
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.w500,
+                                          fontSize: 12),
+                                    ),
+                                    Text(
+                                      'baths ',
+                                      style: TextStyle(fontSize: 12),
+                                    ),
+                                    VerticalDivider(
+                                      width: 1,
+                                      color: Colors.grey,
+                                    ),
+                                    Text(
+                                      ' 1750 ',
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.w500,
+                                          fontSize: 12),
+                                    ),
+                                    Text(
+                                      'sqft',
+                                      style: TextStyle(fontSize: 12),
+                                    ),
+                                  ],
                                 ),
-                                Text(
-                                  'Starting Price',
-                                  style: TextStyle(
-                                    fontSize: 12,
+                              ),
+                              Row(
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      SizedBox(
+                                        height: 7,
+                                      ),
+                                      Text(
+                                        'Starting Price',
+                                        style: TextStyle(
+                                          fontSize: 12,
+                                        ),
+                                      ),
+                                      Text(
+                                        prices[index],
+                                        style: TextStyle(
+                                            color: primaryColor,
+                                            fontWeight: FontWeight.w500,
+                                            fontSize: 11),
+                                      )
+                                    ],
                                   ),
-                                ),
-                                Text(
-                                  prices[index],
-                                  style: TextStyle(
-                                      color: primaryColor,
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 11),
-                                )
-                              ],
-                            ),
-                            Spacer(),
-                            HeartContainer(index)
-                          ],
+                                  Spacer(),
+                                  HeartContainer(index)
+                                ],
+                              )
+                            ],
+                          ),
                         )
                       ],
                     ),
-                  )
-                ],
-              ),
-            ),
-          );
+                  ),
+                );
         }),
   );
 }
 
-Card secondComponent(int index,BuildContext context) {
+Card secondComponent(int index, BuildContext context) {
   return Card(
     margin: EdgeInsets.only(right: 8.0),
     shape: RoundedRectangleBorder(
@@ -268,7 +278,7 @@ Card secondComponent(int index,BuildContext context) {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           GestureDetector(
-            onTap: (){
+            onTap: () {
               Navigator.pushNamed(context, 'HouseDetails');
             },
             child: Container(
@@ -319,7 +329,6 @@ Card secondComponent(int index,BuildContext context) {
                         width: 1,
                         color: Colors.grey,
                       ),
-
                       Text(
                         ' 5 ',
                         style: TextStyle(
@@ -333,7 +342,6 @@ Card secondComponent(int index,BuildContext context) {
                         width: 1,
                         color: Colors.grey,
                       ),
-
                       Text(
                         ' 1750 ',
                         style: TextStyle(
@@ -365,7 +373,7 @@ Card secondComponent(int index,BuildContext context) {
                           prices[index],
                           style: TextStyle(
                               color: primaryColor,
-                              fontWeight: FontWeight.bold,
+                              fontWeight: FontWeight.w500,
                               fontSize: 11),
                         )
                       ],
@@ -394,118 +402,135 @@ Card secondComponent(int index,BuildContext context) {
 }
 
 Card thirdComponent(int index) {
+  Get.put(ProfileControllerImp());
   return Card(
-    margin: EdgeInsets.only(bottom: 10.0, left: 8.0, right: 8.0),
-    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
-    child: Container(
-      height: 120,
-      decoration: BoxDecoration(borderRadius: BorderRadius.circular(20.0)),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          Expanded(
-            flex: 2,
-            child: Container(
-              margin: EdgeInsets.only(
-                  right: 18.0, top: 8.0, left: 8.0, bottom: 8.0),
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10.0),
-                  image: DecorationImage(
-                      fit: BoxFit.fill, image: AssetImage(houseImg[index]))),
-            ),
+      margin: EdgeInsets.only(bottom: 10.0, left: 8.0, right: 8.0),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
+      child: GetBuilder<ProfileControllerImp>(
+        builder: (controller) => Container(
+          height: 120,
+          decoration: BoxDecoration(borderRadius: BorderRadius.circular(20.0)),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Expanded(
+                flex: 2,
+                child: Container(
+                  margin: EdgeInsets.only(
+                      right: 18.0, top: 8.0, left: 8.0, bottom: 8.0),
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10.0),
+                      image: DecorationImage(
+                          fit: BoxFit.fill,
+                          image: AssetImage(houseImg[index]))),
+                ),
+              ),
+              Expanded(
+                  flex: 3,
+                  child: Container(
+                    padding: EdgeInsets.only(
+                      top: 8.0,
+                      right: 8.0,
+                    ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        SizedBox(
+                          height: 5,
+                        ),
+                        Text(
+                          prices[index],
+                          style: kh2,
+                        ),
+                        SizedBox(
+                          height: 2,
+                        ),
+                        Text(
+                          addresses[index],
+                          style: TextStyle(color: Colors.grey, fontSize: 11),
+                        ),
+                        SizedBox(
+                          height: 5,
+                        ),
+                        IntrinsicHeight(
+                          child: Row(
+                            children: [
+                              Text(
+                                '3 ',
+                                style: TextStyle(fontWeight: FontWeight.w500),
+                              ),
+                              Text(
+                                'bds ',
+                              ),
+                              VerticalDivider(
+                                width: 1,
+                                color: Colors.grey,
+                              ),
+                              Text(
+                                ' 5 ',
+                                style: TextStyle(fontWeight: FontWeight.w500),
+                              ),
+                              Text(
+                                'baths ',
+                              ),
+                              VerticalDivider(
+                                width: 1,
+                                color: Colors.grey,
+                              ),
+                              Text(
+                                ' 1,767 ',
+                                style: TextStyle(fontWeight: FontWeight.w500),
+                              ),
+                              Text(
+                                'sqft',
+                              ),
+                            ],
+                          ),
+                        ),
+                        SizedBox(
+                          height: 3,
+                        ),
+                        Spacer(),
+                        Padding(
+                          padding: const EdgeInsets.only(bottom: 8.0),
+                          child: Row(
+                            children: [
+                              CircleAvatar(
+                                maxRadius: 5,
+                                backgroundColor: Colors.green,
+                              ),
+                              Text(
+                                ' House for Sale',
+                                style: TextStyle(fontSize: 12),
+                              ),
+                              Spacer(),
+                              GestureDetector(
+                                onTap: () {
+                                  controller.changeValueFavorit(index);
+                                },
+                                child: Container(
+                                  child: controller.listFavor[index] == true
+                                      ? Icon(
+                                          Icons.favorite,
+                                          color: primaryColor,
+                                          size: 22,
+                                        )
+                                      : Icon(
+                                          Icons.favorite_border,
+                                          size: 22,
+                                        ),
+                                ),
+                              )
+                            ],
+                          ),
+                        )
+                      ],
+                    ),
+                  )),
+            ],
           ),
-          Expanded(
-              flex: 3,
-              child: Container(
-                padding: EdgeInsets.only(
-                  top: 8.0,
-                  right: 8.0,
-                ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    SizedBox(
-                      height: 5,
-                    ),
-                    Text(
-                      prices[index],
-                      style: kh2,
-                    ),
-                    SizedBox(
-                      height: 2,
-                    ),
-                    Text(
-                      addresses[index],
-                      style: TextStyle(color: Colors.grey, fontSize: 11),
-                    ),
-                    SizedBox(
-                      height: 5,
-                    ),
-                    IntrinsicHeight(
-                      child: Row(
-                        children: [
-                          Text(
-                            '3 ',
-                            style: TextStyle(fontWeight: FontWeight.bold),
-                          ),
-                          Text(
-                            'bds ',
-                          ),
-                          VerticalDivider(
-                            width: 1,
-                            color: Colors.grey,
-                          ),
-
-                          Text(
-                            ' 5 ',
-                            style: TextStyle(fontWeight: FontWeight.bold),
-                          ),
-                          Text(
-                            'baths ',
-                          ),
-                          VerticalDivider(
-                            width: 1,
-                            color: Colors.grey,
-                          ),
-
-                          Text(
-                            ' 1,767 ',
-                            style: TextStyle(fontWeight: FontWeight.bold),
-                          ),
-                          Text(
-                            'sqft',
-                          ),
-                        ],
-                      ),
-                    ),
-                    SizedBox(
-                      height: 3,
-                    ),
-                    Spacer(),
-                    Padding(
-                      padding: const EdgeInsets.only(bottom: 8.0),
-                      child: Row(
-                        children: [
-                          CircleAvatar(
-                            maxRadius: 5,
-                            backgroundColor: Colors.green,
-                          ),
-                          Text(
-                            ' House for Sale',
-                            style: TextStyle(fontSize: 12),
-                          ),
-                          Spacer(),
-                          HeartContainer(index)
-                        ],
-                      ),
-                    )
-                  ],
-                ),
-              )),
-        ],
-      ),
-    ),
-  );
+        ),
+      ));
 }
 
 ListView listForThirdComponent() {
@@ -523,4 +548,201 @@ ListView listForThirdComponent() {
       });
 }
 
+class ListForThirdComponent extends StatelessWidget {
+  const ListForThirdComponent({
+    super.key,
+  });
 
+  @override
+  Widget build(BuildContext context) {
+    Get.put(HomeControllerImp());
+    return GetBuilder<HomeControllerImp>(
+        builder: (controller) => ListView.builder(
+            shrinkWrap: true,
+            scrollDirection: Axis.vertical,
+            itemCount: controller.data.length,
+            physics: NeverScrollableScrollPhysics(),
+            itemBuilder: (context, index) {
+              return GestureDetector(
+                  onTap: () {
+                    controller.ProdId = controller.data[index].id!.toInt();
+                    Get.to(() => HouseDetails(),
+                        arguments: {"ProdId": controller.ProdId});
+                  },
+                  child: Card(
+                    margin:
+                        EdgeInsets.only(bottom: 10.0, left: 8.0, right: 8.0),
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(20.0)),
+                    child: Container(
+                      height: 120,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20.0)),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Container(
+                            width: 85,
+                            margin: EdgeInsets.only(
+                                right: 18.0, top: 8.0, left: 8.0, bottom: 8.0),
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(10.0),
+                                image: DecorationImage(
+                                    fit: BoxFit.fill,
+                                    image: NetworkImage(
+                                        AppLinks.serverNameImgeThumbnail +
+                                            controller.data[index].thumbnail
+                                                .toString()))),
+                          ),
+                          Expanded(
+                              flex: 3,
+                              child: Container(
+                                padding: EdgeInsets.only(
+                                  top: 8.0,
+                                  right: 8.0,
+                                ),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    SizedBox(
+                                      height: 5,
+                                    ),
+
+                                    Container(
+                                      child: Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceBetween,
+                                        children: [
+                                          Text(
+                                            controller.data[index].title
+                                                .toString(),
+                                            style: kh2.copyWith(
+                                                fontSize: 18,
+                                                color: AppColors.green,
+                                                fontWeight: FontWeight.w500),
+                                          ),
+                                          Text(
+                                            "\$ " +
+                                                controller.data[index].price
+                                                    .toString(),
+                                            style: kh2,
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      height: 8,
+                                    ),
+                                    controller.data[index].country!.name != null
+                                        ? Text(
+                                            controller.data[index].country!.name
+                                                    .toString() +
+                                                " , ",
+                                            //+ controller
+                                            //     .data[index].city!.name
+                                            //     .toString(),
+                                            style: TextStyle(
+                                                color: Colors.grey,
+                                                fontSize: 14),
+                                          )
+                                        : Text(""),
+                                    SizedBox(
+                                      height: 5,
+                                    ),
+                                    // IntrinsicHeight(
+                                    //   child: Row(
+                                    //     children: [
+                                    //       Text(
+                                    //         controller.data[index]
+                                    //             .propertyDetails!.bed
+                                    //             .toString(),
+                                    //         style: TextStyle(
+                                    //             fontWeight: FontWeight.bold),
+                                    //       ),
+                                    //       Text(
+                                    //         ' beds'.tr,
+                                    //       ),
+                                    //       VerticalDivider(
+                                    //         width: 10,
+                                    //         color: Colors.grey,
+                                    //       ),
+                                    //       Text(
+                                    //         controller.data[index]
+                                    //             .propertyDetails!.bed
+                                    //             .toString(),
+                                    //         style: TextStyle(
+                                    //             fontWeight: FontWeight.bold),
+                                    //       ),
+                                    //       Text(
+                                    //         ' baths'.tr,
+                                    //       ),
+                                    //       VerticalDivider(
+                                    //         width: 10,
+                                    //         color: Colors.green,
+                                    //       ),
+                                    //       Text(
+                                    //         controller.data[index]
+                                    //             .propertyDetails!.floor
+                                    //             .toString(),
+                                    //         style: TextStyle(
+                                    //             fontWeight: FontWeight.bold),
+                                    //       ),
+                                    //       // Text(
+                                    //       //   'floor'.tr,
+                                    //       // ),
+                                    //     ],
+                                    //   ),
+                                    // ),
+                                    // SizedBox(
+                                    //   height: 3,
+                                    // ),
+                                    Spacer(),
+                                    Padding(
+                                      padding:
+                                          const EdgeInsets.only(bottom: 8.0),
+                                      child: Row(
+                                        children: [
+                                          CircleAvatar(
+                                            maxRadius: 5,
+                                            backgroundColor: Colors.green,
+                                          ),
+                                          Text(
+                                            " property for ".tr +
+                                                controller.data[index].type
+                                                    .toString(),
+                                            style: TextStyle(fontSize: 12),
+                                          ),
+                                          Spacer(),
+                                          GestureDetector(
+                                            onTap: () {
+                                              controller
+                                                  .changeValueFavorit(index);
+                                            },
+                                            child: Container(
+                                              child:
+                                                  controller.listFavor[index] ==
+                                                          true
+                                                      ? Icon(
+                                                          Icons.favorite,
+                                                          color: primaryColor,
+                                                          size: 22,
+                                                        )
+                                                      : Icon(
+                                                          Icons.favorite_border,
+                                                          size: 22,
+                                                        ),
+                                            ),
+                                          )
+                                        ],
+                                      ),
+                                    )
+                                  ],
+                                ),
+                              )),
+                        ],
+                      ),
+                    ),
+                  ));
+            }));
+  }
+}

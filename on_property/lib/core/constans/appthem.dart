@@ -5,13 +5,13 @@ ThemeData themArabic = ThemeData(
     primarySwatch: Colors.blue,
     textTheme: const TextTheme(
       titleLarge: TextStyle(
-          fontSize: 25,
+          fontSize: 18,
           fontFamily: "Cairo",
           color: AppColors.blackColor,
-          fontWeight: FontWeight.bold),
+          fontWeight: FontWeight.w400),
       bodyMedium: TextStyle(
         color: AppColors.gry,
-        fontSize: 20,
+        fontSize: 15,
         height: 1.3,
         fontFamily: "Cairo",
       ),
@@ -21,13 +21,13 @@ ThemeData themEnglish = ThemeData(
     primarySwatch: Colors.blue,
     textTheme: const TextTheme(
       titleLarge: TextStyle(
-          fontSize: 25,
+          fontSize: 18,
           fontFamily: "playFireDisplay",
           color: AppColors.blackColor,
-          fontWeight: FontWeight.bold),
+          fontWeight: FontWeight.w400),
       bodyMedium: TextStyle(
         color: AppColors.gry,
-        fontSize: 20,
+        fontSize: 15,
         height: 1.3,
         fontFamily: "Cairo",
       ),

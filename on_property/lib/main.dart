@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
+import 'package:on_property/binding.dart';
 import 'package:on_property/core/localization/localizationController.dart';
 import 'package:on_property/core/localization/translation.dart';
 import 'package:on_property/core/services/services.dart';
@@ -35,6 +36,7 @@ class MyApp extends StatelessWidget {
         theme: controller.appTheme,
         onGenerateRoute: RouteGenerator.generateRoute,
         initialRoute: '/',
+        initialBinding: Binding(),
       );
     });
   }

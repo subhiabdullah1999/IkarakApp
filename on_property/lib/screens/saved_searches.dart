@@ -77,7 +77,7 @@ class _SavedSearchesState extends State<SavedSearches> {
                       Text(
                         savedSearchesData[index].title!,
                         style: TextStyle(
-                            fontSize: 16, fontWeight: FontWeight.bold),
+                            fontSize: 15, fontWeight: FontWeight.w500),
                       ),
                       SizedBox(
                         height: 10,
@@ -89,7 +89,7 @@ class _SavedSearchesState extends State<SavedSearches> {
                               Text('PURPOSE: ', style: TextStyle(fontSize: 13)),
                               Text(savedSearchesData[index].purpose!,
                                   style: TextStyle(
-                                      fontWeight: FontWeight.bold,
+                                      fontWeight: FontWeight.w500,
                                       fontSize: 13))
                             ],
                           ),
@@ -105,7 +105,7 @@ class _SavedSearchesState extends State<SavedSearches> {
                               Text(
                                 savedSearchesData[index].propertyType!,
                                 style: TextStyle(
-                                    fontWeight: FontWeight.bold, fontSize: 13),
+                                    fontWeight: FontWeight.w500, fontSize: 13),
                               )
                             ],
                           ),
@@ -122,7 +122,7 @@ class _SavedSearchesState extends State<SavedSearches> {
                                   style: TextStyle(fontSize: 13)),
                               Text(savedSearchesData[index].location!,
                                   style: TextStyle(
-                                      fontWeight: FontWeight.bold,
+                                      fontWeight: FontWeight.w500,
                                       fontSize: 13))
                             ],
                           ),

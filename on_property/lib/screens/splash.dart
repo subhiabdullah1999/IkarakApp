@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:on_property/core/constans/appColors.dart';
 import 'package:on_property/screens/onboarding/onboarding_screen1.dart';
 
 import 'package:on_property/utils/colorscheme.dart';
@@ -31,12 +32,15 @@ class _SplashState extends State<Splash> {
   onDoneLoading() async {
     SharedPreferences _prefs = await SharedPreferences.getInstance();
     var status = _prefs.getBool('isLoggedIn') ?? false;
+    var statusVisit = _prefs.getBool('visit') ?? false;
+    var showIntro = _prefs.getBool('showIntro') ?? false;
+
     print(status);
     // print(PreferencesKeys.token.isNotEmpty);
     print("----------------2--------");
 
     if (this.mounted) {
-      if (status) {
+      if (status || statusVisit || showIntro) {
         print("----------------3--------");
         // Navigator.of(context).pushReplacement(
         //   MaterialPageRoute(
@@ -62,13 +66,15 @@ class _SplashState extends State<Splash> {
         statusBarIconBrightness: Brightness.light));
 
     return Scaffold(
+      // backgroundColor: AppColors.green,
       body: Container(
         height: MediaQuery.of(context).size.height,
         width: MediaQuery.of(context).size.width,
         decoration: BoxDecoration(
-          color: primaryColor.withOpacity(0.4),
+          color: AppColors.green,
           image: DecorationImage(
-              fit: BoxFit.fill, image: AssetImage('assets/images/ik.png')),
+              // fit: BoxFit.fill,
+              image: AssetImage('assets/images/icIkarak.PNG')),
         ),
         // child: Center(
         //   child: Image.asset(

@@ -8,7 +8,7 @@ copyright() {
         children: [
           Text(
             'CopyRight ',
-            style: TextStyle(fontWeight: FontWeight.bold),
+            style: TextStyle(fontWeight: FontWeight.w500),
           ),
           Container(
             height: 11,
@@ -27,7 +27,7 @@ copyright() {
           ),
           Text(
             ' 2023 Ikarak',
-            style: TextStyle(fontWeight: FontWeight.bold),
+            style: TextStyle(fontWeight: FontWeight.w500),
           ),
         ],
       ),
