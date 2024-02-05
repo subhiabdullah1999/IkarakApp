@@ -1,7 +1,9 @@
 import 'dart:convert';
 
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:on_property/core/class/status_request.dart';
+import 'package:on_property/core/constans/appColors.dart';
 import 'package:on_property/core/constans/applinks.dart';
 import 'package:on_property/core/functions/checkinternet.dart';
 import 'package:on_property/core/services/services.dart';
@@ -13,6 +15,18 @@ abstract class ProfileController extends GetxController {}
 
 class ProfileControllerImp extends ProfileController {
   MyServices myServices = Get.find();
+
+  List<Tab> tabs = [
+    Tab(
+      text: "Acceptable properties".tr,
+    ),
+    Tab(
+      text: "Properties are under review".tr,
+    ),
+    Tab(
+      text: "Rejected properties".tr,
+    )
+  ];
 
   List<ProfileModel> data = [];
   List<PropUserIdModel> dataPropUserId = [];
@@ -130,6 +144,32 @@ class ProfileControllerImp extends ProfileController {
   changeValueFavorit(int i) {
     listFavor[i] = !listFavor[i];
     update();
+  }
+
+  popDeletCard() {
+    Get.defaultDialog(
+      titlePadding: const EdgeInsets.all(10),
+      contentPadding: const EdgeInsets.symmetric(vertical: 12, horizontal: 12),
+      title: "waring".tr,
+      backgroundColor: AppColors.whiteColor,
+      content: Text("هل تريد حذف العقار".tr),
+      confirm: Padding(
+        padding: const EdgeInsets.only(left: 20, right: 20),
+        child: ElevatedButton(
+            onPressed: () {
+              Get.back(canPop: false);
+            },
+            child: Text("delete".tr)),
+      ),
+      cancel: Padding(
+        padding: const EdgeInsets.only(left: 20, right: 20),
+        child: ElevatedButton(
+            onPressed: () {
+              Get.back(canPop: false);
+            },
+            child: Text("back".tr)),
+      ),
+    );
   }
 
   @override

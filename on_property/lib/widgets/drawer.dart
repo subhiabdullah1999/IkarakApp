@@ -123,48 +123,48 @@ class _CustomDrawerState extends State<CustomDrawer> {
                       Divider(
                         color: dividerColor,
                       ),
-                      drawerTile(
-                          title: 'Search Properties',
-                          svgIconLoc: 'assets/icons/search_property.svg',
-                          routeName: 'SearchProperty'),
-                      Divider(
-                        color: dividerColor,
-                      ),
-                      GestureDetector(
-                        onTap: () {
-                          Navigator.pushReplacement(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => DashBoard(
-                                      page: 1,
-                                    )),
-                          );
-                        },
-                        child: Container(
-                          height: 40,
-                          child: Row(
-                            children: [
-                              SizedBox(
-                                width: 10,
-                              ),
-                              SvgPicture.asset(
-                                'assets/icons/new_project.svg',
-                                color: dividerTextColor,
-                              ),
-                              SizedBox(
-                                width: 10,
-                              ),
-                              Text(
-                                'New Projects'.tr,
-                                style: TextStyle(color: dividerTextColor),
-                              )
-                            ],
-                          ),
-                        ),
-                      ),
-                      Divider(
-                        color: dividerColor,
-                      ),
+                      // drawerTile(
+                      //     title: 'Search Properties',
+                      //     svgIconLoc: 'assets/icons/search_property.svg',
+                      //     routeName: 'SearchProperty'),
+                      // Divider(
+                      //   color: dividerColor,
+                      // ),
+                      // GestureDetector(
+                      //   onTap: () {
+                      //     Navigator.pushReplacement(
+                      //       context,
+                      //       MaterialPageRoute(
+                      //           builder: (context) => DashBoard(
+                      //                 page: 1,
+                      //               )),
+                      //     );
+                      //   },
+                      //   child: Container(
+                      //     height: 40,
+                      //     child: Row(
+                      //       children: [
+                      //         SizedBox(
+                      //           width: 10,
+                      //         ),
+                      //         SvgPicture.asset(
+                      //           'assets/icons/new_project.svg',
+                      //           color: dividerTextColor,
+                      //         ),
+                      //         SizedBox(
+                      //           width: 10,
+                      //         ),
+                      //         Text(
+                      //           'New Projects'.tr,
+                      //           style: TextStyle(color: dividerTextColor),
+                      //         )
+                      //       ],
+                      //     ),
+                      //   ),
+                      // ),
+                      // Divider(
+                      //   color: dividerColor,
+                      // ),
                       drawerTile(
                           title: 'Settings',
                           svgIconLoc: 'assets/icons/setting.svg',
@@ -172,60 +172,60 @@ class _CustomDrawerState extends State<CustomDrawer> {
                       Divider(
                         color: dividerColor,
                       ),
-                      GestureDetector(
-                        onTap: () {
-                          Navigator.pushReplacement(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => DashBoard(page: 2)),
-                          );
-                        },
-                        child: Container(
-                          height: 40,
-                          child: Row(
-                            children: [
-                              SizedBox(
-                                width: 10,
-                              ),
-                              SvgPicture.asset(
-                                'assets/icons/favourite.svg',
-                                color: dividerTextColor,
-                              ),
-                              SizedBox(
-                                width: 10,
-                              ),
-                              Text(
-                                'Favourites'.tr,
-                                style: TextStyle(color: dividerTextColor),
-                              )
-                            ],
-                          ),
-                        ),
-                      ),
-                      Divider(
-                        color: dividerColor,
-                      ),
-                      drawerTile(
-                          title: 'Saved Searches',
-                          svgIconLoc: 'assets/icons/saved_searches.svg',
-                          routeName: 'SavedSearches'),
-                      Divider(
-                        color: dividerColor,
-                      ),
-                      drawerTile(
-                          title: 'Agents',
-                          svgIconLoc: 'assets/icons/agents.svg',
-                          routeName: 'Agents'),
-                      Divider(
-                        color: dividerColor,
-                      ),
-                      drawerTile(
-                          title: 'News and Blog',
-                          svgIconLoc: 'assets/icons/news_and_blog.svg',
-                          routeName: 'NewsAndBlog'),
-                      Divider(
-                        color: dividerColor,
-                      ),
+                      // GestureDetector(
+                      //   onTap: () {
+                      //     Navigator.pushReplacement(
+                      //       context,
+                      //       MaterialPageRoute(
+                      //           builder: (context) => DashBoard(page: 2)),
+                      //     );
+                      //   },
+                      //   child: Container(
+                      //     height: 40,
+                      //     child: Row(
+                      //       children: [
+                      //         SizedBox(
+                      //           width: 10,
+                      //         ),
+                      //         SvgPicture.asset(
+                      //           'assets/icons/favourite.svg',
+                      //           color: dividerTextColor,
+                      //         ),
+                      //         SizedBox(
+                      //           width: 10,
+                      //         ),
+                      //         Text(
+                      //           'Favourites'.tr,
+                      //           style: TextStyle(color: dividerTextColor),
+                      //         )
+                      //       ],
+                      //     ),
+                      //   ),
+                      // ),
+                      // Divider(
+                      //   color: dividerColor,
+                      // ),
+                      // drawerTile(
+                      //     title: 'Saved Searches',
+                      //     svgIconLoc: 'assets/icons/saved_searches.svg',
+                      //     routeName: 'SavedSearches'),
+                      // Divider(
+                      //   color: dividerColor,
+                      // ),
+                      // drawerTile(
+                      //     title: 'Agents',
+                      //     svgIconLoc: 'assets/icons/agents.svg',
+                      //     routeName: 'Agents'),
+                      // Divider(
+                      //   color: dividerColor,
+                      // ),
+                      // drawerTile(
+                      //     title: 'News and Blog',
+                      //     svgIconLoc: 'assets/icons/news_and_blog.svg',
+                      //     routeName: 'NewsAndBlog'),
+                      // Divider(
+                      //   color: dividerColor,
+                      // ),
                       drawerTile(
                           title: 'About Us',
                           svgIconLoc: 'assets/icons/about_us.svg',

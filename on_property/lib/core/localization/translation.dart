@@ -162,6 +162,8 @@ class MyTranslation extends Translations {
           "Acceptable properties": "العقارات المقبولة",
           "Properties are under review": "العقارات قيد المراجعة",
           "Rejected properties": "العقارات المرفوضة",
+          "delete": "حذف",
+          "back": "تراجع",
         },
         "en": {
           "Search Advance Filter": "Search Advance Filter",
@@ -326,6 +328,8 @@ class MyTranslation extends Translations {
           "Acceptable properties": "Acceptable properties",
           "Properties are under review": "Properties are under review",
           "Rejected properties": "Rejected properties",
+          "delete": "delete",
+          "back": "back",
         }
       };
 }
