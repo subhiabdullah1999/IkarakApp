@@ -77,7 +77,7 @@ class _SavedSearchesState extends State<SavedSearches> {
                       Text(
                         savedSearchesData[index].title!,
                         style: TextStyle(
-                            fontSize: 15, fontWeight: FontWeight.w500),
+                            fontSize: 13, fontWeight: FontWeight.w500),
                       ),
                       SizedBox(
                         height: 10,
@@ -86,11 +86,11 @@ class _SavedSearchesState extends State<SavedSearches> {
                         children: [
                           Row(
                             children: [
-                              Text('PURPOSE: ', style: TextStyle(fontSize: 13)),
+                              Text('PURPOSE: ', style: TextStyle(fontSize: 12)),
                               Text(savedSearchesData[index].purpose!,
                                   style: TextStyle(
                                       fontWeight: FontWeight.w500,
-                                      fontSize: 13))
+                                      fontSize: 12))
                             ],
                           ),
                           SizedBox(
@@ -100,12 +100,12 @@ class _SavedSearchesState extends State<SavedSearches> {
                             children: [
                               Text(
                                 'TYPE: ',
-                                style: TextStyle(fontSize: 13),
+                                style: TextStyle(fontSize: 12),
                               ),
                               Text(
                                 savedSearchesData[index].propertyType!,
                                 style: TextStyle(
-                                    fontWeight: FontWeight.w500, fontSize: 13),
+                                    fontWeight: FontWeight.w500, fontSize: 12),
                               )
                             ],
                           ),
@@ -119,11 +119,11 @@ class _SavedSearchesState extends State<SavedSearches> {
                           Row(
                             children: [
                               Text('LOCATION: ',
-                                  style: TextStyle(fontSize: 13)),
+                                  style: TextStyle(fontSize: 12)),
                               Text(savedSearchesData[index].location!,
                                   style: TextStyle(
                                       fontWeight: FontWeight.w500,
-                                      fontSize: 13))
+                                      fontSize: 12))
                             ],
                           ),
                           Spacer(),

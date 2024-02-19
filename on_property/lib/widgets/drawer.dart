@@ -90,7 +90,7 @@ class _CustomDrawerState extends State<CustomDrawer> {
                                         " " +
                                         controller.data[0].lName.toString(),
                                     style: TextStyle(
-                                        fontSize: 15,
+                                        fontSize: 13,
                                         color: Colors.black,
                                         fontWeight: FontWeight.w500),
                                   ),
@@ -101,7 +101,7 @@ class _CustomDrawerState extends State<CustomDrawer> {
                                     "emaile : " +
                                         controller.data[0].email.toString(),
                                     style: TextStyle(
-                                        fontSize: 12, color: Colors.black54),
+                                        fontSize: 11, color: Colors.black54),
                                   )
                                 ],
                               ),

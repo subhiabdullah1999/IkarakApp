@@ -14,7 +14,7 @@ class Notifications extends StatelessWidget {
         backgroundColor: Colors.white,
         title: Text(
           'Notifications'.tr,
-          style: TextStyle(color: Colors.black, fontSize: 16),
+          style: TextStyle(color: Colors.black, fontSize: 14),
         ),
         leading: GestureDetector(
             onTap: () {

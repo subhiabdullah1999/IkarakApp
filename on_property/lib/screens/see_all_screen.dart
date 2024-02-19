@@ -12,7 +12,7 @@ class SeeAllScreen extends StatelessWidget {
           backgroundColor: Colors.white,
           title: Text(
             'Properties',
-            style: TextStyle(color: Colors.black, fontSize: 16),
+            style: TextStyle(color: Colors.black, fontSize: 14),
           ),
           leading: GestureDetector(
               onTap: () {

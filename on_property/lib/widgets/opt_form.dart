@@ -53,7 +53,7 @@ class _OptFormState extends State<OptForm> {
           //   width: 50,
           //   child: TextFormField(
           //       autofocus: true,
-          //       style: TextStyle(fontSize: 20),
+          //       style: TextStyle(fontSize: 18),
           //       obscureText: true,
           //       onChanged: (value) {
           //         controller.otp = value;
@@ -68,7 +68,7 @@ class _OptFormState extends State<OptForm> {
             width: 50,
             child: TextFormField(
                 autofocus: true,
-                style: TextStyle(fontSize: 20),
+                style: TextStyle(fontSize: 18),
                 obscureText: true,
                 onChanged: (value) {
                   nextField(value: value, focusNode: pin2FocusNode);
@@ -83,7 +83,7 @@ class _OptFormState extends State<OptForm> {
             width: 50,
             child: TextFormField(
                 autofocus: false,
-                style: TextStyle(fontSize: 20),
+                style: TextStyle(fontSize: 18),
                 focusNode: pin2FocusNode,
                 obscureText: true,
                 onChanged: (value) {
@@ -98,7 +98,7 @@ class _OptFormState extends State<OptForm> {
             height: 60,
             width: 50,
             child: TextFormField(
-                style: TextStyle(fontSize: 20),
+                style: TextStyle(fontSize: 18),
                 focusNode: pin3FocusNode,
                 obscureText: true,
                 onChanged: (value) {
@@ -113,7 +113,7 @@ class _OptFormState extends State<OptForm> {
             height: 60,
             width: 50,
             child: TextFormField(
-                style: TextStyle(fontSize: 20),
+                style: TextStyle(fontSize: 18),
                 focusNode: pin4FocusNode,
                 obscureText: true,
                 keyboardType: TextInputType.number,
@@ -128,7 +128,7 @@ class _OptFormState extends State<OptForm> {
             height: 60,
             width: 50,
             child: TextFormField(
-                style: TextStyle(fontSize: 20),
+                style: TextStyle(fontSize: 18),
                 focusNode: pin5FocusNode,
                 obscureText: true,
                 keyboardType: TextInputType.number,
@@ -143,7 +143,7 @@ class _OptFormState extends State<OptForm> {
             height: 60,
             width: 50,
             child: TextFormField(
-                style: TextStyle(fontSize: 20),
+                style: TextStyle(fontSize: 18),
                 obscureText: true,
                 focusNode: pin6FocusNode,
                 onChanged: (value) {

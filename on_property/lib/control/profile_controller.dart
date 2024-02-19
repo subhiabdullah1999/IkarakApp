@@ -10,6 +10,7 @@ import 'package:on_property/core/services/services.dart';
 import 'package:on_property/data/models/profile_model.dart';
 import 'package:http/http.dart' as http;
 import 'package:on_property/data/models/prop_user_id_model.dart';
+import 'package:on_property/widgets/loading.dart';
 
 abstract class ProfileController extends GetxController {}
 
@@ -47,6 +48,7 @@ class ProfileControllerImp extends ProfileController {
           myServices.sharedPreferences.get("id").toString()));
       if (response.statusCode == 200 || response.statusCode == 201) {
         statusRequest = StatusRequest.success;
+        update();
         data.clear();
 
         var responseBody = jsonDecode(response.body);
@@ -152,11 +154,12 @@ class ProfileControllerImp extends ProfileController {
       contentPadding: const EdgeInsets.symmetric(vertical: 12, horizontal: 12),
       title: "waring".tr,
       backgroundColor: AppColors.whiteColor,
-      content: Text("هل تريد حذف العقار".tr),
+      content: Text("Do you want to delete the property?".tr),
       confirm: Padding(
         padding: const EdgeInsets.only(left: 20, right: 20),
         child: ElevatedButton(
             onPressed: () {
+              DeletProp();
               Get.back(canPop: false);
             },
             child: Text("delete".tr)),
@@ -170,6 +173,101 @@ class ProfileControllerImp extends ProfileController {
             child: Text("back".tr)),
       ),
     );
+  }
+
+  Future<List> DeletProp() async {
+    if (await checkInterNet()) {
+      statusRequest = StatusRequest.loading;
+      update();
+      Get.defaultDialog(
+        titlePadding: const EdgeInsets.all(10),
+        contentPadding:
+            const EdgeInsets.symmetric(vertical: 12, horizontal: 12),
+        title: "Loading".tr,
+        backgroundColor: AppColors.whiteColor,
+        content: Loading(),
+      );
+
+      update();
+      var response = await http.post(Uri.parse(AppLinks.deletProp), body: {
+        "user_id": myServices.sharedPreferences.get("id"),
+        "property_id": ProdId.toString()
+      });
+      if (response.statusCode == 200 || response.statusCode == 201) {
+        Get.back();
+        print("yyyuuuuuuuu8777777777777thhh");
+        print(ProdId);
+        print(myServices.sharedPreferences.get("id"));
+        print("sjjjjjjjjjjjjjjjjjjj8276666661999999999999999999");
+        statusRequest = StatusRequest.success;
+        update();
+        var responseBody = jsonDecode(response.body);
+        if (responseBody["message"] == "Delete  successful!") {
+          print(
+              "sjjjjjjjjjjjjjjjjjjj8276666661999999999999nnnnnnmmmmmmmmmmmmmmmmmkoooo");
+
+          Get.rawSnackbar(
+              backgroundColor: AppColors.green,
+              title: "success".tr,
+              messageText: Text(
+                "The property has been successfully deleted".tr,
+                style: TextStyle(color: AppColors.whiteColor),
+              ),
+              borderColor: AppColors.oraColor,
+              borderWidth: 2,
+              padding:
+                  const EdgeInsets.symmetric(vertical: 10, horizontal: 80));
+          update();
+          getProdUserId();
+          update();
+        }
+
+        update();
+      } else {
+        {
+          Get.back();
+
+          Get.defaultDialog(
+            titlePadding: const EdgeInsets.all(10),
+            contentPadding:
+                const EdgeInsets.symmetric(vertical: 12, horizontal: 12),
+            title: "waring".tr,
+            backgroundColor: AppColors.whiteColor,
+            content: Text("An unexpected error occurred".tr),
+            confirm: Padding(
+              padding: const EdgeInsets.only(left: 20, right: 20),
+              child: ElevatedButton(
+                  onPressed: () {
+                    Get.back(canPop: false);
+                  },
+                  child: Text("ok".tr)),
+            ),
+          );
+          update();
+        }
+        print("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&");
+        print(response.statusCode);
+        print("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&");
+      }
+    } else {
+      print("***********no enternet***********");
+      Get.rawSnackbar(
+          backgroundColor: AppColors.redcolor,
+          title: "waring".tr,
+          messageText: Text(
+            "Check your internet connection".tr,
+            style: TextStyle(color: AppColors.whiteColor),
+          ),
+          borderColor: AppColors.oraColor,
+          borderWidth: 2,
+          padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 80));
+      update();
+    }
+    update();
+
+    update();
+
+    return data;
   }
 
   @override

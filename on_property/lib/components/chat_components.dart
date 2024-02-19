@@ -111,7 +111,7 @@ verticalChatList(BuildContext context, int index) {
                         Text(
                           personNames[index - 1],
                           style: TextStyle(
-                              fontWeight: FontWeight.w500, fontSize: 14),
+                              fontWeight: FontWeight.w500, fontSize: 12),
                         ),
                         SizedBox(
                           height: 8,

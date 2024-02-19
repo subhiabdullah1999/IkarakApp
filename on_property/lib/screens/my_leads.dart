@@ -2,17 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:on_property/components/myleads_components.dart';
 
-
-
 class MyLeads extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return SafeArea(child: Scaffold(
-      appBar: AppBar(elevation: 1,
+    return SafeArea(
+        child: Scaffold(
+      appBar: AppBar(
+        elevation: 1,
         backgroundColor: Colors.white,
         title: Text(
           'My Leads',
-          style: TextStyle(color: Colors.black, fontSize: 17),
+          style: TextStyle(color: Colors.black, fontSize: 15),
         ),
         leading: GestureDetector(
             onTap: () {

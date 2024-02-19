@@ -103,7 +103,7 @@ listOfLocations() {
                                         style: TextStyle(
                                             fontWeight: FontWeight.w500,
                                             color: primaryColor,
-                                            fontSize: 18),
+                                            fontSize: 14),
                                       ),
                                       Spacer(),
                                       CircleAvatar(
@@ -127,7 +127,7 @@ listOfLocations() {
                                         ),
                                         Text(
                                           ' House for Sale',
-                                          style: TextStyle(fontSize: 12),
+                                          style: TextStyle(fontSize: 11),
                                         ),
                                       ],
                                     ),
@@ -151,11 +151,11 @@ listOfLocations() {
                                           '3 ',
                                           style: TextStyle(
                                               fontWeight: FontWeight.bold,
-                                              fontSize: 12),
+                                              fontSize: 11),
                                         ),
                                         Text(
                                           'bds ',
-                                          style: TextStyle(fontSize: 12),
+                                          style: TextStyle(fontSize: 11),
                                         ),
                                         VerticalDivider(
                                           width: 1,
@@ -165,11 +165,11 @@ listOfLocations() {
                                           ' 5 ',
                                           style: TextStyle(
                                               fontWeight: FontWeight.bold,
-                                              fontSize: 12),
+                                              fontSize: 11),
                                         ),
                                         Text(
                                           'baths ',
-                                          style: TextStyle(fontSize: 12),
+                                          style: TextStyle(fontSize: 11),
                                         ),
                                         VerticalDivider(
                                           width: 1,
@@ -179,11 +179,11 @@ listOfLocations() {
                                           ' 1750 ',
                                           style: TextStyle(
                                               fontWeight: FontWeight.bold,
-                                              fontSize: 12),
+                                              fontSize: 11),
                                         ),
                                         Text(
                                           'sqft',
-                                          style: TextStyle(fontSize: 12),
+                                          style: TextStyle(fontSize: 11),
                                         ),
                                       ],
                                     ),
@@ -194,12 +194,12 @@ listOfLocations() {
                                       Text(
                                         'Agent: ',
                                         style: TextStyle(
-                                            color: primaryColor, fontSize: 13),
+                                            color: primaryColor, fontSize: 12),
                                       ),
                                       Text(
                                         name[index - 1],
                                         style: TextStyle(
-                                            color: primaryColor, fontSize: 13),
+                                            color: primaryColor, fontSize: 12),
                                       )
                                     ],
                                   ),

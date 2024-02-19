@@ -156,7 +156,7 @@ class Properties extends StatelessWidget {
                                                 Text(
                                                   ' House for Sale',
                                                   style:
-                                                      TextStyle(fontSize: 12),
+                                                      TextStyle(fontSize: 11),
                                                 ),
                                                 Spacer(),
                                                 CircleAvatar(

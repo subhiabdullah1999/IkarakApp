@@ -131,7 +131,7 @@ import '../components/house_details_components.dart';
 //                           'Hilton House',
 //                           style: TextStyle(
 //                               color: Colors.white,
-//                               fontSize: 18,
+//                               fontSize: 14,
 //                               fontWeight: FontWeight.bold),
 //                         ),
 //                         SizedBox(
@@ -144,7 +144,7 @@ import '../components/house_details_components.dart';
 //                               style: TextStyle(
 //                                   color: Colors.white,
 //                                   fontWeight: FontWeight.bold,
-//                                   fontSize: 12),
+//                                   fontSize: 11),
 //                             ),
 //                             SvgPicture.asset(
 //                               'assets/icons/squareft.svg',
@@ -155,7 +155,7 @@ import '../components/house_details_components.dart';
 //                               style: TextStyle(
 //                                   color: Colors.white,
 //                                   fontWeight: FontWeight.bold,
-//                                   fontSize: 12),
+//                                   fontSize: 11),
 //                             ),
 //                           ],
 //                         )
@@ -260,7 +260,7 @@ import '../components/house_details_components.dart';
 //                                       style: TextStyle(
 //                                           fontWeight: FontWeight.bold,
 //                                           color: primaryColor,
-//                                           fontSize: 18),
+//                                           fontSize: 14),
 //                                     ),
 //                                     SizedBox(
 //                                       height: 5,
@@ -295,11 +295,11 @@ import '../components/house_details_components.dart';
 //                                             '3 ',
 //                                             style: TextStyle(
 //                                                 fontWeight: FontWeight.bold,
-//                                                 fontSize: 12),
+//                                                 fontSize: 11),
 //                                           ),
 //                                           Text(
 //                                             'bds ',
-//                                             style: TextStyle(fontSize: 12),
+//                                             style: TextStyle(fontSize: 11),
 //                                           ),
 //                                           VerticalDivider(
 //                                             width: 1,
@@ -309,11 +309,11 @@ import '../components/house_details_components.dart';
 //                                             '5 ',
 //                                             style: TextStyle(
 //                                                 fontWeight: FontWeight.bold,
-//                                                 fontSize: 12),
+//                                                 fontSize: 11),
 //                                           ),
 //                                           Text(
 //                                             'baths ',
-//                                             style: TextStyle(fontSize: 12),
+//                                             style: TextStyle(fontSize: 11),
 //                                           ),
 //                                           VerticalDivider(
 //                                             width: 1,
@@ -323,11 +323,11 @@ import '../components/house_details_components.dart';
 //                                             '1750 ',
 //                                             style: TextStyle(
 //                                                 fontWeight: FontWeight.bold,
-//                                                 fontSize: 12),
+//                                                 fontSize: 11),
 //                                           ),
 //                                           Text(
 //                                             'sqft',
-//                                             style: TextStyle(fontSize: 12),
+//                                             style: TextStyle(fontSize: 11),
 //                                           ),
 //                                         ],
 //                                       ),
@@ -341,13 +341,13 @@ import '../components/house_details_components.dart';
 //                                           'Agent: ',
 //                                           style: TextStyle(
 //                                               color: primaryColor,
-//                                               fontSize: 13),
+//                                               fontSize: 12),
 //                                         ),
 //                                         Text(
 //                                           'Chapman Ford',
 //                                           style: TextStyle(
 //                                               color: primaryColor,
-//                                               fontSize: 13),
+//                                               fontSize: 12),
 //                                         )
 //                                       ],
 //                                     ),
@@ -539,7 +539,7 @@ class HouseDetails extends StatelessWidget {
                                 controller.data[0].title.toString(),
                                 style: TextStyle(
                                     color: Colors.white,
-                                    fontSize: 18,
+                                    fontSize: 14,
                                     fontWeight: FontWeight.w500),
                               ),
                               SizedBox(
@@ -556,7 +556,7 @@ class HouseDetails extends StatelessWidget {
                                     style: TextStyle(
                                         color: Colors.white,
                                         fontWeight: FontWeight.bold,
-                                        fontSize: 12),
+                                        fontSize: 11),
                                   ),
                                   SvgPicture.asset(
                                     'assets/icons/squareft.svg',
@@ -567,7 +567,7 @@ class HouseDetails extends StatelessWidget {
                                     style: TextStyle(
                                         color: Colors.white,
                                         fontWeight: FontWeight.bold,
-                                        fontSize: 12),
+                                        fontSize: 11),
                                   ),
                                 ],
                               )
@@ -633,7 +633,7 @@ class HouseDetails extends StatelessWidget {
                         child: Text(
                           "You have not added any property".tr,
                           style: TextStyle(
-                              fontSize: 18,
+                              fontSize: 14,
                               fontWeight: FontWeight.w500,
                               fontStyle: FontStyle.italic,
                               color: AppColors.redcolor),
@@ -686,7 +686,7 @@ class HouseDetails extends StatelessWidget {
                                       style: TextStyle(
                                           fontWeight: FontWeight.w500,
                                           color: primaryColor,
-                                          fontSize: 18),
+                                          fontSize: 14),
                                     ),
                                     SizedBox(
                                       height: 5,
@@ -700,7 +700,7 @@ class HouseDetails extends StatelessWidget {
                                       style: TextStyle(
                                           fontWeight: FontWeight.w500,
                                           color: primaryColor,
-                                          fontSize: 18),
+                                          fontSize: 14),
                                     ),
                                     SizedBox(
                                       height: 5,
@@ -770,11 +770,11 @@ class HouseDetails extends StatelessWidget {
                                     //         '3 ',
                                     //         style: TextStyle(
                                     //             fontWeight: FontWeight.bold,
-                                    //             fontSize: 12),
+                                    //             fontSize: 11),
                                     //       ),
                                     //       Text(
                                     //         'bds ',
-                                    //         style: TextStyle(fontSize: 12),
+                                    //         style: TextStyle(fontSize: 11),
                                     //       ),
                                     //       VerticalDivider(
                                     //         width: 1,
@@ -784,11 +784,11 @@ class HouseDetails extends StatelessWidget {
                                     //         '5 ',
                                     //         style: TextStyle(
                                     //             fontWeight: FontWeight.bold,
-                                    //             fontSize: 12),
+                                    //             fontSize: 11),
                                     //       ),
                                     //       Text(
                                     //         'baths ',
-                                    //         style: TextStyle(fontSize: 12),
+                                    //         style: TextStyle(fontSize: 11),
                                     //       ),
                                     //       VerticalDivider(
                                     //         width: 1,
@@ -798,11 +798,11 @@ class HouseDetails extends StatelessWidget {
                                     //         '1750 ',
                                     //         style: TextStyle(
                                     //             fontWeight: FontWeight.bold,
-                                    //             fontSize: 12),
+                                    //             fontSize: 11),
                                     //       ),
                                     //       Text(
                                     //         'sqft',
-                                    //         style: TextStyle(fontSize: 12),
+                                    //         style: TextStyle(fontSize: 11),
                                     //       ),
                                     //     ],
                                     //   ),
@@ -819,7 +819,7 @@ class HouseDetails extends StatelessWidget {
                                                   .toString(),
                                           style: TextStyle(
                                               color: primaryColor,
-                                              fontSize: 13),
+                                              fontSize: 12),
                                         ),
                                       ],
                                     ),

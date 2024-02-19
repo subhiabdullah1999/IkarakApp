@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'colorscheme.dart';
 
-const TextStyle kh1 = TextStyle(fontWeight: FontWeight.w500, fontSize: 18);
+const TextStyle kh1 = TextStyle(fontWeight: FontWeight.w500, fontSize: 14);
 
-const TextStyle kh2 = TextStyle(fontWeight: FontWeight.w500, fontSize: 18);
-const TextStyle kh3 = TextStyle(fontWeight: FontWeight.w500, fontSize: 16);
-const TextStyle kh4 = TextStyle(fontWeight: FontWeight.w500, fontSize: 14);
+const TextStyle kh2 = TextStyle(fontWeight: FontWeight.w500, fontSize: 14);
+const TextStyle kh3 = TextStyle(fontWeight: FontWeight.w500, fontSize: 14);
+const TextStyle kh4 = TextStyle(fontWeight: FontWeight.w500, fontSize: 13);
 
 BoxDecoration roundCorners = BoxDecoration(
     borderRadius: BorderRadius.circular(30.0), color: primaryColor);

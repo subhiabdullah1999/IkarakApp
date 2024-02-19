@@ -155,19 +155,19 @@ class _AddPropertyState extends State<AddProperty> {
                             Text(
                               'Country  '.tr,
                               style: TextStyle(
-                                  fontWeight: FontWeight.w500, fontSize: 18),
+                                  fontWeight: FontWeight.w500, fontSize: 14),
                             ),
                             Text(
                               '(LB)',
                               style: TextStyle(
                                   color: primaryColor,
                                   fontWeight: FontWeight.w500,
-                                  fontSize: 18),
+                                  fontSize: 14),
                             ),
                             Spacer(),
                             // Text(
                             //   'Change Country'.tr,
-                            //   style: TextStyle(color: primaryColor, fontSize: 19),
+                            //   style: TextStyle(color: primaryColor, fontSize: 17),
                             // )
                           ],
                         ),
@@ -264,7 +264,7 @@ class _AddPropertyState extends State<AddProperty> {
               child: TextFormField(
                 controller: controller.descr,
                 maxLines: 3,
-                style: TextStyle(fontSize: 16),
+                style: TextStyle(fontSize: 14),
                 keyboardType: TextInputType.text,
                 textAlign: TextAlign.start,
                 decoration: InputDecoration(
@@ -556,7 +556,7 @@ class _AddPropertyState extends State<AddProperty> {
                 style: TextStyle(
                     color: Colors.grey,
                     fontWeight: FontWeight.w500,
-                    fontSize: 13),
+                    fontSize: 12),
               )
             ],
           ),
@@ -601,7 +601,7 @@ class _AddPropertyState extends State<AddProperty> {
                 style: TextStyle(
                     color: Colors.grey,
                     fontWeight: FontWeight.w500,
-                    fontSize: 13),
+                    fontSize: 12),
               )
             ],
           ),
@@ -646,7 +646,7 @@ class _AddPropertyState extends State<AddProperty> {
                 style: TextStyle(
                     color: Colors.grey,
                     fontWeight: FontWeight.w500,
-                    fontSize: 13),
+                    fontSize: 12),
               )
             ],
           ),
@@ -691,7 +691,7 @@ class _AddPropertyState extends State<AddProperty> {
                 style: TextStyle(
                     color: Colors.grey,
                     fontWeight: FontWeight.w500,
-                    fontSize: 13),
+                    fontSize: 12),
               )
             ],
           ),
@@ -748,7 +748,7 @@ class _AddPropertyState extends State<AddProperty> {
                 style: TextStyle(
                     color: Colors.grey,
                     fontWeight: FontWeight.w500,
-                    fontSize: 13),
+                    fontSize: 12),
               )
             ],
           ),
@@ -793,7 +793,7 @@ class _AddPropertyState extends State<AddProperty> {
                 style: TextStyle(
                     color: Colors.grey,
                     fontWeight: FontWeight.w500,
-                    fontSize: 13),
+                    fontSize: 12),
               )
             ],
           ),
@@ -838,7 +838,7 @@ class _AddPropertyState extends State<AddProperty> {
                 style: TextStyle(
                     color: Colors.grey,
                     fontWeight: FontWeight.w500,
-                    fontSize: 13),
+                    fontSize: 12),
               )
             ],
           ),
@@ -883,7 +883,7 @@ class _AddPropertyState extends State<AddProperty> {
                 style: TextStyle(
                     color: Colors.grey,
                     fontWeight: FontWeight.w500,
-                    fontSize: 13),
+                    fontSize: 12),
               )
             ],
           ),
@@ -938,7 +938,7 @@ class _AddPropertyState extends State<AddProperty> {
                 style: TextStyle(
                     color: Colors.grey,
                     fontWeight: FontWeight.w500,
-                    fontSize: 13),
+                    fontSize: 12),
               )
             ],
           ),
@@ -983,7 +983,7 @@ class _AddPropertyState extends State<AddProperty> {
                 style: TextStyle(
                     color: Colors.grey,
                     fontWeight: FontWeight.w500,
-                    fontSize: 13),
+                    fontSize: 12),
               )
             ],
           ),
@@ -1028,7 +1028,7 @@ class _AddPropertyState extends State<AddProperty> {
                 style: TextStyle(
                     color: Colors.grey,
                     fontWeight: FontWeight.w500,
-                    fontSize: 13),
+                    fontSize: 12),
               )
             ],
           ),
@@ -1073,7 +1073,7 @@ class _AddPropertyState extends State<AddProperty> {
                 style: TextStyle(
                     color: Colors.grey,
                     fontWeight: FontWeight.w500,
-                    fontSize: 13),
+                    fontSize: 12),
               )
             ],
           ),
@@ -1134,7 +1134,7 @@ class _AddPropertyState extends State<AddProperty> {
                       .get("mobile")
                       .toString(),
                   enabled: false,
-                  style: TextStyle(fontSize: 16),
+                  style: TextStyle(fontSize: 14),
                   keyboardType: TextInputType.number,
                   textAlign: TextAlign.start,
                   decoration: InputDecoration(
@@ -1339,7 +1339,7 @@ class _AddPropertyState extends State<AddProperty> {
                                 style: TextStyle(
                                     color: Colors.grey,
                                     fontWeight: FontWeight.w500,
-                                    fontSize: 15),
+                                    fontSize: 13),
                               ),
                             ),
                             GoogelMapLocation()
@@ -1402,6 +1402,12 @@ class CustomTypeProp extends StatelessWidget {
                       onTap: () {
                         int subCatId = index + 1;
                         controller.sub_category_id = subCatId;
+                        print("iu8888888888999999999999900000000007777777");
+                        print(subCatId);
+                        print(controller.sub_category_id);
+
+                        print("iu8888888888999999999999900000000007777777");
+
                         controller.selectedProp = index;
                         controller.updatUi();
                       },

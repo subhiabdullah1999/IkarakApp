@@ -98,7 +98,7 @@ class _IntroductionPageState extends State<IntroductionPage> {
                             style: TextStyle(
                               color: whitecolor,
                               fontWeight: FontWeight.bold,
-                              fontSize: 13.sp,
+                              fontSize: 12.sp,
                             ),
                           ),
                           onPressed: () {
@@ -113,7 +113,7 @@ class _IntroductionPageState extends State<IntroductionPage> {
                           style: ElevatedButton.styleFrom(
                             backgroundColor: primaryColor,
                             textStyle: const TextStyle(
-                              fontSize: 14,
+                              fontSize: 13,
                             ),
                             elevation: 0,
                             shape: RoundedRectangleBorder(
@@ -134,7 +134,7 @@ class _IntroductionPageState extends State<IntroductionPage> {
                             style: TextStyle(
                               color: whitecolor,
                               fontWeight: FontWeight.bold,
-                              fontSize: 13.sp,
+                              fontSize: 12.sp,
                             ),
                           ),
                           onPressed: () {
@@ -154,7 +154,7 @@ class _IntroductionPageState extends State<IntroductionPage> {
                           style: ElevatedButton.styleFrom(
                             backgroundColor: primaryColor,
                             textStyle: const TextStyle(
-                              fontSize: 14,
+                              fontSize: 13,
                             ),
                             elevation: 0,
                             shape: RoundedRectangleBorder(

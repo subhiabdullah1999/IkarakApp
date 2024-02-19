@@ -39,7 +39,7 @@ class _IndroductionPageState extends State<IndroductionPage> {
             style: TextStyle(
               color: dividerTextColor,
               fontWeight: FontWeight.w500,
-              fontSize: 18.sp,
+              fontSize: 14.sp,
             ),
           ),
         ),
@@ -50,7 +50,7 @@ class _IndroductionPageState extends State<IndroductionPage> {
             widget.description!,
             textAlign: TextAlign.center,
             style: TextStyle(
-              fontSize: 13.sp,
+              fontSize: 12.sp,
             ),
           ),
         ),

@@ -117,7 +117,7 @@ class _NewsAndBlogBodyState extends State<NewsAndBlogBody> {
                                           overflow: TextOverflow.ellipsis,
                                           style: TextStyle(
                                               fontWeight: FontWeight.w500,
-                                              fontSize: 16),
+                                              fontSize: 14),
                                         ),
                                         Spacer(),
                                         Flexible(

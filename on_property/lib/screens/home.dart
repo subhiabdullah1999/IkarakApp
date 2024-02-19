@@ -150,7 +150,7 @@ class Home extends StatelessWidget {
                                                               "Buy"
                                                           ? primaryColor
                                                           : AppColors.gry,
-                                                      fontSize: 15,
+                                                      fontSize: 13,
                                                       fontWeight:
                                                           FontWeight.w500),
                                                 ),
@@ -197,7 +197,7 @@ class Home extends StatelessWidget {
                                                               "Rant"
                                                           ? primaryColor
                                                           : AppColors.gry,
-                                                      fontSize: 15,
+                                                      fontSize: 13,
                                                       fontWeight:
                                                           FontWeight.w500),
                                                 ),
@@ -263,7 +263,7 @@ class Home extends StatelessWidget {
                                                               "Inv"
                                                           ? primaryColor
                                                           : AppColors.gry,
-                                                      fontSize: 15,
+                                                      fontSize: 13,
                                                       fontWeight:
                                                           FontWeight.w500),
                                                 ),
@@ -281,7 +281,7 @@ class Home extends StatelessWidget {
                                   ? Container(
                                       margin: const EdgeInsets.symmetric(
                                           horizontal: 10, vertical: 10),
-                                      height: 105,
+                                      height: Get.height - 280,
                                       width: Get.width,
                                       decoration: BoxDecoration(
                                           borderRadius:
@@ -295,8 +295,8 @@ class Home extends StatelessWidget {
                                           scrollDirection: Axis.vertical,
                                           gridDelegate:
                                               SliverGridDelegateWithFixedCrossAxisCount(
-                                            crossAxisCount: 3,
-                                            childAspectRatio: 2.5,
+                                            crossAxisCount: 1,
+                                            childAspectRatio: 4,
                                           ),
                                           itemBuilder: (context, index) {
                                             return InkWell(
@@ -324,7 +324,7 @@ class Home extends StatelessWidget {
                                                       controller
                                                           .salePrope[index],
                                                       style: TextStyle(
-                                                          fontSize: 15,
+                                                          fontSize: 13,
                                                           color: controller
                                                                       .indexListtypeprop ==
                                                                   index
@@ -343,7 +343,7 @@ class Home extends StatelessWidget {
                                       ? Container(
                                           margin: const EdgeInsets.symmetric(
                                               horizontal: 10, vertical: 10),
-                                          height: 105,
+                                          height: Get.height - 280,
                                           width: Get.width,
                                           decoration: BoxDecoration(
                                               borderRadius:
@@ -357,8 +357,8 @@ class Home extends StatelessWidget {
                                               scrollDirection: Axis.vertical,
                                               gridDelegate:
                                                   SliverGridDelegateWithFixedCrossAxisCount(
-                                                crossAxisCount: 3,
-                                                childAspectRatio: 2.5,
+                                                crossAxisCount: 1,
+                                                childAspectRatio: 4,
                                               ),
                                               itemBuilder: (context, index) {
                                                 return InkWell(
@@ -390,7 +390,7 @@ class Home extends StatelessWidget {
                                                           controller
                                                               .salePrope[index],
                                                           style: TextStyle(
-                                                              fontSize: 15,
+                                                              fontSize: 13,
                                                               color: controller
                                                                           .indexListtypeprop ==
                                                                       index
@@ -411,7 +411,7 @@ class Home extends StatelessWidget {
                                                   const EdgeInsets.symmetric(
                                                       horizontal: 10,
                                                       vertical: 10),
-                                              height: 105,
+                                              height: Get.height - 280,
                                               width: Get.width,
                                               decoration: BoxDecoration(
                                                   borderRadius:
@@ -426,8 +426,8 @@ class Home extends StatelessWidget {
                                                       Axis.vertical,
                                                   gridDelegate:
                                                       SliverGridDelegateWithFixedCrossAxisCount(
-                                                    crossAxisCount: 3,
-                                                    childAspectRatio: 2.5,
+                                                    crossAxisCount: 1,
+                                                    childAspectRatio: 4,
                                                   ),
                                                   itemBuilder:
                                                       (context, index) {
@@ -463,7 +463,7 @@ class Home extends StatelessWidget {
                                                                       .salePrope[
                                                                   index],
                                                               style: TextStyle(
-                                                                  fontSize: 15,
+                                                                  fontSize: 13,
                                                                   color: controller
                                                                               .indexListtypeprop ==
                                                                           index

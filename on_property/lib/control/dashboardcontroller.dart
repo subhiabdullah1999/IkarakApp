@@ -8,6 +8,7 @@ import 'package:on_property/core/functions/checkinternet.dart';
 import 'package:on_property/core/functions/handling_data.dart';
 import 'package:on_property/core/services/services.dart';
 import 'package:on_property/data/dataSource/remote/test_data.dart';
+import 'package:on_property/data/models/profile_model.dart';
 import 'package:on_property/data/models/rent_prop_mode.dart';
 import 'package:http/http.dart' as http;
 
@@ -18,6 +19,7 @@ class DashBoardControllerImp extends DashBoardController {
   TestData testData = TestData(Get.find());
 
   List<rentProp> data = [];
+
   StatusRequest statusRequest = StatusRequest.none;
 
   Future<List<rentProp>> getRentPrp() async {
@@ -80,6 +82,7 @@ class DashBoardControllerImp extends DashBoardController {
     checkInterNet();
     // getRentProp();
     getRentPrp();
+
     super.onInit();
   }
 }

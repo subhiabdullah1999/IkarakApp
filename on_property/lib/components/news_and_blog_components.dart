@@ -62,7 +62,7 @@ Container bannerForNewsAndBlog(BuildContext context) {
                   'News and Blog'.tr,
                   style: TextStyle(
                       color: Colors.white,
-                      fontSize: 18,
+                      fontSize: 14,
                       fontWeight: FontWeight.w500),
                 ),
               ),

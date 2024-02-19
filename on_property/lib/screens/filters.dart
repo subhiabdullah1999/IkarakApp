@@ -86,7 +86,7 @@ class _FiltersState extends State<Filters> {
                 style: TextStyle(
                     color: primaryColor,
                     fontWeight: FontWeight.w500,
-                    fontSize: 15),
+                    fontSize: 13),
               ),
             )),
             SizedBox(
@@ -731,7 +731,7 @@ class _FiltersState extends State<Filters> {
                 style: TextStyle(
                     color: Colors.grey,
                     fontWeight: FontWeight.w500,
-                    fontSize: 13),
+                    fontSize: 12),
               )
             ],
           ),
@@ -788,7 +788,7 @@ class _FiltersState extends State<Filters> {
                 style: TextStyle(
                     color: Colors.grey,
                     fontWeight: FontWeight.w500,
-                    fontSize: 13),
+                    fontSize: 12),
               )
             ],
           ),
@@ -845,7 +845,7 @@ class _FiltersState extends State<Filters> {
                 style: TextStyle(
                     color: Colors.grey,
                     fontWeight: FontWeight.w500,
-                    fontSize: 13),
+                    fontSize: 12),
               )
             ],
           ),
@@ -902,7 +902,7 @@ class _FiltersState extends State<Filters> {
                 style: TextStyle(
                     color: Colors.grey,
                     fontWeight: FontWeight.w500,
-                    fontSize: 13),
+                    fontSize: 12),
               )
             ],
           ),
@@ -971,7 +971,7 @@ class _FiltersState extends State<Filters> {
                 style: TextStyle(
                     color: Colors.grey,
                     fontWeight: FontWeight.w500,
-                    fontSize: 13),
+                    fontSize: 12),
               )
             ],
           ),
@@ -1028,7 +1028,7 @@ class _FiltersState extends State<Filters> {
                 style: TextStyle(
                     color: Colors.grey,
                     fontWeight: FontWeight.w500,
-                    fontSize: 13),
+                    fontSize: 12),
               )
             ],
           ),
@@ -1085,7 +1085,7 @@ class _FiltersState extends State<Filters> {
                 style: TextStyle(
                     color: Colors.grey,
                     fontWeight: FontWeight.w500,
-                    fontSize: 13),
+                    fontSize: 12),
               )
             ],
           ),
@@ -1142,7 +1142,7 @@ class _FiltersState extends State<Filters> {
                 style: TextStyle(
                     color: Colors.grey,
                     fontWeight: FontWeight.w500,
-                    fontSize: 13),
+                    fontSize: 12),
               )
             ],
           ),
@@ -1211,7 +1211,7 @@ class _FiltersState extends State<Filters> {
                 style: TextStyle(
                     color: Colors.grey,
                     fontWeight: FontWeight.w500,
-                    fontSize: 13),
+                    fontSize: 12),
               )
             ],
           ),
@@ -1268,7 +1268,7 @@ class _FiltersState extends State<Filters> {
                 style: TextStyle(
                     color: Colors.grey,
                     fontWeight: FontWeight.w500,
-                    fontSize: 13),
+                    fontSize: 12),
               )
             ],
           ),
@@ -1325,7 +1325,7 @@ class _FiltersState extends State<Filters> {
                 style: TextStyle(
                     color: Colors.grey,
                     fontWeight: FontWeight.w500,
-                    fontSize: 13),
+                    fontSize: 12),
               )
             ],
           ),
@@ -1382,7 +1382,7 @@ class _FiltersState extends State<Filters> {
                 style: TextStyle(
                     color: Colors.grey,
                     fontWeight: FontWeight.w500,
-                    fontSize: 13),
+                    fontSize: 12),
               )
             ],
           ),

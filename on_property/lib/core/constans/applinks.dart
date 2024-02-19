@@ -11,7 +11,11 @@ class AppLinks {
   static const otpCode = "$serverName/verify";
   static const login = "$serverName/login";
   static const changePassword = "$serverName/change-password";
-  static const logOut = "$serverName/logout";
+  static const deletAccount = "$serverName/delete-account";
+
+  // payment
+
+  static const payment = "$serverName/apply-package";
 
   // forget Password Links
 
@@ -43,6 +47,7 @@ class AppLinks {
   // profile
   static const getProfile = "$serverName/user-profile/";
   static const getPropUserId = "$serverName/user-properties/";
+  static const deletProp = "$serverName/delete-property";
 
   // adress
   static const addAddress = "$serverName/add-address";

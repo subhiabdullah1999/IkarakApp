@@ -14,13 +14,14 @@ class ProfileModel {
   String? companyName;
   String? image;
   String? description;
-  String? skype;
+  Null? skype;
   Null? fb;
-  String? twitter;
+  Null? twitter;
   Null? instagram;
-  String? status;
-  String? mobileOffice;
-  Null? otp;
+  Null? status;
+  Null? mobileOffice;
+  String? otp;
+  int? cridetNumber;
 
   ProfileModel(
       {this.id,
@@ -44,7 +45,8 @@ class ProfileModel {
       this.instagram,
       this.status,
       this.mobileOffice,
-      this.otp});
+      this.otp,
+      this.cridetNumber});
 
   ProfileModel.fromJson(Map<String, dynamic> json) {
     id = json['id'];
@@ -69,6 +71,7 @@ class ProfileModel {
     status = json['status'];
     mobileOffice = json['mobile_office'];
     otp = json['otp'];
+    cridetNumber = json['cridet_number'];
   }
 
   Map<String, dynamic> toJson() {
@@ -95,6 +98,7 @@ class ProfileModel {
     data['status'] = this.status;
     data['mobile_office'] = this.mobileOffice;
     data['otp'] = this.otp;
+    data['cridet_number'] = this.cridetNumber;
     return data;
   }
 }

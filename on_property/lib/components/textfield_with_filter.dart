@@ -38,20 +38,20 @@ textFieldWithFilter({BuildContext? context, Function()? callback}) {
         SizedBox(
           width: 10,
         ),
-        GestureDetector(
-            onTap: () {
-              Navigator.pushNamed(context!, 'Filters');
-            },
-            child: Padding(
-              padding:
-                  const EdgeInsets.only(right: 12.0, top: 12.0, bottom: 12.0),
-              child: SvgPicture.asset(
-                'assets/icons/filter.svg',
-                height: 20,
-                width: 20,
-                color: primaryColor,
-              ),
-            )),
+        // GestureDetector(
+        //     onTap: () {
+        //       Navigator.pushNamed(context!, 'Filters');
+        //     },
+        //     child: Padding(
+        //       padding:
+        //           const EdgeInsets.only(right: 12.0, top: 12.0, bottom: 12.0),
+        //       child: SvgPicture.asset(
+        //         'assets/icons/filter.svg',
+        //         height: 20,
+        //         width: 20,
+        //         color: primaryColor,
+        //       ),
+        //     )),
       ],
     ),
   );

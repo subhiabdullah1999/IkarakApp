@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -9,10 +8,10 @@ import '../screens/opt_screen.dart';
 import '../screens/sign_in.dart';
 import '../screens/sign_up.dart';
 
-
 class CustomBottomNavigatioBar extends StatefulWidget {
   @override
-  _CustomBottomNavigatioBarState createState() => _CustomBottomNavigatioBarState();
+  _CustomBottomNavigatioBarState createState() =>
+      _CustomBottomNavigatioBarState();
 }
 
 class _CustomBottomNavigatioBarState extends State<CustomBottomNavigatioBar> {
@@ -49,7 +48,7 @@ class _CustomBottomNavigatioBarState extends State<CustomBottomNavigatioBar> {
                         ),
                         Text(
                           'Home',
-                          style: TextStyle(fontSize: 12),
+                          style: TextStyle(fontSize: 11),
                         )
                       ],
                     ),
@@ -72,7 +71,7 @@ class _CustomBottomNavigatioBarState extends State<CustomBottomNavigatioBar> {
                               ? primaryColor
                               : Color(0xffb2b2b2),
                         ),
-                        Text('Chat', style: TextStyle(fontSize: 12))
+                        Text('Chat', style: TextStyle(fontSize: 11))
                       ],
                     ),
                   ),
@@ -99,7 +98,7 @@ class _CustomBottomNavigatioBarState extends State<CustomBottomNavigatioBar> {
                               ? primaryColor
                               : Color(0xffb2b2b2),
                         ),
-                        Text('Notifications', style: TextStyle(fontSize: 12))
+                        Text('Notifications', style: TextStyle(fontSize: 11))
                       ],
                     ),
                   ),
@@ -123,7 +122,7 @@ class _CustomBottomNavigatioBarState extends State<CustomBottomNavigatioBar> {
                         SizedBox(
                           height: 1,
                         ),
-                        Text('Trend', style: TextStyle(fontSize: 12))
+                        Text('Trend', style: TextStyle(fontSize: 11))
                       ],
                     ),
                   ),

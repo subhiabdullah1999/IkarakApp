@@ -80,7 +80,7 @@ Stack customCarousal(BuildContext context) {
               'Hilton House',
               style: TextStyle(
                   color: Colors.white,
-                  fontSize: 18,
+                  fontSize: 16,
                   fontWeight: FontWeight.w500),
             ),
             SizedBox(
@@ -93,7 +93,7 @@ Stack customCarousal(BuildContext context) {
                   style: TextStyle(
                       color: Colors.white,
                       fontWeight: FontWeight.w500,
-                      fontSize: 12),
+                      fontSize: 11),
                 ),
                 SvgPicture.asset(
                   'assets/icons/squareft.svg',
@@ -104,7 +104,7 @@ Stack customCarousal(BuildContext context) {
                   style: TextStyle(
                       color: Colors.white,
                       fontWeight: FontWeight.w500,
-                      fontSize: 12),
+                      fontSize: 11),
                 ),
               ],
             )
@@ -149,7 +149,7 @@ class FirstCompOfDetails extends StatelessWidget {
                         style: TextStyle(
                             color: Colors.black,
                             fontWeight: FontWeight.w500,
-                            fontSize: 18),
+                            fontSize: 16),
                       ),
                       Column(
                         children: [
@@ -158,7 +158,7 @@ class FirstCompOfDetails extends StatelessWidget {
                             style: TextStyle(
                                 color: Colors.black,
                                 fontWeight: FontWeight.w500,
-                                fontSize: 18),
+                                fontSize: 16),
                           ),
                           Text(
                             '\$ ' + controllerImp.data[0].price.toString(),
@@ -201,7 +201,7 @@ class FirstCompOfDetails extends StatelessWidget {
                                       ' beds'.tr,
                                   style: TextStyle(
                                     fontWeight: FontWeight.w500,
-                                    fontSize: 14,
+                                    fontSize: 13,
                                   ),
                                   textAlign: TextAlign.start,
                                 ),
@@ -229,7 +229,7 @@ class FirstCompOfDetails extends StatelessWidget {
                                       ' baths'.tr,
                                   style: TextStyle(
                                     fontWeight: FontWeight.w500,
-                                    fontSize: 14,
+                                    fontSize: 13,
                                   ),
                                 ),
                               ],
@@ -257,7 +257,7 @@ class FirstCompOfDetails extends StatelessWidget {
                                       ' kitchens'.tr,
                                   style: TextStyle(
                                     fontWeight: FontWeight.w500,
-                                    fontSize: 14,
+                                    fontSize: 13,
                                   ),
                                 ),
                               ],
@@ -292,7 +292,7 @@ class FirstCompOfDetails extends StatelessWidget {
 //             style: TextStyle(
 //                 color: Colors.black,
 //                 fontWeight: FontWeight.w500,
-//                 fontSize: 18),
+//                 fontSize: 16),
 //           ),
 //           Column(
 //             children: [
@@ -301,7 +301,7 @@ class FirstCompOfDetails extends StatelessWidget {
 //                 style: TextStyle(
 //                     color: Colors.black,
 //                     fontWeight: FontWeight.w500,
-//                     fontSize: 18),
+//                     fontSize: 16),
 //               ),
 //               Text(
 //                 '\$ ' + controllerImp.data[0].price.toString(),
@@ -343,7 +343,7 @@ class FirstCompOfDetails extends StatelessWidget {
 //                                 ' beds'.tr,
 //                             style: TextStyle(
 //                               fontWeight: FontWeight.w500,
-//                               fontSize: 14,
+//                               fontSize: 13,
 //                             ),
 //                             textAlign: TextAlign.start,
 //                           ),
@@ -371,7 +371,7 @@ class FirstCompOfDetails extends StatelessWidget {
 //                                 ' baths'.tr,
 //                             style: TextStyle(
 //                               fontWeight: FontWeight.w500,
-//                               fontSize: 14,
+//                               fontSize: 13,
 //                             ),
 //                           ),
 //                         ],
@@ -399,7 +399,7 @@ class FirstCompOfDetails extends StatelessWidget {
 //                                 ' kitchens'.tr,
 //                             style: TextStyle(
 //                               fontWeight: FontWeight.w500,
-//                               fontSize: 14,
+//                               fontSize: 13,
 //                             ),
 //                           ),
 //                         ],
@@ -660,12 +660,12 @@ Container sixthComponent(BuildContext context) {
             child: Text(
           controllerImp.data[0].user!.fName.toString(),
           style: TextStyle(
-              color: primaryColor, fontWeight: FontWeight.w500, fontSize: 18),
+              color: primaryColor, fontWeight: FontWeight.w500, fontSize: 16),
         )),
         Center(
             child: Text(
           controllerImp.data[0].user!.type.toString(),
-          style: TextStyle(color: Colors.black, fontSize: 14),
+          style: TextStyle(color: Colors.black, fontSize: 13),
         )),
         SizedBox(
           height: 15,

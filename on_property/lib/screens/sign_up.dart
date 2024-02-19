@@ -46,7 +46,7 @@ class _SignUpState extends State<SignUp> {
                         Text(
                           'Sign Up'.tr,
                           style: TextStyle(
-                              fontWeight: FontWeight.w500, fontSize: 18),
+                              fontWeight: FontWeight.w500, fontSize: 14),
                         ),
                         SizedBox(
                           height: 5,

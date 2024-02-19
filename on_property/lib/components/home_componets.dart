@@ -185,11 +185,11 @@ Container listForSecondComponent() {
                                       '3 ',
                                       style: TextStyle(
                                           fontWeight: FontWeight.w500,
-                                          fontSize: 12),
+                                          fontSize: 11),
                                     ),
                                     Text(
                                       'bds ',
-                                      style: TextStyle(fontSize: 12),
+                                      style: TextStyle(fontSize: 11),
                                     ),
                                     VerticalDivider(
                                       width: 1,
@@ -199,11 +199,11 @@ Container listForSecondComponent() {
                                       ' 5 ',
                                       style: TextStyle(
                                           fontWeight: FontWeight.w500,
-                                          fontSize: 12),
+                                          fontSize: 11),
                                     ),
                                     Text(
                                       'baths ',
-                                      style: TextStyle(fontSize: 12),
+                                      style: TextStyle(fontSize: 11),
                                     ),
                                     VerticalDivider(
                                       width: 1,
@@ -213,11 +213,11 @@ Container listForSecondComponent() {
                                       ' 1750 ',
                                       style: TextStyle(
                                           fontWeight: FontWeight.w500,
-                                          fontSize: 12),
+                                          fontSize: 11),
                                     ),
                                     Text(
                                       'sqft',
-                                      style: TextStyle(fontSize: 12),
+                                      style: TextStyle(fontSize: 11),
                                     ),
                                   ],
                                 ),
@@ -235,7 +235,7 @@ Container listForSecondComponent() {
                                       Text(
                                         'Starting Price',
                                         style: TextStyle(
-                                          fontSize: 12,
+                                          fontSize: 11,
                                         ),
                                       ),
                                       Text(
@@ -319,11 +319,11 @@ Card secondComponent(int index, BuildContext context) {
                       Text(
                         '3 ',
                         style: TextStyle(
-                            fontWeight: FontWeight.bold, fontSize: 12),
+                            fontWeight: FontWeight.bold, fontSize: 11),
                       ),
                       Text(
                         'bds ',
-                        style: TextStyle(fontSize: 12),
+                        style: TextStyle(fontSize: 11),
                       ),
                       VerticalDivider(
                         width: 1,
@@ -332,11 +332,11 @@ Card secondComponent(int index, BuildContext context) {
                       Text(
                         ' 5 ',
                         style: TextStyle(
-                            fontWeight: FontWeight.bold, fontSize: 12),
+                            fontWeight: FontWeight.bold, fontSize: 11),
                       ),
                       Text(
                         'baths ',
-                        style: TextStyle(fontSize: 12),
+                        style: TextStyle(fontSize: 11),
                       ),
                       VerticalDivider(
                         width: 1,
@@ -345,11 +345,11 @@ Card secondComponent(int index, BuildContext context) {
                       Text(
                         ' 1750 ',
                         style: TextStyle(
-                            fontWeight: FontWeight.bold, fontSize: 12),
+                            fontWeight: FontWeight.bold, fontSize: 11),
                       ),
                       Text(
                         'sqft',
-                        style: TextStyle(fontSize: 12),
+                        style: TextStyle(fontSize: 11),
                       ),
                     ],
                   ),
@@ -366,7 +366,7 @@ Card secondComponent(int index, BuildContext context) {
                         Text(
                           'Starting Price',
                           style: TextStyle(
-                            fontSize: 12,
+                            fontSize: 11,
                           ),
                         ),
                         Text(
@@ -501,7 +501,7 @@ Card thirdComponent(int index) {
                               ),
                               Text(
                                 ' House for Sale',
-                                style: TextStyle(fontSize: 12),
+                                style: TextStyle(fontSize: 11),
                               ),
                               Spacer(),
                               GestureDetector(
@@ -617,7 +617,7 @@ class ListForThirdComponent extends StatelessWidget {
                                             controller.data[index].title
                                                 .toString(),
                                             style: kh2.copyWith(
-                                                fontSize: 18,
+                                                fontSize: 14,
                                                 color: AppColors.green,
                                                 fontWeight: FontWeight.w500),
                                           ),
@@ -643,7 +643,7 @@ class ListForThirdComponent extends StatelessWidget {
                                             //     .toString(),
                                             style: TextStyle(
                                                 color: Colors.grey,
-                                                fontSize: 14),
+                                                fontSize: 11),
                                           )
                                         : Text(""),
                                     SizedBox(
@@ -710,7 +710,7 @@ class ListForThirdComponent extends StatelessWidget {
                                             " property for ".tr +
                                                 controller.data[index].type
                                                     .toString(),
-                                            style: TextStyle(fontSize: 12),
+                                            style: TextStyle(fontSize: 11),
                                           ),
                                           Spacer(),
                                           GestureDetector(

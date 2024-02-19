@@ -79,18 +79,21 @@ class _LocationForHouseDetailsState extends State<LocationForHouseDetails> {
               height: MediaQuery.of(context).size.height,
               width: MediaQuery.of(context).size.width,
               child: GoogleMap(
-                  zoomGesturesEnabled: true,
-                  markers: controller.markers,
-                  initialCameraPosition:
-                      CameraPosition(target: _center, zoom: 6.1),
-                  mapType: MapType.terrain,
-                  onMapCreated: (controller) {
-                    setState(() {
-                      _controller = controller;
-                    });
-                  },
-                  onTap: (coordinates) => _controller!
-                      .animateCamera(CameraUpdate.newLatLng(coordinates))),
+                zoomGesturesEnabled: true,
+                markers: controller.markers,
+                initialCameraPosition:
+                    CameraPosition(target: _center, zoom: 8.6),
+
+                // mapType: MapType.none,
+                onMapCreated: (controller) {
+                  setState(() {
+                    _controller = controller;
+                    // _controller!.setMapStyle("assets/cMap.html");
+                  });
+                },
+                onTap: (coordinates) => _controller!
+                    .animateCamera(CameraUpdate.newLatLng(coordinates)),
+              ),
             ),
             controller.statusRequest == StatusRequest.loading
                 ? Positioned(
@@ -127,6 +130,7 @@ class _LocationForHouseDetailsState extends State<LocationForHouseDetails> {
                           color: AppColors.whiteColor,
                           borderRadius: BorderRadius.circular(10)),
                       child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
                           InkWell(
                             onTap: () {
@@ -153,7 +157,7 @@ class _LocationForHouseDetailsState extends State<LocationForHouseDetails> {
                                           color: controller.label == "Buy"
                                               ? primaryColor
                                               : AppColors.gry,
-                                          fontSize: 15,
+                                          fontSize: 13,
                                           fontWeight: FontWeight.w500),
                                     ),
                                   ],
@@ -195,7 +199,7 @@ class _LocationForHouseDetailsState extends State<LocationForHouseDetails> {
                                           color: controller.label == "Rant"
                                               ? primaryColor
                                               : AppColors.gry,
-                                          fontSize: 15,
+                                          fontSize: 13,
                                           fontWeight: FontWeight.w500),
                                     ),
                                   ],
@@ -257,7 +261,7 @@ class _LocationForHouseDetailsState extends State<LocationForHouseDetails> {
                                           color: controller.label == "Inv"
                                               ? primaryColor
                                               : AppColors.gry,
-                                          fontSize: 15,
+                                          fontSize: 13,
                                           fontWeight: FontWeight.w500),
                                     ),
                                   ],
@@ -351,7 +355,7 @@ class _LocationForHouseDetailsState extends State<LocationForHouseDetails> {
                             //                                       fontWeight:
                             //                                           FontWeight
                             //                                               .w500,
-                            //                                       fontSize: 18,
+                            //                                       fontSize: 14,
                             //                                       fontStyle:
                             //                                           FontStyle
                             //                                               .italic),
@@ -403,7 +407,7 @@ class _LocationForHouseDetailsState extends State<LocationForHouseDetails> {
                             //                                       fontWeight:
                             //                                           FontWeight
                             //                                               .w500,
-                            //                                       fontSize: 18,
+                            //                                       fontSize: 14,
                             //                                       fontStyle:
                             //                                           FontStyle
                             //                                               .italic),
@@ -455,7 +459,7 @@ class _LocationForHouseDetailsState extends State<LocationForHouseDetails> {
                             //                                       fontWeight:
                             //                                           FontWeight
                             //                                               .w500,
-                            //                                       fontSize: 18,
+                            //                                       fontSize: 14,
                             //                                       fontStyle:
                             //                                           FontStyle
                             //                                               .italic),
@@ -512,7 +516,7 @@ class _LocationForHouseDetailsState extends State<LocationForHouseDetails> {
                             //                                 style: TextStyle(
                             //                                     color: Colors
                             //                                         .black,
-                            //                                     fontSize: 20,
+                            //                                     fontSize: 18,
                             //                                     fontWeight:
                             //                                         FontWeight
                             //                                             .w500,
@@ -562,7 +566,7 @@ class _LocationForHouseDetailsState extends State<LocationForHouseDetails> {
                             //                                                               child: Center(
                             //                                                                 child: Text(
                             //                                                                   "Ok".tr,
-                            //                                                                   style: TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.w400, fontStyle: FontStyle.italic),
+                            //                                                                   style: TextStyle(color: Colors.white, fontSize: 14, fontWeight: FontWeight.w400, fontStyle: FontStyle.italic),
                             //                                                                 ),
                             //                                                               ),
                             //                                                             ),
@@ -575,7 +579,7 @@ class _LocationForHouseDetailsState extends State<LocationForHouseDetails> {
                             //                                                               children: [
                             //                                                                 Text(
                             //                                                                   "map location".tr,
-                            //                                                                   style: TextStyle(color: Colors.black, fontSize: 20, fontWeight: FontWeight.w500, fontStyle: FontStyle.italic),
+                            //                                                                   style: TextStyle(color: Colors.black, fontSize: 18, fontWeight: FontWeight.w500, fontStyle: FontStyle.italic),
                             //                                                                 ),
                             //                                                                 SizedBox(
                             //                                                                   width: 8,
@@ -596,7 +600,7 @@ class _LocationForHouseDetailsState extends State<LocationForHouseDetails> {
                             //                                                           children: [
                             //                                                             Text(
                             //                                                               "city".tr,
-                            //                                                               style: TextStyle(color: Colors.black, fontSize: 20, fontWeight: FontWeight.w500, fontStyle: FontStyle.italic),
+                            //                                                               style: TextStyle(color: Colors.black, fontSize: 18, fontWeight: FontWeight.w500, fontStyle: FontStyle.italic),
                             //                                                             ),
                             //                                                             InkWell(
                             //                                                               onTap: () {
@@ -625,7 +629,7 @@ class _LocationForHouseDetailsState extends State<LocationForHouseDetails> {
                             //                                                                                             children: [
                             //                                                                                               Text(
                             //                                                                                                 "city".tr,
-                            //                                                                                                 style: TextStyle(color: Colors.black, fontSize: 20, fontWeight: FontWeight.w500, fontStyle: FontStyle.italic),
+                            //                                                                                                 style: TextStyle(color: Colors.black, fontSize: 18, fontWeight: FontWeight.w500, fontStyle: FontStyle.italic),
                             //                                                                                               ),
                             //                                                                                               SizedBox(
                             //                                                                                                 width: 8,
@@ -646,7 +650,7 @@ class _LocationForHouseDetailsState extends State<LocationForHouseDetails> {
                             //                                                                                         children: [
                             //                                                                                           Text(
                             //                                                                                             "city".tr,
-                            //                                                                                             style: TextStyle(color: Colors.black, fontSize: 20, fontWeight: FontWeight.w500, fontStyle: FontStyle.italic),
+                            //                                                                                             style: TextStyle(color: Colors.black, fontSize: 18, fontWeight: FontWeight.w500, fontStyle: FontStyle.italic),
                             //                                                                                           ),
                             //                                                                                           TextFormField(
                             //                                                                                             decoration: InputDecoration(
@@ -677,7 +681,7 @@ class _LocationForHouseDetailsState extends State<LocationForHouseDetails> {
                             //                                                                   children: [
                             //                                                                     Text(
                             //                                                                       "Select city".tr,
-                            //                                                                       style: TextStyle(color: Colors.black54, fontSize: 18, fontWeight: FontWeight.w400, fontStyle: FontStyle.italic),
+                            //                                                                       style: TextStyle(color: Colors.black54, fontSize: 14, fontWeight: FontWeight.w400, fontStyle: FontStyle.italic),
                             //                                                                     ),
                             //                                                                   ],
                             //                                                                 ),
@@ -755,7 +759,7 @@ class _LocationForHouseDetailsState extends State<LocationForHouseDetails> {
                             //                                 style: TextStyle(
                             //                                     color: Colors
                             //                                         .black,
-                            //                                     fontSize: 20,
+                            //                                     fontSize: 18,
                             //                                     fontWeight:
                             //                                         FontWeight
                             //                                             .w500,
@@ -805,7 +809,7 @@ class _LocationForHouseDetailsState extends State<LocationForHouseDetails> {
                             //                                                               child: Center(
                             //                                                                 child: Text(
                             //                                                                   "Ok".tr,
-                            //                                                                   style: TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.w400, fontStyle: FontStyle.italic),
+                            //                                                                   style: TextStyle(color: Colors.white, fontSize: 14, fontWeight: FontWeight.w400, fontStyle: FontStyle.italic),
                             //                                                                 ),
                             //                                                               ),
                             //                                                             ),
@@ -818,7 +822,7 @@ class _LocationForHouseDetailsState extends State<LocationForHouseDetails> {
                             //                                                               children: [
                             //                                                                 Text(
                             //                                                                   "Property Type".tr,
-                            //                                                                   style: TextStyle(color: Colors.black, fontSize: 20, fontWeight: FontWeight.w500, fontStyle: FontStyle.italic),
+                            //                                                                   style: TextStyle(color: Colors.black, fontSize: 18, fontWeight: FontWeight.w500, fontStyle: FontStyle.italic),
                             //                                                                 ),
                             //                                                                 SizedBox(
                             //                                                                   width: 8,
@@ -901,7 +905,7 @@ class _LocationForHouseDetailsState extends State<LocationForHouseDetails> {
                             //                                 style: TextStyle(
                             //                                     color: Colors
                             //                                         .black,
-                            //                                     fontSize: 20,
+                            //                                     fontSize: 18,
                             //                                     fontWeight:
                             //                                         FontWeight
                             //                                             .w500,
@@ -957,7 +961,7 @@ class _LocationForHouseDetailsState extends State<LocationForHouseDetails> {
                             //                           "Search".tr,
                             //                           style: TextStyle(
                             //                               color: Colors.white,
-                            //                               fontSize: 18,
+                            //                               fontSize: 14,
                             //                               fontWeight:
                             //                                   FontWeight.w400,
                             //                               fontStyle:
@@ -994,7 +998,7 @@ class _LocationForHouseDetailsState extends State<LocationForHouseDetails> {
                                   style: TextStyle(
                                       color: Colors.white,
                                       fontWeight: FontWeight.w500,
-                                      fontSize: 18,
+                                      fontSize: 14,
                                       fontStyle: FontStyle.italic),
                                 )
                               ],
@@ -1009,7 +1013,7 @@ class _LocationForHouseDetailsState extends State<LocationForHouseDetails> {
                                 margin: const EdgeInsets.symmetric(
                                   horizontal: 2,
                                 ),
-                                height: 100,
+                                height: Get.height - 380,
                                 width: Get.width - 100,
                                 decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(10),
@@ -1020,8 +1024,8 @@ class _LocationForHouseDetailsState extends State<LocationForHouseDetails> {
                                     scrollDirection: Axis.vertical,
                                     gridDelegate:
                                         SliverGridDelegateWithFixedCrossAxisCount(
-                                      crossAxisCount: 3,
-                                      childAspectRatio: 2.2,
+                                      crossAxisCount: 1,
+                                      childAspectRatio: 4,
                                     ),
                                     itemBuilder: (context, index) {
                                       return InkWell(
@@ -1047,7 +1051,7 @@ class _LocationForHouseDetailsState extends State<LocationForHouseDetails> {
                                               child: Text(
                                                 controller.salePrope[index],
                                                 style: TextStyle(
-                                                    fontSize: 15,
+                                                    fontSize: 13,
                                                     color: controller
                                                                 .indexListtypeprop ==
                                                             index
@@ -1066,7 +1070,7 @@ class _LocationForHouseDetailsState extends State<LocationForHouseDetails> {
                                     margin: const EdgeInsets.symmetric(
                                       horizontal: 2,
                                     ),
-                                    height: 100,
+                                    height: Get.height - 380,
                                     width: Get.width - 100,
                                     decoration: BoxDecoration(
                                         borderRadius: BorderRadius.circular(10),
@@ -1078,8 +1082,8 @@ class _LocationForHouseDetailsState extends State<LocationForHouseDetails> {
                                         scrollDirection: Axis.vertical,
                                         gridDelegate:
                                             SliverGridDelegateWithFixedCrossAxisCount(
-                                          crossAxisCount: 3,
-                                          childAspectRatio: 2.2,
+                                          crossAxisCount: 1,
+                                          childAspectRatio: 4,
                                         ),
                                         itemBuilder: (context, index) {
                                           return InkWell(
@@ -1106,7 +1110,7 @@ class _LocationForHouseDetailsState extends State<LocationForHouseDetails> {
                                                   child: Text(
                                                     controller.salePrope[index],
                                                     style: TextStyle(
-                                                        fontSize: 15,
+                                                        fontSize: 13,
                                                         color: controller
                                                                     .indexListtypeprop ==
                                                                 index
@@ -1126,7 +1130,7 @@ class _LocationForHouseDetailsState extends State<LocationForHouseDetails> {
                                         margin: const EdgeInsets.symmetric(
                                           horizontal: 2,
                                         ),
-                                        height: 100,
+                                        height: Get.height - 380,
                                         width: Get.width - 100,
                                         decoration: BoxDecoration(
                                             borderRadius:
@@ -1140,8 +1144,8 @@ class _LocationForHouseDetailsState extends State<LocationForHouseDetails> {
                                             scrollDirection: Axis.vertical,
                                             gridDelegate:
                                                 SliverGridDelegateWithFixedCrossAxisCount(
-                                              crossAxisCount: 3,
-                                              childAspectRatio: 2.2,
+                                              crossAxisCount: 1,
+                                              childAspectRatio: 4,
                                             ),
                                             itemBuilder: (context, index) {
                                               return InkWell(
@@ -1169,7 +1173,7 @@ class _LocationForHouseDetailsState extends State<LocationForHouseDetails> {
                                                         controller
                                                             .salePrope[index],
                                                         style: TextStyle(
-                                                            fontSize: 15,
+                                                            fontSize: 13,
                                                             color: controller
                                                                         .indexListtypeprop ==
                                                                     index
@@ -1263,7 +1267,7 @@ class _LocationForHouseDetailsState extends State<LocationForHouseDetails> {
                             style: TextStyle(
                                 color: Colors.black,
                                 fontWeight: FontWeight.w400,
-                                fontSize: 15,
+                                fontSize: 13,
                                 fontStyle: FontStyle.italic),
                           )
                         ],

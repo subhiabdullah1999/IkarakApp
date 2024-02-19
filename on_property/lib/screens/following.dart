@@ -103,7 +103,7 @@ class Following extends StatelessWidget {
                     Text(
                       personNames[index],
                       style:
-                          TextStyle(fontSize: 15, fontWeight: FontWeight.w500),
+                          TextStyle(fontSize: 13, fontWeight: FontWeight.w500),
                     ),
                     Spacer(),
                     Container(

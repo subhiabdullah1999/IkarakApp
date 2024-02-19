@@ -164,6 +164,37 @@ class MyTranslation extends Translations {
           "Rejected properties": "العقارات المرفوضة",
           "delete": "حذف",
           "back": "تراجع",
+          "about_us_desc":
+              "مرحبًا بك في صندوق العقارات، حيث يلتقي الأحلام بالواقع وتجد طريقها إلى قلوبكم. نحن هنا لتحقيق رغباتكم في العثور على عقار الأحلام  الذي يلبي تطلعاتكم ويمثل مأوىً دافئًا يروي قصة حياتكم. في هذا المكان، نجمع بين الراحة والتميز لنقدم لكم تجربة فريدة في عالم العقارات. اكتشفوا معنا عالمًا جديدًا من حيث تتحقق الأحلام وتبدأ قصة حياة جديدة.",
+          "policy_descr":
+              "نحن نولي أهمية كبيرة لحماية خصوصية مستخدمي تطبيقنا لبيع العقارات. إليك نبذة عن كيفية جمعنا واستخدامنا وحماية بياناتك:\n1. جمع البيانات: نقوم بجمع المعلومات التي تقدمها عند تسجيل الدخول أو استخدام التطبيق، بما في ذلك اسم المستخدم ورقم الهاتف والبريد الإلكتروني ومعلومات العقار.\n2. استخدام البيانات: نستخدم البيانات لتحسين تجربتك في التطبيق وتخصيص الخدمات المقدمة، دون مشاركتها مع أطراف ثالثة دون موافقتك الصريحة.\n3. تأمين البيانات: نتخذ إجراءات أمان متقدمة لحماية بياناتك من الوصول غير المصرح به والاستخدام السيء.\n4. مشاركة البيانات: لن نشارك معلوماتك الشخصية مع أي جهة خارجية دون موافقتك الصريحة، باستثناء الحالات التي تقتضيها القوانين المعمول بها.\n5. تحكم المستخدم: يوفر التطبيق خيارات لضبط إعدادات الخصوصية الخاصة بك وإمكانية حذف بياناتك عند الطلب.",
+          "policy_descr2":
+              "باستخدامك لتطبيقنا، فإنك توافق على شروط سياسة الخصوصية هذه. يرجى مراجعة هذه السياسة بشكل دوري للبقاء على اطلاع على التحديثات.",
+          "Choose package": "اختيار بكج",
+          "Please choose a package to be able to add your ads":
+              "يرجى اختيار بكج للتمكن من اضافة اعلاناتك",
+          "One ad": "اعلان واحد",
+          "Price": "السعر",
+          "Three ads": "ثلاثة اعلانات",
+          "Six ads": "ستة اعلانات",
+          "Direct payment": "مباشرة الدفع",
+          "A copy of the transfer notice": "صورة اشعار التحويل",
+          "research results": "نتائج البحث",
+          "There are no results for your search": "لا يوجد نتائج للبحث",
+          "Delete My Account": "حذف حسابي",
+          "The account has been successfully deleted": "تم حذف الحساب بنجاح",
+          "The property has been successfully deleted": "تم حذف العقار بنجاح",
+          "Choose a transfer office": "اختيار مكتب التحويل",
+          "Please select a payment office": "يرجى اختيار مكتب الدفع",
+          "Payment completed successfully": "تم الدفع بنجاح",
+          "An error occurred and the payment was not successful":
+              "حصل خطأ ما ولم ينجح الدفع",
+          "Please send to the name": "يرجى الارسال الى الاسم",
+          "Attach a copy of the transfer here": "وارفاق صورة الحوالة هنا",
+          "Note": "ملاحظة",
+          "Do you want to delete your account?": "هل تريد حذف حسابك ؟",
+          "Do you want to delete the property?": "هل تريد حذف العقار",
+          "Account not found": "الحساب غير موجود",
         },
         "en": {
           "Search Advance Filter": "Search Advance Filter",
@@ -330,6 +361,43 @@ class MyTranslation extends Translations {
           "Rejected properties": "Rejected properties",
           "delete": "delete",
           "back": "back",
+          "about_us_desc":
+              "Welcome to Real Estate Fund, where dreams meet reality and find their way into your hearts. We are here to fulfill your desires to find a dream property that meets your aspirations and represents a warm shelter that tells the story of your life. In this place, we combine comfort and excellence to offer you a unique experience in the world of real estate. Discover with us a new world where dreams come true and a new life story begins.",
+          "policy_descr":
+              "We attach great importance to protecting the privacy of users of our real estate selling app. A brief overview of how we collect our news and protect your data:\n1. Data collection:We collect information you provide when you log in or use the App, including your username, phone number, email, and real estate information.\n2. Use of data:We use your experience in the application and personalize the data of the services provided, without interruptions with third parties without your express consent.\n3. Insurance data:We take advanced security measures to protect your data from unauthorized access and misuse.\n4. Data sharing:We will not share your personal information with any party without your explicit consent, except in external cases required by Eid laws.\n5. User control:The app provides options to adjust your privacy settings and the ability to delete your data upon request.",
+          "policy_descr2":
+              "By using our application, you agree to the terms of this privacy policy. Please review this policy periodically to stay informed of updates.",
+          "Choose package": "Choose package",
+          "Please choose a package to be able to add your ads":
+              "Please choose a package to be able to add your ads",
+          "One ad": "One Ad",
+          "Price": "Price",
+          "Three ads": "Three ads",
+          "Six ads": "Six ads",
+          "Direct payment": "Direct payment",
+          "A copy of the transfer notice": "A copy of the transfer notice",
+          "research results": "Research Results",
+          "There are no results for your search":
+              "There are no results for your search",
+          "Delete My Account": "Delete My Account",
+          "The account has been successfully deleted":
+              "The account has been successfully deleted",
+          "The property has been successfully deleted":
+              "The property has been successfully deleted",
+          "Choose a transfer office": "Choose a transfer office",
+          "Please select a payment office": "Please select a payment office",
+          "Payment completed successfully": "Payment completed successfully",
+          "An error occurred and the payment was not successful":
+              "An error occurred and the payment was not successful",
+          "Please send to the name": "Please send to the name",
+          "Attach a copy of the transfer here":
+              "Attach a copy of the transfer here",
+          "Note": "Note",
+          "Do you want to delete your account?":
+              "Do you want to delete your account?",
+          "Do you want to delete the property?":
+              "Do you want to delete the property?",
+          "Account not found": "Account not found",
         }
       };
 }

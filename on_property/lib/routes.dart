@@ -21,16 +21,20 @@ import 'package:on_property/screens/news_and_blog.dart';
 import 'package:on_property/screens/news_and_blog_details.dart';
 import 'package:on_property/screens/notifications.dart';
 import 'package:on_property/screens/opt_screen.dart';
+import 'package:on_property/screens/packges_ads.dart';
+import 'package:on_property/screens/payment.dart';
 import 'package:on_property/screens/properties.dart';
 import 'package:on_property/screens/saved_searches.dart';
 import 'package:on_property/screens/search_properties.dart';
 import 'package:on_property/screens/search_property.dart';
+import 'package:on_property/screens/search_values.dart';
 import 'package:on_property/screens/see_all_screen.dart';
 import 'package:on_property/screens/settings.dart';
 import 'package:on_property/screens/sign_in.dart';
 import 'package:on_property/screens/sign_up.dart';
 import 'package:on_property/screens/splash.dart';
 import 'package:on_property/screens/terms_and_conditions.dart';
+import 'package:on_property/screens/transfer_office.dart';
 import 'package:on_property/screens/video_call.dart';
 import 'package:on_property/screens/wishlist.dart';
 
@@ -116,6 +120,14 @@ class RouteGenerator {
             builder: (context) => LocationForHouseDetails());
       case 'HouseDetails':
         return MaterialPageRoute(builder: (context) => HouseDetails());
+      case 'PackgesAds':
+        return MaterialPageRoute(builder: (context) => PackgesAds());
+      case 'Payment':
+        return MaterialPageRoute(builder: (context) => Payment());
+      case 'SearchValues':
+        return MaterialPageRoute(builder: (context) => SearchValues());
+      case 'TransferOffice':
+        return MaterialPageRoute(builder: (context) => TransferOffice());
     }
     return null;
   }

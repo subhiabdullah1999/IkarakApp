@@ -77,11 +77,11 @@ class NewsAndBlogDetailsBody extends StatelessWidget {
                   style: TextStyle(
                       color: primaryColor,
                       fontWeight: FontWeight.w500,
-                      fontSize: 16),
+                      fontSize: 14),
                 ),
                 Text(
                   headline,
-                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
+                  style: TextStyle(fontSize: 14, fontWeight: FontWeight.w500),
                 ),
                 SizedBox(height: 5),
                 Text(
@@ -230,7 +230,7 @@ class NewsAndBlogDetailsBody extends StatelessWidget {
                                             style: TextStyle(
                                                 fontWeight: FontWeight.w500,
                                                 color: primaryColor,
-                                                fontSize: 16),
+                                                fontSize: 14),
                                           ),
                                           Spacer(),
                                           CircleAvatar(
@@ -255,7 +255,7 @@ class NewsAndBlogDetailsBody extends StatelessWidget {
                                             ),
                                             Text(
                                               ' House for Sale',
-                                              style: TextStyle(fontSize: 12),
+                                              style: TextStyle(fontSize: 11),
                                             ),
                                           ],
                                         ),
@@ -279,11 +279,11 @@ class NewsAndBlogDetailsBody extends StatelessWidget {
                                               '3 ',
                                               style: TextStyle(
                                                   fontWeight: FontWeight.bold,
-                                                  fontSize: 12),
+                                                  fontSize: 11),
                                             ),
                                             Text(
                                               'bds ',
-                                              style: TextStyle(fontSize: 12),
+                                              style: TextStyle(fontSize: 11),
                                             ),
                                             VerticalDivider(
                                               width: 1,
@@ -293,11 +293,11 @@ class NewsAndBlogDetailsBody extends StatelessWidget {
                                               ' 5 ',
                                               style: TextStyle(
                                                   fontWeight: FontWeight.bold,
-                                                  fontSize: 12),
+                                                  fontSize: 11),
                                             ),
                                             Text(
                                               'baths ',
-                                              style: TextStyle(fontSize: 12),
+                                              style: TextStyle(fontSize: 11),
                                             ),
                                             VerticalDivider(
                                               width: 1,
@@ -307,11 +307,11 @@ class NewsAndBlogDetailsBody extends StatelessWidget {
                                               ' 1750 ',
                                               style: TextStyle(
                                                   fontWeight: FontWeight.bold,
-                                                  fontSize: 12),
+                                                  fontSize: 11),
                                             ),
                                             Text(
                                               'sqft',
-                                              style: TextStyle(fontSize: 12),
+                                              style: TextStyle(fontSize: 11),
                                             ),
                                           ],
                                         ),
@@ -323,13 +323,13 @@ class NewsAndBlogDetailsBody extends StatelessWidget {
                                             'Agent: ',
                                             style: TextStyle(
                                                 color: primaryColor,
-                                                fontSize: 13),
+                                                fontSize: 12),
                                           ),
                                           Text(
                                             name[index - 1],
                                             style: TextStyle(
                                                 color: primaryColor,
-                                                fontSize: 13),
+                                                fontSize: 12),
                                           )
                                         ],
                                       ),

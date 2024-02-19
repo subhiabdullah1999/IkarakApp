@@ -46,7 +46,7 @@ ListView myLeadsAgentsList() {
                                       Text(
                                         'Real Estate',
                                         style: TextStyle(
-                                            color: Colors.grey, fontSize: 12),
+                                            color: Colors.grey, fontSize: 11),
                                       ),
                                       SizedBox(width: 5),
                                       Icon(
@@ -89,7 +89,7 @@ ListView myLeadsAgentsList() {
                                       Text(
                                         '00000 Susan Apartment,New York ,USA',
                                         style: TextStyle(
-                                            color: Colors.grey, fontSize: 12),
+                                            color: Colors.grey, fontSize: 11),
                                       ),
                                       SizedBox(width: 5),
                                     ],

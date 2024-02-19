@@ -65,7 +65,7 @@ Container reusableTextField(
     {@required String? hint,
     Icon? icon,
     TextInputType? keyboard,
-    bool obsc = true,
+    bool obsc = false,
     TextEditingController? myController}) {
   Get.put(SignInControllerImp());
   return Container(

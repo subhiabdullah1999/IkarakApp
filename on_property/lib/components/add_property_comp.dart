@@ -16,7 +16,7 @@ addPropertyTextField(
       initialValue: initaiValue,
       validator: validator,
       controller: controller,
-      style: TextStyle(fontSize: 16),
+      style: TextStyle(fontSize: 13),
       keyboardType: TextInputType.text,
       textAlign: TextAlign.start,
       decoration: InputDecoration(
@@ -66,7 +66,7 @@ class AddPropertyTextField extends StatelessWidget {
         initialValue: initialValue,
         validator: validator,
         controller: controller,
-        style: TextStyle(fontSize: 16),
+        style: TextStyle(fontSize: 13),
         keyboardType: TextInputType.text,
         textAlign: TextAlign.start,
         decoration: InputDecoration(

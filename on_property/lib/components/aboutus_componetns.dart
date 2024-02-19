@@ -61,7 +61,7 @@ bannerForAboutUS(BuildContext context) {
                         'About Us'.tr,
                         style: TextStyle(
                             color: Colors.white,
-                            fontSize: 20,
+                            fontSize: 14,
                             fontWeight: FontWeight.w500),
                       )))
             ],

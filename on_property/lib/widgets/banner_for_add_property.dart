@@ -53,7 +53,7 @@ class _BannerForAddPropertyState extends State<BannerForAddProperty> {
                       style: TextStyle(
                           color: Colors.white,
                           fontWeight: FontWeight.w500,
-                          fontSize: 15),
+                          fontSize: 13),
                     ),
                     Spacer(),
                     // GestureDetector(
@@ -132,7 +132,7 @@ class _BannerForAddPropertyState extends State<BannerForAddProperty> {
                                     color: forSaleSelected == true
                                         ? Colors.white
                                         : Colors.grey,
-                                    fontSize: 17),
+                                    fontSize: 15),
                               ),
                             ),
                           ),
@@ -164,7 +164,7 @@ class _BannerForAddPropertyState extends State<BannerForAddProperty> {
                                   color: forBuySelected == true
                                       ? Colors.white
                                       : Colors.grey,
-                                  fontSize: 18),
+                                  fontSize: 14),
                             )),
                           ),
                         ),
@@ -199,7 +199,7 @@ class _BannerForAddPropertyState extends State<BannerForAddProperty> {
                                   color: forRentSelected == true
                                       ? Colors.white
                                       : Colors.grey,
-                                  fontSize: 17),
+                                  fontSize: 15),
                             )),
                           ),
                         ),

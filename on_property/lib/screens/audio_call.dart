@@ -24,7 +24,7 @@ class AudioCall extends StatelessWidget {
                 ),
                 Text(
                   'Ringing...',
-                  style: TextStyle(color: Colors.white, fontSize: 15),
+                  style: TextStyle(color: Colors.white, fontSize: 13),
                 ),
                 SizedBox(
                   height: MediaQuery.of(context).size.height * 0.15,
@@ -38,7 +38,7 @@ class AudioCall extends StatelessWidget {
                 ),
                 Text(
                   'John  Doe',
-                  style: TextStyle(color: Colors.white, fontSize: 18),
+                  style: TextStyle(color: Colors.white, fontSize: 14),
                 ),
                 SizedBox(
                   height: 10,

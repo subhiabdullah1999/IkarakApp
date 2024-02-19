@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:on_property/screens/dashboard.dart';
 import 'package:on_property/utils/colorscheme.dart';
 
-
 appBarForChatScreen(BuildContext context) {
   return PreferredSize(
       preferredSize: Size(double.infinity, 100),
@@ -41,7 +40,7 @@ appBarForChatScreen(BuildContext context) {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => DashBoard(page:4),
+                    builder: (context) => DashBoard(page: 4),
                   ),
                 );
               },
@@ -130,7 +129,6 @@ appBarForChatScreen(BuildContext context) {
                       borderRadius: BorderRadius.circular(10.0)),
                   child: Icon(Icons.videocam, color: Colors.grey)),
             ),
-
           ],
         ),
       ));
@@ -146,7 +144,6 @@ userChatBubble(String message) {
           Container(
             height: 40,
             alignment: Alignment.topCenter,
-
             padding: EdgeInsets.symmetric(horizontal: 18.0),
             decoration: BoxDecoration(
                 color: Colors.grey,
@@ -167,7 +164,7 @@ userChatBubble(String message) {
       ),
       Text(
         '4.15 pm',
-        style: TextStyle(color: Colors.grey, fontSize: 12),
+        style: TextStyle(color: Colors.grey, fontSize: 11),
       )
     ],
   );
@@ -201,7 +198,7 @@ otherUserChatBubble(String message) {
       ),
       Text(
         '4.15 pm',
-        style: TextStyle(color: Colors.grey, fontSize: 12),
+        style: TextStyle(color: Colors.grey, fontSize: 11),
       )
     ],
   );

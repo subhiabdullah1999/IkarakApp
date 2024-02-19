@@ -17,6 +17,8 @@ import 'package:on_property/data/models/state_model.dart';
 import 'package:http/http.dart' as http;
 import 'dart:io';
 
+import 'package:on_property/screens/packges_ads.dart';
+
 abstract class AddPropController extends GetxController {}
 
 class AddPropControllerImp extends AddPropController {
@@ -39,6 +41,8 @@ class AddPropControllerImp extends AddPropController {
   Position? position;
 
   CameraPosition? kGooglePlex;
+
+  int test = 0;
 
   int? indexState = 1;
   int? indexCity = 1;
@@ -401,7 +405,7 @@ class AddPropControllerImp extends AddPropController {
                     "Add property Done".tr,
                     style: TextStyle(
                         color: AppColors.blackColor3,
-                        fontSize: 18,
+                        fontSize: 14,
                         fontWeight: FontWeight.w500),
                   )
                 ],
@@ -436,7 +440,7 @@ class AddPropControllerImp extends AddPropController {
                     "An error occurred, adding the property did not succeed".tr,
                     style: TextStyle(
                         color: AppColors.blackColor3,
-                        fontSize: 18,
+                        fontSize: 14,
                         fontWeight: FontWeight.w500),
                   )
                 ],
@@ -474,7 +478,7 @@ class AddPropControllerImp extends AddPropController {
                   "An error occurred, adding the property did not succeed".tr,
                   style: TextStyle(
                       color: AppColors.blackColor3,
-                      fontSize: 18,
+                      fontSize: 14,
                       fontWeight: FontWeight.w500),
                 )
               ],
@@ -502,7 +506,7 @@ class AddPropControllerImp extends AddPropController {
                   "An error occurred, adding the property did not succeed".tr,
                   style: TextStyle(
                       color: AppColors.blackColor3,
-                      fontSize: 18,
+                      fontSize: 14,
                       fontWeight: FontWeight.w500),
                 )
               ],
@@ -521,6 +525,10 @@ class AddPropControllerImp extends AddPropController {
     } else {
       print("***********no enternet***********");
     }
+  }
+
+  goToPackgesAds() {
+    Get.to(() => PackgesAds());
   }
 
   @override

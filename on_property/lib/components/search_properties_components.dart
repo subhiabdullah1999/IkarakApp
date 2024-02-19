@@ -154,7 +154,7 @@ listOfProperties() {
                                         ),
                                         Text(
                                           ' House for Sale',
-                                          style: TextStyle(fontSize: 12),
+                                          style: TextStyle(fontSize: 11),
                                         ),
                                         Spacer(),
                                         HeartContainer(index)

@@ -12,6 +12,7 @@ class CustomButton extends StatelessWidget {
     return GestureDetector(
       onTap: callback,
       child: Container(
+        margin: const EdgeInsets.symmetric(horizontal: 5),
         height: 50,
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(30.0), color: primaryColor),
@@ -19,7 +20,7 @@ class CustomButton extends StatelessWidget {
             child: Text(
           title!,
           style: TextStyle(
-              color: Colors.white, fontWeight: FontWeight.w500, fontSize: 16),
+              color: Colors.white, fontWeight: FontWeight.w500, fontSize: 14),
         )),
       ),
     );

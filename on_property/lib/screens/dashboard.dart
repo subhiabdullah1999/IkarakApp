@@ -15,6 +15,7 @@ import 'package:on_property/screens/add_property.dart';
 import 'package:on_property/screens/chat.dart';
 import 'package:on_property/screens/home.dart';
 import 'package:on_property/screens/locationForHouseDetails.dart';
+import 'package:on_property/screens/packges_ads.dart';
 import 'package:on_property/screens/profile.dart';
 import 'package:on_property/screens/search_properties.dart';
 import 'package:on_property/screens/sign_in.dart';
@@ -142,7 +143,9 @@ class _DashBoardState extends State<DashBoard> {
                   currentScreen =
                       controller.myServices.sharedPreferences.get("id") == null
                           ? SignIn()
-                          : AddProperty();
+                          : controller.cridetNumber == 0
+                              ? PackgesAds()
+                              : AddProperty();
                   _currentTab = 2;
                   title = '';
                 });
@@ -229,7 +232,7 @@ class _DashBoardState extends State<DashBoard> {
                                   "Services".tr,
                                   style: TextStyle(
                                       color: AppColors.blackColor3,
-                                      fontSize: 18,
+                                      fontSize: 14,
                                       fontWeight: FontWeight.w500,
                                       fontStyle: FontStyle.normal),
                                 ),
@@ -240,7 +243,7 @@ class _DashBoardState extends State<DashBoard> {
                                       "Renting, selling, buying and registering real estate"
                                           .tr,
                                       style: TextStyle(
-                                        fontSize: 17,
+                                        fontSize: 15,
                                         fontWeight: FontWeight.w500,
                                       ),
                                       overflow: TextOverflow.clip,
@@ -258,7 +261,7 @@ class _DashBoardState extends State<DashBoard> {
                                       "Services for establishing real estate companies and documenting their trademarks"
                                           .tr,
                                       style: TextStyle(
-                                        fontSize: 17,
+                                        fontSize: 15,
                                         fontWeight: FontWeight.w500,
                                       ),
                                       overflow: TextOverflow.clip,
@@ -276,7 +279,7 @@ class _DashBoardState extends State<DashBoard> {
                                       "Real Estate Investment and Marketing Services Management"
                                           .tr,
                                       style: TextStyle(
-                                        fontSize: 17,
+                                        fontSize: 15,
                                         fontWeight: FontWeight.w500,
                                       ),
                                       overflow: TextOverflow.clip,
@@ -320,7 +323,7 @@ class _DashBoardState extends State<DashBoard> {
                                           'Contact Us'.tr,
                                           style: TextStyle(
                                               color: AppColors.whiteColor,
-                                              fontSize: 15,
+                                              fontSize: 13,
                                               fontWeight: FontWeight.w500),
                                         ),
                                       ],
@@ -364,7 +367,7 @@ class _DashBoardState extends State<DashBoard> {
                                                 'العربية',
                                                 style: TextStyle(
                                                     color: AppColors.whiteColor,
-                                                    fontSize: 15,
+                                                    fontSize: 13,
                                                     fontWeight:
                                                         FontWeight.w500),
                                               )
@@ -372,7 +375,7 @@ class _DashBoardState extends State<DashBoard> {
                                                 'English',
                                                 style: TextStyle(
                                                     color: AppColors.whiteColor,
-                                                    fontSize: 15,
+                                                    fontSize: 13,
                                                     fontWeight:
                                                         FontWeight.w500),
                                               )
@@ -420,7 +423,7 @@ class _DashBoardState extends State<DashBoard> {
       backgroundColor: Colors.white,
       title: Text(
         title!,
-        style: TextStyle(color: Colors.black, fontSize: 18),
+        style: TextStyle(color: Colors.black, fontSize: 14),
       ),
       leading: GestureDetector(
         onTap: () => _drawerKey.currentState!.openDrawer(),

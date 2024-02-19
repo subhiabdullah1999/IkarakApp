@@ -85,7 +85,7 @@ Container bannerForContactUs(BuildContext context) {
                   'Contact Us'.tr,
                   style: TextStyle(
                       color: Colors.white,
-                      fontSize: 18,
+                      fontSize: 14,
                       fontWeight: FontWeight.w500),
                 ),
               ),
@@ -182,7 +182,7 @@ inquiryForm(BuildContext context) {
               child: Container(
                 height: 50,
                 child: TextFormField(
-                    style: TextStyle(fontSize: 16),
+                    style: TextStyle(fontSize: 13),
                     keyboardType: TextInputType.number,
                     textAlign: TextAlign.start,
                     decoration: InputDecoration(
@@ -221,7 +221,7 @@ inquiryForm(BuildContext context) {
               border: Border.all(color: Colors.grey.shade300)),
           child: TextFormField(
             maxLines: 3,
-            style: TextStyle(fontSize: 16),
+            style: TextStyle(fontSize: 13),
             keyboardType: TextInputType.text,
             textAlign: TextAlign.start,
             decoration: InputDecoration(
@@ -261,7 +261,7 @@ textFieldForContactUs(String title) {
   return Container(
     height: 50,
     child: TextFormField(
-        style: TextStyle(fontSize: 16),
+        style: TextStyle(fontSize: 13),
         keyboardType: TextInputType.text,
         textAlign: TextAlign.start,
         decoration: InputDecoration(
@@ -339,7 +339,7 @@ Row customListTile(IconData iconData, String title, subtitle) {
         children: [
           Text(
             title.tr,
-            style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+            style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
           ),
           SizedBox(
             height: 2,

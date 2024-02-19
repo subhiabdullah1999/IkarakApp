@@ -31,7 +31,7 @@ class SignUpWithOptions extends StatelessWidget {
           Text(
             'Hello There ',
             style: TextStyle(
-                color: Colors.white, fontSize: 20, fontWeight: FontWeight.w500),
+                color: Colors.white, fontSize: 18, fontWeight: FontWeight.w500),
           ),
           SizedBox(
             height: 5,

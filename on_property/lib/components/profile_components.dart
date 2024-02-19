@@ -444,7 +444,7 @@ class _ProfileCustomState extends State<ProfileCustom>
                 //     style: Theme.of(context)
                 //         .textTheme
                 //         .titleLarge!
-                //         .copyWith(color: AppColors.blackColor3, fontSize: 16),
+                //         .copyWith(color: AppColors.blackColor3, fontSize: 14),
                 //   ),
                 // ),
 
@@ -456,7 +456,7 @@ class _ProfileCustomState extends State<ProfileCustom>
                 //     style: Theme.of(context)
                 //         .textTheme
                 //         .titleLarge!
-                //         .copyWith(color: AppColors.blackColor3, fontSize: 16),
+                //         .copyWith(color: AppColors.blackColor3, fontSize: 14),
                 //   ),
                 // ),
               ],
@@ -476,7 +476,7 @@ class PropAprovid extends StatelessWidget {
               "You have not added any property".tr,
               style: TextStyle(
                   color: AppColors.redcolor,
-                  fontSize: 18,
+                  fontSize: 14,
                   fontWeight: FontWeight.w500,
                   fontStyle: FontStyle.italic),
             ),
@@ -492,16 +492,16 @@ class PropAprovid extends StatelessWidget {
                   return Dismissible(
                     key: Key(controller.dataPropUserId[index].id.toString()),
                     direction: DismissDirection.horizontal,
-                    confirmDismiss: (direction) => controller.popDeletCard(),
-                    // onDismissed: (direction) {
-                    //   if (direction ==
-                    //       DismissDirection.endToStart) {
-                    //     controller.popDeletCard();
-                    //   } else if (direction ==
-                    //       DismissDirection.startToEnd) {
-                    //     controller.popDeletCard();
-                    //   }
-                    // },
+                    // confirmDismiss: (direction) => controller.popDeletCard(),
+                    onDismissed: (direction) {
+                      controller.ProdId =
+                          controller.dataPropUserId[index].id!.toInt();
+                      if (direction == DismissDirection.endToStart) {
+                        controller.popDeletCard();
+                      } else if (direction == DismissDirection.startToEnd) {
+                        controller.popDeletCard();
+                      }
+                    },
                     child: GestureDetector(
                         onTap: () {
                           controller.ProdId =
@@ -566,7 +566,7 @@ class PropAprovid extends StatelessWidget {
                                                       .title
                                                       .toString(),
                                                   style: kh2.copyWith(
-                                                      fontSize: 18,
+                                                      fontSize: 14,
                                                       color: AppColors.green,
                                                       fontWeight:
                                                           FontWeight.w500),
@@ -603,7 +603,7 @@ class PropAprovid extends StatelessWidget {
                                                       //     .toString(),
                                                       style: TextStyle(
                                                           color: Colors.grey,
-                                                          fontSize: 14),
+                                                          fontSize: 13),
                                                     ),
                                                     SizedBox(
                                                       width: 2,
@@ -628,7 +628,7 @@ class PropAprovid extends StatelessWidget {
                                                             style: TextStyle(
                                                                 color:
                                                                     Colors.grey,
-                                                                fontSize: 14),
+                                                                fontSize: 13),
                                                           ),
                                                   ],
                                                 )
@@ -700,13 +700,19 @@ class PropAprovid extends StatelessWidget {
                                                           .type
                                                           .toString(),
                                                   style:
-                                                      TextStyle(fontSize: 12),
+                                                      TextStyle(fontSize: 11),
                                                 ),
                                                 Spacer(),
                                                 Row(
                                                   children: [
                                                     GestureDetector(
                                                       onTap: () {
+                                                        controller.ProdId =
+                                                            controller
+                                                                .dataPropUserId[
+                                                                    index]
+                                                                .id!
+                                                                .toInt();
                                                         controller
                                                             .popDeletCard();
                                                       },
@@ -777,7 +783,7 @@ class PropAprovid extends StatelessWidget {
     //     style: Theme.of(context)
     //         .textTheme
     //         .titleLarge!
-    //         .copyWith(color: AppColors.blackColor3, fontSize: 16),
+    //         .copyWith(color: AppColors.blackColor3, fontSize: 14),
     //   ),
     // ),;
   }
@@ -795,7 +801,7 @@ class ReviewProp extends StatelessWidget {
               "You have not added any property".tr,
               style: TextStyle(
                   color: AppColors.redcolor,
-                  fontSize: 18,
+                  fontSize: 14,
                   fontWeight: FontWeight.w500,
                   fontStyle: FontStyle.italic),
             ),
@@ -869,7 +875,7 @@ class ReviewProp extends StatelessWidget {
                                                     .dataPropUserId[index].title
                                                     .toString(),
                                                 style: kh2.copyWith(
-                                                    fontSize: 18,
+                                                    fontSize: 14,
                                                     color: AppColors.green,
                                                     fontWeight:
                                                         FontWeight.w500),
@@ -906,7 +912,7 @@ class ReviewProp extends StatelessWidget {
                                                     //     .toString(),
                                                     style: TextStyle(
                                                         color: Colors.grey,
-                                                        fontSize: 14),
+                                                        fontSize: 13),
                                                   ),
                                                   SizedBox(
                                                     width: 2,
@@ -931,7 +937,7 @@ class ReviewProp extends StatelessWidget {
                                                           style: TextStyle(
                                                               color:
                                                                   Colors.grey,
-                                                              fontSize: 14),
+                                                              fontSize: 13),
                                                         ),
                                                 ],
                                               )
@@ -1002,7 +1008,7 @@ class ReviewProp extends StatelessWidget {
                                                         .dataPropUserId[index]
                                                         .type
                                                         .toString(),
-                                                style: TextStyle(fontSize: 12),
+                                                style: TextStyle(fontSize: 11),
                                               ),
                                               Spacer(),
                                               Row(
@@ -1082,7 +1088,7 @@ class RejectedProp extends StatelessWidget {
               "You have not added any property".tr,
               style: TextStyle(
                   color: AppColors.redcolor,
-                  fontSize: 18,
+                  fontSize: 14,
                   fontWeight: FontWeight.w500,
                   fontStyle: FontStyle.italic),
             ),
@@ -1156,7 +1162,7 @@ class RejectedProp extends StatelessWidget {
                                                     .dataPropUserId[index].title
                                                     .toString(),
                                                 style: kh2.copyWith(
-                                                    fontSize: 18,
+                                                    fontSize: 14,
                                                     color: AppColors.green,
                                                     fontWeight:
                                                         FontWeight.w500),
@@ -1193,7 +1199,7 @@ class RejectedProp extends StatelessWidget {
                                                     //     .toString(),
                                                     style: TextStyle(
                                                         color: Colors.grey,
-                                                        fontSize: 14),
+                                                        fontSize: 13),
                                                   ),
                                                   SizedBox(
                                                     width: 2,
@@ -1218,7 +1224,7 @@ class RejectedProp extends StatelessWidget {
                                                           style: TextStyle(
                                                               color:
                                                                   Colors.grey,
-                                                              fontSize: 14),
+                                                              fontSize: 13),
                                                         ),
                                                 ],
                                               )
@@ -1289,7 +1295,7 @@ class RejectedProp extends StatelessWidget {
                                                         .dataPropUserId[index]
                                                         .type
                                                         .toString(),
-                                                style: TextStyle(fontSize: 12),
+                                                style: TextStyle(fontSize: 11),
                                               ),
                                               Spacer(),
                                               Row(
