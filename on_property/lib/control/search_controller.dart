@@ -26,12 +26,12 @@ class SearchControllerImp extends SearchController {
   List<StateModel> data = [];
   List<CityStateModel> dataCity = [];
   List<String> salePrope = [
-    "شقق",
-    "اراضي",
-    "محلات",
-    "مستودعات",
-    "شاليهات",
-    "فلل"
+    "Apartments".tr,
+    "Lands".tr,
+    "Shops".tr,
+    "Warehouses".tr,
+    "Chalets".tr,
+    "Villas".tr
   ];
   int selectedProp = 0;
 

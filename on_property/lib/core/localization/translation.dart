@@ -195,6 +195,17 @@ class MyTranslation extends Translations {
           "Do you want to delete your account?": "هل تريد حذف حسابك ؟",
           "Do you want to delete the property?": "هل تريد حذف العقار",
           "Account not found": "الحساب غير موجود",
+          "Towards a new horizon": "نحو أفق جديد",
+          "Apartments": "شقق",
+          "Lands": "اراضي",
+          "Shops": "محلات",
+          "Warehouses": "مستودعات",
+          "Chalets": "شاليهات",
+          "Villas": "فلل",
+          'Legal documents': 'المستندات القانونية',
+          "Company registration certificate with Finance":
+              "شهادة تسجيل الشركة لدى المالية",
+          "Blackgold Lawyer Business Card": "بطاقة عمل محامي بلاك جولد",
         },
         "en": {
           "Search Advance Filter": "Search Advance Filter",
@@ -398,6 +409,17 @@ class MyTranslation extends Translations {
           "Do you want to delete the property?":
               "Do you want to delete the property?",
           "Account not found": "Account not found",
+          "Towards a new horizon": "Towards a new horizon",
+          "Apartments": "Apartments",
+          "Lands": "Lands",
+          "Shops": "Shops",
+          "Warehouses": "Warehouses",
+          "Chalets": "Chalets",
+          "Villas": "Villas",
+          'Legal documents': 'Legal documents',
+          "Company registration certificate with Finance":
+              "Company registration certificate with Finance",
+          "Blackgold Lawyer Business Card": "Blackgold Lawyer Business Card",
         }
       };
 }

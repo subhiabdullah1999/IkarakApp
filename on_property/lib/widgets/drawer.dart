@@ -3,6 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:on_property/control/drawer_controller.dart';
 import 'package:on_property/core/constans/appColors.dart';
+import 'package:on_property/core/services/services.dart';
 import 'package:on_property/utils/colorscheme.dart';
 import 'package:on_property/widgets/loading.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -16,6 +17,7 @@ class CustomDrawer extends StatefulWidget {
 
 class _CustomDrawerState extends State<CustomDrawer> {
   DrawerControllerImp controller = Get.put(DrawerControllerImp());
+
   @override
   Widget build(BuildContext context) {
     return GetBuilder<DrawerControllerImp>(
@@ -119,7 +121,13 @@ class _CustomDrawerState extends State<CustomDrawer> {
                       drawerTile(
                           title: 'Add property',
                           svgIconLoc: 'assets/icons/add_property.svg',
-                          routeName: 'AddProperty'),
+                          routeName: controller.myServices.sharedPreferences
+                                      .get("id") ==
+                                  null
+                              ? "SignIn"
+                              : controller.cridetNumber == 0
+                                  ? "PackgesAds"
+                                  : 'AddProperty'),
                       Divider(
                         color: dividerColor,
                       ),
@@ -241,6 +249,13 @@ class _CustomDrawerState extends State<CustomDrawer> {
                         color: dividerColor,
                       ),
                       drawerTile(
+                          title: 'Legal documents'.tr,
+                          svgIconLoc: 'assets/icons/leagl.svg',
+                          routeName: 'LeagleDoucments'),
+                      Divider(
+                        color: dividerColor,
+                      ),
+                      drawerTile(
                           title: 'Terms and Policies',
                           svgIconLoc: 'assets/icons/terms_and_privacy.svg',
                           routeName: 'TermsAndConditions'),
@@ -285,6 +300,8 @@ class _CustomDrawerState extends State<CustomDrawer> {
             SvgPicture.asset(
               svgIconLoc!,
               color: dividerTextColor,
+              height: 20,
+              width: 20,
             ),
             SizedBox(
               width: 10,

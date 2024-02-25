@@ -38,6 +38,8 @@ import 'package:on_property/screens/transfer_office.dart';
 import 'package:on_property/screens/video_call.dart';
 import 'package:on_property/screens/wishlist.dart';
 
+import 'screens/leagl_documents.dart';
+
 class RouteGenerator {
   // ignore: missing_return
   static Route<dynamic>? generateRoute(RouteSettings settings) {
@@ -128,6 +130,8 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (context) => SearchValues());
       case 'TransferOffice':
         return MaterialPageRoute(builder: (context) => TransferOffice());
+      case 'LeagleDoucments':
+        return MaterialPageRoute(builder: (context) => LeagleDoucments());
     }
     return null;
   }

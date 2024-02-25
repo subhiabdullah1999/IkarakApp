@@ -13,6 +13,7 @@ import 'package:http/http.dart' as http;
 import 'package:on_property/screens/house_details.dart';
 import 'package:on_property/screens/search_properties.dart';
 import 'package:on_property/screens/search_property.dart';
+import 'package:on_property/utils/app_assets.dart';
 
 abstract class LocationHousDetailescontroller extends GetxController {
   typeIkar();
@@ -35,12 +36,12 @@ class LocationHousDetailescontrollerImp extends LocationHousDetailescontroller {
   int indexTypeProp = 0;
   int indexTypePropdata = 1;
   List<String> salePrope = [
-    "شقق",
-    "اراضي",
-    "محلات",
-    "مستودعات",
-    "شاليهات",
-    "فلل"
+    "Apartments".tr,
+    "Lands".tr,
+    "Shops".tr,
+    "Warehouses".tr,
+    "Chalets".tr,
+    "Villas".tr
   ];
   int? indexListtypeprop;
 
@@ -71,19 +72,40 @@ class LocationHousDetailescontrollerImp extends LocationHousDetailescontroller {
         }
 
         for (var i = 0; i < data.length; i++) {
+          // await await BitmapDescriptor.fromAssetImage(
+          //         ImageConfiguration(),
+          //         "assets/images/pin1.png")
+          //     .then((myMarker) {
+          //   print("yyygjhghjghgku9900000000000000000022222222222222222");
+
+          // markers.add(Marker(
+          //     markerId: MarkerId(data[i].propertyDetails!.id.toString()),
+          //     position: LatLng(
+          //         double.parse(data[i].lat!), double.parse(data[i].lon!)),
+          //     icon: myMarker,
+          //     infoWindow: InfoWindow(
+          //         onTap: () {
+          //           ProdId = data[i].id!.toInt();
+          //           Get.to(() => HouseDetails(),
+          //               arguments: {"ProdId": ProdId});
+          //         },
+          //         title: 'Title'.tr + ": " + data[i].title.toString(),
+          //         snippet: 'Price '.tr + ": " + data[i].price.toString())));
+          // });
           markers.add(Marker(
               markerId: MarkerId(data[i].propertyDetails!.id.toString()),
               position: LatLng(
                   double.parse(data[i].lat!), double.parse(data[i].lon!)),
-              icon: BitmapDescriptor.defaultMarker,
+              icon: BitmapDescriptor.defaultMarkerWithHue(120),
               infoWindow: InfoWindow(
                   onTap: () {
                     ProdId = data[i].id!.toInt();
-
                     Get.to(() => HouseDetails(), arguments: {"ProdId": ProdId});
                   },
                   title: 'Title'.tr + ": " + data[i].title.toString(),
                   snippet: 'Price '.tr + ": " + data[i].price.toString())));
+
+          ;
           print("KIUYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY");
           print(double.parse(data[i].lat!));
           print(data.length);
@@ -140,7 +162,7 @@ class LocationHousDetailescontrollerImp extends LocationHousDetailescontroller {
               markerId: MarkerId(data[i].propertyDetails!.id.toString()),
               position: LatLng(
                   double.parse(data[i].lat!), double.parse(data[i].lon!)),
-              icon: BitmapDescriptor.defaultMarker,
+              icon: BitmapDescriptor.defaultMarkerWithHue(255),
               infoWindow: InfoWindow(
                   onTap: () {
                     ProdId = data[i].id!.toInt();
@@ -193,10 +215,12 @@ class LocationHousDetailescontrollerImp extends LocationHousDetailescontroller {
         }
         for (var i = 0; i < data.length; i++) {
           markers.add(Marker(
-              markerId: MarkerId(data[i].propertyDetails!.id.toString()),
+              markerId: MarkerId(
+                data[i].propertyDetails!.id.toString(),
+              ),
               position: LatLng(
                   double.parse(data[i].lat!), double.parse(data[i].lon!)),
-              icon: BitmapDescriptor.defaultMarker,
+              icon: BitmapDescriptor.defaultMarkerWithHue(5),
               infoWindow: InfoWindow(
                   onTap: () {
                     ProdId = data[i].id!.toInt();
@@ -271,6 +295,7 @@ class LocationHousDetailescontrollerImp extends LocationHousDetailescontroller {
   @override
   void onInit() {
     checkInterNet();
+
     // getSaletPrp();
     indexTypeProp = 0;
     super.onInit();

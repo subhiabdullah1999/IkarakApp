@@ -58,12 +58,12 @@ class AddPropControllerImp extends AddPropController {
   bool showMap = false;
   List<Marker> markers = [];
   List<String> salePrope = [
-    "شقق",
-    "اراضي",
-    "محلات",
-    "مستودعات",
-    "شاليهات",
-    "فلل"
+    "Apartments".tr,
+    "Lands".tr,
+    "Shops".tr,
+    "Warehouses".tr,
+    "Chalets".tr,
+    "Villas".tr
   ];
   int selectedProp = 0;
   List<StateModel> data = [];

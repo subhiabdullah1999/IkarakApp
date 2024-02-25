@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:get/get.dart';
 import 'package:on_property/core/constans/appColors.dart';
 import 'package:on_property/screens/onboarding/onboarding_screen1.dart';
 
@@ -66,24 +67,39 @@ class _SplashState extends State<Splash> {
         statusBarIconBrightness: Brightness.light));
 
     return Scaffold(
-      // backgroundColor: AppColors.green,
-      body: Container(
-        height: MediaQuery.of(context).size.height,
-        width: MediaQuery.of(context).size.width,
-        decoration: BoxDecoration(
-          color: AppColors.whiteColor,
-          image: DecorationImage(
-              // fit: BoxFit.fill,
-              image: AssetImage('assets/images/logoIkarak.PNG')),
+      backgroundColor: AppColors.whiteColor,
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Container(
+              height: 300,
+              width: 300,
+              decoration: BoxDecoration(
+                color: AppColors.whiteColor,
+                image: DecorationImage(
+                    // fit: BoxFit.fill,
+                    image: AssetImage('assets/images/logoIkarak.PNG')),
+              ),
+              // child: Center(
+              //   child: Image.asset(
+              //     'assets/images/ik.png',
+              //     height: 150,
+              //     width: 150,
+              //     // color: Colors.white,
+              //   ),
+              // ),
+            ),
+            Text(
+              "Towards a new horizon".tr,
+              style: Theme.of(context)
+                  .textTheme
+                  .titleLarge!
+                  .copyWith(color: AppColors.blackColor3, fontSize: 17),
+            )
+          ],
         ),
-        // child: Center(
-        //   child: Image.asset(
-        //     'assets/images/ik.png',
-        //     height: 150,
-        //     width: 150,
-        //     // color: Colors.white,
-        //   ),
-        // ),
       ),
     );
   }

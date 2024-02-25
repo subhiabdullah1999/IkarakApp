@@ -83,8 +83,7 @@ class _LocationForHouseDetailsState extends State<LocationForHouseDetails> {
                 markers: controller.markers,
                 initialCameraPosition:
                     CameraPosition(target: _center, zoom: 8.6),
-
-                // mapType: MapType.none,
+                mapType: MapType.terrain,
                 onMapCreated: (controller) {
                   setState(() {
                     _controller = controller;

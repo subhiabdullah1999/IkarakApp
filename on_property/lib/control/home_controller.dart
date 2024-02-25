@@ -19,12 +19,12 @@ class HomeControllerImp extends HomeController {
   int indexTypeProp = 0;
   int indexTypePropdata = 1;
   List<String> salePrope = [
-    "شقق",
-    "اراضي",
-    "محلات",
-    "مستودعات",
-    "شاليهات",
-    "فلل"
+    "Apartments".tr,
+    "Lands".tr,
+    "Shops".tr,
+    "Warehouses".tr,
+    "Chalets".tr,
+    "Villas".tr
   ];
   List<bool> listFavor = [];
 
